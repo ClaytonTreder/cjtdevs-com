@@ -10,7 +10,7 @@ function Contact() {
       <div class="col-md-8 offset-md-2">
         <p>
           The best way to get in contact with us is through email:{" "}
-          <a href="mailto:cjtdevs@gmail.com">CJTDevs@gmail.com</a>
+          <a href="mailto:info@CJTDevs.com">info@CJTDevs.com</a>
         </p>
         <p>
           You can also call Clay: <a href="tel:+17347878670">(734) 787-8670</a>

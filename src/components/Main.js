@@ -32,7 +32,7 @@ function Main() {
         <div class="col-sm-12 text-center">
           <span>
             To work with CJT Devs, please email:{" "}
-            <a href="mailto:cjtdevs@gmail.com">CJTDevs@gmail.com</a>
+            <a href="mailto:info@CJTDevs.com">info@CJTDevs.com</a>
           </span>
         </div>
       </div>

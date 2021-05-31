@@ -30,7 +30,7 @@ function Footer() {
         <div class="d-flex justify-content-between mx-3">
           <span>CJT Devs, {new Date().getFullYear()}</span>
           <span>
-            <a href="mailto:cjtdevs@gmail.com">cjtdevs@gmail.com</a>
+            <a href="mailto:info@CJTDevs.com">info@CJTDevs.com</a>
           </span>
         </div>
       </div>
