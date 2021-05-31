@@ -18,7 +18,7 @@ function About() {
           We also provide a place for developers to share thier work and a
           protfolio about themselves.
         </p>
-        <p>Thanks for taking the time to look and we hope to here from you!</p>
+        <p>Thanks for taking the time to look and we hope to hear from you!</p>
       </div>
     </div>
   );
