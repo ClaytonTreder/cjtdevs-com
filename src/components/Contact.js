@@ -1,9 +1,6 @@
 function Contact() {
   return (
-    <div
-      class="col-md-12 px-0"
-      style={{ fontFamily: "copperplate,courier,arial,helvetica" }}
-    >
+    <div class="col-md-12 px-0">
       <div class="d-flex justify-content-center mb-5 mt-2">
         <h4>Contact</h4>
       </div>

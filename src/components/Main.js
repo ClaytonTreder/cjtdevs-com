@@ -2,15 +2,16 @@ import Project from "./Project";
 import zacevan from "../content/images/projects/zacevan-com.png";
 import cjtdevs from "../content/images/projects/cjtdevs-com.png";
 import serpinskis_triangle from "../content/images/projects/serpinskis-triangle.gif";
+import React from "react";
 
 function Main() {
   return (
-    <main>
-      <div class="col-sm-12 px-0">
+    <React.Fragment>
+      <div class="col-sm-12">
         <div class="d-flex justify-content-center mb-5 mt-2">
           <h4>Projects</h4>
         </div>
-        <div class="col-12">
+        <div class="col-sm-12">
           <Project
             href="https://zacevan.com/"
             img={zacevan}
@@ -36,7 +37,7 @@ function Main() {
           </span>
         </div>
       </div>
-    </main>
+    </React.Fragment>
   );
 }
 
