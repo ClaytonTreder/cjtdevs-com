@@ -34,9 +34,9 @@ function Header(props) {
             <div className="form-row"><small><em>{subTitle}</em></small></div></div>
         </div>
       </div>
-      <a href="/" class="mr-4 col-form-label">
-        <h5 class="pl-3 pr-1">/</h5>
-      </a>
+      <h5 class="mr-3">
+        <a href="/">Projects</a>
+      </h5>
       <div class="dropdown mr-3">
         <h5
           class="dropdown-toggle anchor"

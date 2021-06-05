@@ -8,8 +8,11 @@ function Main() {
   return (
     <React.Fragment>
       <div class="col-sm-12">
-        <div class="d-flex justify-content-center mb-5 mt-2">
+        <div class="d-flex justify-content-center mt-2">
           <h4>Projects</h4>
+        </div>
+        <div class="d-flex justify-content-center mb-3">
+          <span>Recent projects completed by CJT Devs</span>
         </div>
         <div class="col-sm-12">
           <Project
@@ -21,11 +24,6 @@ function Main() {
             href="https://github.com/ClaytonTreder/cjtdevs-com/"
             img={cjtdevs}
             title="CJTDevs.com"
-          />
-          <Project
-            href="https://github.com/ClaytonTreder/Seirpinskis-Triangle"
-            img={serpinskis_triangle}
-            title="Seirpinski's Triangle Demo"
           />
         </div>
       </div>
