@@ -28,7 +28,10 @@ function Header(props) {
             style={{ borderRadius: "100%", width: "7em" }}
             alt="header logo"
           />
-          <h1 className="mt-3">{pageTitle}</h1>
+          <div className="col">
+            <div className="form-row">
+              <h1 className="mt-3">{pageTitle}</h1></div>
+            <div className="form-row"><small><em>{subTitle}</em></small></div></div>
         </div>
       </div>
       <a href="/" class="mr-4 col-form-label">
