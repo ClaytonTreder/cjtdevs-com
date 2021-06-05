@@ -5,14 +5,8 @@ import claytonTreder from "../content/images/clayton-treder.png";
 
 function Header(props) {
   let location = useLocation();
-  let img, pageTitle;
+  let img, pageTitle, subTitle;
   switch (location.pathname) {
-    case "/":
-    case "/contact":
-    case "/about":
-      img = logo;
-      pageTitle = "Devs";
-      break;
 
     case "/clayton-treder":
       img = claytonTreder;
@@ -20,6 +14,9 @@ function Header(props) {
       break;
 
     default:
+      img = logo;
+      pageTitle = "Devs";
+      subTitle = "Find your new home page here"
       break;
   }
   return (
