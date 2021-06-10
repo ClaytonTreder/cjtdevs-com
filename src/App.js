@@ -12,7 +12,7 @@ import Contact from "./components/Contact";
 function App() {
   return (
     <Router>
-      <div class="pt-2 offset-md-2 col-md-8 px-0 body-content">
+      <div class="pt-2 offset-md-1 col-md-10 px-1 body-content">
         <Header />
         <Route exact path="/">
           <Main />

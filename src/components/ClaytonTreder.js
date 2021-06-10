@@ -14,7 +14,7 @@ function ClaytonTreder() {
           <div class="form-row">
             <label class="font-weight-bold col-md-4">Email:</label>
             <label class="col-md-8">
-              <a href="mailto:cjtreder@gmail.com">CJTreder@outlook.com</a>
+              <a href="mailto:cjtreder@gmail.com">CJTreder@gmail.com</a>
             </label>
           </div>
           <div class="form-row">

@@ -1,7 +1,7 @@
 import fbImg from '../content/images/misc/img-FB.png'
 function Footer() {
   return (
-    <footer class="offset-md-2 col-md-8 px-0 mb-1">
+    <footer class="offset-md-1 col-md-10 px-0 mb-3">
       <div class="col-md-12 px-0">
         <hr />
         <div class="d-flex justify-content-between my-3">
