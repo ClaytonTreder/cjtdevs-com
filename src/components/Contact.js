@@ -1,3 +1,5 @@
+const axios = require("axios");
+
 function Contact() {
   const requestOptions = {
     method: "POST",
@@ -10,7 +12,19 @@ function Contact() {
     },
   };
   function sendEmail() {
-    fetch("https://mailer.cjtdevs.com/mail", requestOptions);
+    axios({
+      method: "POST",
+      url: "https://mailer.cjtdevs.com/mail",
+      header: {
+        "Content-Type": "application/json",
+      },
+      data: {
+        from: "info@cjtdevs.com",
+        to: "info@cjtdevs.com",
+        subject: "Client Sent Email --- Sending Email using Node.js",
+        text: "That was easy!",
+      },
+    });
   }
   return (
     <div class="col-md-12 px-0">
