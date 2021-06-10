@@ -15,8 +15,9 @@ function Contact() {
     axios({
       method: "POST",
       url: "https://mailer.cjtdevs.com/mail",
-      header: {
+      headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "https://cjtdevs.com",
       },
       data: {
         from: "info@cjtdevs.com",
