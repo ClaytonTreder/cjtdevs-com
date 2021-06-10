@@ -1,9 +1,13 @@
 function Contact() {
   const requestOptions = {
-    from: "info@cjtdevs.com",
-    to: "info@cjtdevs.com",
-    subject: "Client Sent Email --- Sending Email using Node.js",
-    text: "That was easy!",
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: {
+      from: "info@cjtdevs.com",
+      to: "info@cjtdevs.com",
+      subject: "Client Sent Email --- Sending Email using Node.js",
+      text: "That was easy!",
+    },
   };
   function sendEmail() {
     fetch(process.env.EMAILSERVER, requestOptions);
