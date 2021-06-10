@@ -10,7 +10,7 @@ function Contact() {
     },
   };
   function sendEmail() {
-    fetch("Cjtdevsemailer-env.eba-vat3ui6e.us-east-2.elasticbeanstalk.com/mail", requestOptions);
+    fetch("http://Cjtdevsemailer-env.eba-vat3ui6e.us-east-2.elasticbeanstalk.com/mail", requestOptions);
   }
   return (
     <div class="col-md-12 px-0">
