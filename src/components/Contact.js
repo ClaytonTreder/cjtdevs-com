@@ -1,4 +1,13 @@
 function Contact() {
+  const requestOptions = {
+    from: "info@cjtdevs.com",
+    to: "info@cjtdevs.com",
+    subject: "Client Sent Email --- Sending Email using Node.js",
+    text: "That was easy!",
+  };
+  function sendEmail() {
+    fetch(process.env.EMAILSERVER, requestOptions);
+  }
   return (
     <div class="col-md-12 px-0">
       <div class="d-flex justify-content-center mb-5 mt-2">
@@ -13,6 +22,7 @@ function Contact() {
           You can also call Clay: <a href="tel:+17347878670">(734) 787-8670</a>
         </p>
       </div>
+      <input type="button" onClick={sendEmail} value="test" />
     </div>
   );
 }
