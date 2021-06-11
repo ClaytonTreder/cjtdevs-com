@@ -11,6 +11,14 @@ function Contact() {
   };
   const [state, setValue] = useState(mailBody);
 
+  function formatBody() {
+    return {
+      to: "info@cjtdevs.com",
+      subject: " From: " + state.from + " - Subject: " + state.subject,
+      text: state.text,
+    };
+  }
+
   function sendEmail() {
     axios({
       method: "POST",
