@@ -1,15 +1,16 @@
-import { useState } from "react";
+import { render } from "@testing-library/react";
+import { useEffect, useState } from "react";
 
 const axios = require("axios");
 
 function Contact() {
-  let mailBody = {
+  const [state, setValue] = useState({
     from: null,
-    to: "info@cjtdevs.com",
     subject: null,
     text: null,
-  };
-  const [state, setValue] = useState(mailBody);
+    success: null,
+  });
+  useEffect(() => {}, [state.success]);
 
   function formatBody() {
     return {
@@ -28,7 +29,20 @@ function Contact() {
         "Access-Control-Allow-Origin": "https://cjtdevs.com",
       },
       data: formatBody(),
-    });
+    })
+      .then(() => {
+        displayMessage(true);
+      })
+      .catch(() => {
+        displayMessage(false);
+      });
+  }
+
+  function displayMessage(error) {
+    setValue((prevState) => ({
+    ...prevState,
+    success: error,
+  }))
   }
   return (
     <div class="col-md-12 px-0">
@@ -41,7 +55,6 @@ function Contact() {
             type="text"
             className="form-control col-12"
             placeholder="Email *"
-            name="from"
             onChange={(e) =>
               setValue((prevState) => ({
                 ...prevState,
@@ -55,7 +68,6 @@ function Contact() {
             type="text"
             className="form-control my-1 col-12"
             placeholder="Subject"
-            name="subject"
             onChange={(e) =>
               setValue((prevState) => ({
                 ...prevState,
@@ -68,7 +80,6 @@ function Contact() {
           <textarea
             className="form-control col-12"
             rows="5"
-            name="text"
             placeholder="Message"
             onChange={(e) =>
               setValue((prevState) => ({
@@ -81,10 +92,25 @@ function Contact() {
         <div className="form-row">
           <input
             type="button"
-            className="offset-md-5 mt-2 col-md-2"
+            className="offset-4 mt-2 col-4"
             onClick={sendEmail}
             value="Send"
           />
+        </div>
+        <div className="text-center">
+          {state.success !== null ? (
+            state.success === false ? (
+              <label id="failMessage" className="alert-danger">
+                Message failed please email us at the email below.
+              </label>
+            ) : (
+              <label id="successMessage" className="alert-success">
+                Talk to you soon!
+              </label>
+            )
+          ) : (
+            ""
+          )}
         </div>
       </div>
       <div class="text-center mt-5">
