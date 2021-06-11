@@ -27,7 +27,7 @@ function Contact() {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "https://cjtdevs.com",
       },
-      data: state,
+      data: formatBody,
     });
   }
   return (
