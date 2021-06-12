@@ -64,7 +64,7 @@ function Contact() {
             src={loading}
             alt="loading"
             className="img-fluid float col-2"
-            style={{ position: "fixed", position: "-webkit-sticky" }}
+            style={{ position: "fixed", zIndex="999" }}
           />
         ) : (
           ""
@@ -122,7 +122,7 @@ function Contact() {
           {state.success !== null ? (
             state.success === false ? (
               <label id="failMessage" className="alert-danger">
-                Message failed please email us at the email below.
+                Message failed. Ensure you are on secure connection ('https://'), try again shortly or please email us at the email below. 
               </label>
             ) : (
               <label id="successMessage" className="alert-success">
