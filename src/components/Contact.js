@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
 import { useEffect, useState } from "react";
+import loading from "../content/images/misc/loader.gif";
 
 const axios = require("axios");
 
@@ -9,8 +10,9 @@ function Contact() {
     subject: null,
     text: null,
     success: null,
+    loading: false,
   });
-  useEffect(() => {}, [state.success]);
+  useEffect(() => {}, [state.success, state.loading]);
 
   function formatBody() {
     return {
@@ -21,6 +23,7 @@ function Contact() {
   }
 
   function sendEmail() {
+    displayLoading(true);
     axios({
       method: "POST",
       url: "https://mailer.cjtdevs.com/mail",
@@ -40,14 +43,32 @@ function Contact() {
 
   function displayMessage(error) {
     setValue((prevState) => ({
-    ...prevState,
-    success: error,
-  }))
+      ...prevState,
+      success: error,
+    }));
+    displayLoading(false);
+  }
+
+  function displayLoading(show) {
+    setValue((prevState) => ({
+      ...prevState,
+      loading: show,
+    }));
   }
   return (
     <div class="col-md-12 px-0">
       <div class="d-flex justify-content-center mb-5 mt-2">
         <h4>Contact</h4>
+        {state.loading === true ? (
+          <img
+            src={loading}
+            alt="loading"
+            className="img-fluid float col-2"
+            style={{ position: "fixed", position: "-webkit-sticky" }}
+          />
+        ) : (
+          ""
+        )}
       </div>
       <div class="col-md-4 offset-md-4">
         <div className="form-row">
