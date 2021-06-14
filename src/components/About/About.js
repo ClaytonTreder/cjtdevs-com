@@ -7,10 +7,9 @@ function About() {
         <h4>{text.about.title}</h4>
       </div>
       <div class="col-md-8 offset-md-2">
-        <p>{text.about.content.line_1}</p>
-        <p>{text.about.content.line_2}</p>
-        <p>{text.about.content.line_3}</p>
-        <p>{text.about.content.line_4}</p>
+        {text.about.content.map((val) => {
+          return <p>{val}</p>;
+        })}
       </div>
     </div>
   );

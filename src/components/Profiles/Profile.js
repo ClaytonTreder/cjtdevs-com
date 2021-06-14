@@ -117,16 +117,6 @@ function Profile() {
                     );
                   })
                 : ""}
-              <div class="form-row mt-3">
-                <div className="col-12">
-                  <h4>
-                    <u>Testimonials</u>
-                  </h4>
-                  <div className="offset-1">
-                    <p>None yet.. Leave one!</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
