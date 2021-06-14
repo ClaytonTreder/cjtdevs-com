@@ -1,6 +1,6 @@
-import { render } from "@testing-library/react";
 import { useEffect, useState } from "react";
-import loading from "../content/images/misc/loader.gif";
+import loading from "../../content/images/misc/loader.gif";
+import text from "../text.json";
 
 const axios = require("axios");
 
@@ -58,7 +58,7 @@ function Contact() {
   return (
     <div class="col-md-12 px-0">
       <div class="d-flex justify-content-center mb-5 mt-2">
-        <h4>Contact</h4>
+        <h4>{text.contact.title}</h4>
         {state.loading === true ? (
           <img
             src={loading}
@@ -75,7 +75,7 @@ function Contact() {
           <input
             type="text"
             className="form-control col-12"
-            placeholder="Email *"
+            placeholder={text.contact.placeholder.contact}
             onChange={(e) =>
               setValue((prevState) => ({
                 ...prevState,
@@ -88,7 +88,7 @@ function Contact() {
           <input
             type="text"
             className="form-control my-1 col-12"
-            placeholder="Subject"
+            placeholder={text.contact.placeholder.message}
             onChange={(e) =>
               setValue((prevState) => ({
                 ...prevState,
@@ -101,7 +101,7 @@ function Contact() {
           <textarea
             className="form-control col-12"
             rows="5"
-            placeholder="Message"
+            placeholder={text.contact.placeholder.message}
             onChange={(e) =>
               setValue((prevState) => ({
                 ...prevState,
@@ -122,13 +122,11 @@ function Contact() {
           {state.success !== null ? (
             state.success === false ? (
               <label id="failMessage" className="alert-danger">
-                Message failed. Ensure you are on secure connection
-                ('https://'), try again shortly or please email us at the email
-                below.
+                {text.contact.respone_messages.failed}
               </label>
             ) : (
               <label id="successMessage" className="alert-success">
-                Talk to you soon!
+                {text.contact.respone_messages.success}
               </label>
             )
           ) : (
@@ -138,8 +136,8 @@ function Contact() {
       </div>
       <div class="text-center mt-5">
         <p>
-          You can also reach out through Email:{" "}
-          <a href="mailto:info@CJTDevs.com">info@CJTDevs.com</a>
+          {text.contact.email_info + " "}
+          <a href={"mailto:" + text.email.info}>{text.email.info}</a>
         </p>
       </div>
     </div>

@@ -1,16 +1,18 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
-import "../content/header.css"
-
+import "../content/header.css";
+import text from "./text.json";
 import logo from "../content/images/misc/logo.png";
 import claytonTreder from "../content/images/clayton-treder.png";
+import { useState } from "react";
 
-function Header(props) {
-  let location = useLocation();
+function Header() {
+  const { id } = useParams();
+  const location = useLocation();
+  const [state, setState] = useState({ mobileNavClass: "mobile-nav-hide" });
   let img, pageTitle, subTitle;
   switch (location.pathname) {
-
-    case "/clayton-treder":
+    case "/profile/clayton-treder":
       img = claytonTreder;
       pageTitle = "Clay";
       break;
@@ -18,11 +20,18 @@ function Header(props) {
     default:
       img = logo;
       pageTitle = "Devs";
-      subTitle = "Find your new home page here"
+      subTitle = "Find your new home page here";
       break;
   }
   function mobileNavClick() {
-    alert("Yo");
+    const newClass =
+      state.mobileNavClass === "mobile-nav-hide"
+        ? "mobile-nav-show"
+        : "mobile-nav-hide";
+    setState((prevState) => ({
+      ...prevState,
+      mobileNavClass: newClass,
+    }));
   }
   return (
     <div>
@@ -46,7 +55,11 @@ function Header(props) {
                 </div>
               </div>
               <div className="form-row">
-                <small><em><b>{subTitle}</b></em></small>
+                <small>
+                  <em>
+                    <b>{subTitle}</b>
+                  </em>
+                </small>
               </div>
             </div>
           </div>
@@ -56,17 +69,29 @@ function Header(props) {
             <a href="/">Projects</a>
           </h5>
           <div class="dropdown mr-3">
-            <h5 class="dropdown-toggle anchor"
+            <h5
+              class="dropdown-toggle anchor"
               id="dropdownMenuButton"
               data-toggle="dropdown"
               aria-haspopup="true"
-              aria-expanded="false">
+              aria-expanded="false"
+            >
               Profiles
             </h5>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="/clayton-treder">
-                Clayton Treder
-              </a>
+              {text.profiles && text.profiles.length > 0
+                ? text.profiles.map((val, ind) => {
+                    return (
+                      <a
+                        key={ind}
+                        class="dropdown-item"
+                        href={"/profile/" + val.id}
+                      >
+                        {val.name}
+                      </a>
+                    );
+                  })
+                : ""}
             </div>
           </div>
           <h5 class="mr-3">
@@ -74,6 +99,65 @@ function Header(props) {
           </h5>
           <h5 class="mr-3">
             <a href="/contact">Contact</a>
+          </h5>
+        </div>
+      </div>
+      <div className={state.mobileNavClass + " col"}>
+        <div class="form-row float-right pt-2 pr-1" onClick={mobileNavClick}>
+          <div className="menu-icon-x-back"></div>
+          <div className="menu-icon-x-front"></div>
+        </div>
+        <div className="form-row">
+          <h5 class="mb-0 mt-1 pb-4">
+            <a className="pl-3 " href="/">
+              Projects
+            </a>
+          </h5>
+        </div>
+        <div className="form-row">
+          <div class="dropdown mb-0 py-4">
+            <h5
+              class="dropdown-toggle anchor mb-0 pl-3"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Profiles
+            </h5>
+            <div
+              class="dropdown-menu"
+              style={{ backgroundColor: "black" }}
+              aria-labelledby="dropdownMenuButton"
+            >
+              {text.profiles && text.profiles.length > 0
+                ? text.profiles.map((val, ind) => {
+                    return (
+                      <a
+                        key={ind}
+                        class="dropdown-item text-white"
+                        href={"/profile/" + val.id}
+                      >
+                        {val.name}
+                      </a>
+                    );
+                  })
+                : ""}
+            </div>
+          </div>
+        </div>
+        <div className="form-row">
+          <h5 class="mb-0 py-4">
+            <a href="/about" className="pl-3 ">
+              About
+            </a>
+          </h5>
+        </div>
+        <div className="form-row">
+          <h5 class="mb-0 py-4">
+            <a href="/contact" className="pl-3 ">
+              Contact
+            </a>
           </h5>
         </div>
       </div>

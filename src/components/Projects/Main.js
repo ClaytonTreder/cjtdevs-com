@@ -1,6 +1,6 @@
 import Project from "./Project";
-import zacevan from "../content/images/projects/zacevan-com.png";
-import cjtdevs from "../content/images/projects/cjtdevs-com.png";
+import zacevan from "../../content/images/projects/zacevan-com.png";
+import cjtdevs from "../../content/images/projects/cjtdevs-com.png";
 import React from "react";
 
 function Main() {
