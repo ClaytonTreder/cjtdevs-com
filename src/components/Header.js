@@ -1,16 +1,16 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
-import "../content/header.css"
-
+import "../content/header.css";
+import text from "./text.json";
 import logo from "../content/images/misc/logo.png";
 import claytonTreder from "../content/images/clayton-treder.png";
 
-function Header(props) {
+function Header() {
+  let { id } = useParams();
   let location = useLocation();
   let img, pageTitle, subTitle;
   switch (location.pathname) {
-
-    case "/clayton-treder":
+    case "/profile/" + id:
       img = claytonTreder;
       pageTitle = "Clay";
       break;
@@ -18,7 +18,7 @@ function Header(props) {
     default:
       img = logo;
       pageTitle = "Devs";
-      subTitle = "Find your new home page here"
+      subTitle = "Find your new home page here";
       break;
   }
   function mobileNavClick() {
@@ -46,7 +46,11 @@ function Header(props) {
                 </div>
               </div>
               <div className="form-row">
-                <small><em><b>{subTitle}</b></em></small>
+                <small>
+                  <em>
+                    <b>{subTitle}</b>
+                  </em>
+                </small>
               </div>
             </div>
           </div>
@@ -56,17 +60,29 @@ function Header(props) {
             <a href="/">Projects</a>
           </h5>
           <div class="dropdown mr-3">
-            <h5 class="dropdown-toggle anchor"
+            <h5
+              class="dropdown-toggle anchor"
               id="dropdownMenuButton"
               data-toggle="dropdown"
               aria-haspopup="true"
-              aria-expanded="false">
+              aria-expanded="false"
+            >
               Profiles
             </h5>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="/clayton-treder">
-                Clayton Treder
-              </a>
+              {text.profiles && text.profiles.length > 0
+                ? text.profiles.map((val, ind) => {
+                    return (
+                      <a
+                        key={ind}
+                        class="dropdown-item"
+                        href={"/profile/" + val.id}
+                      >
+                        {val.name}
+                      </a>
+                    );
+                  })
+                : ""}
             </div>
           </div>
           <h5 class="mr-3">

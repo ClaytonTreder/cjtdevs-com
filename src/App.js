@@ -2,12 +2,12 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Header from "./components/Header";
-import Main from "./components/Main";
+import Main from "./components/Projects/Main";
 import Footer from "./components/Footer";
 
-import ClaytonTreder from "./components/ClaytonTreder";
-import About from "./components/About";
-import Contact from "./components/Contact";
+import Profile from "./components/Profiles/Profile";
+import About from "./components/About/About";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   return (
@@ -17,8 +17,8 @@ function App() {
         <Route exact path="/">
           <Main />
         </Route>
-        <Route path="/clayton-treder">
-          <ClaytonTreder />
+        <Route path="/profile/:id">
+          <Profile />
         </Route>
         <Route path="/about">
           <About />

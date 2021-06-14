@@ -1,0 +1,78 @@
+{
+  "about": {
+    "title": "About",
+
+    "content": {
+      "line_1": "CJT Devs is collective of software developers looking to build you your next website or app!",
+      "line_2": "Based out of metro Detroit, we are available for consulating, application/website creation, or any general software development needs.",
+      "line_3": "We also provide a place for developers to share their work and a protfolio about themselves.",
+      "line_4": "Thanks for taking the time to look and we hope to hear from you!"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "placeholder": {
+      "contact": "Email *",
+      "subject": "Subject",
+      "message": "Message"
+    },
+    "respone_messages": {
+      "failed": "Message failed. Ensure you are on secure connection ('https://'), try again shortly or please email us at the email below.",
+      "success": "Talk to you soon!"
+    },
+    "email_info": "You can also reach out through Email:"
+  },
+  "profiles": [
+    {
+      "id": "clayton-treder",
+      "name": "Clayton Treder",
+      "contact": {
+        "title": "Contact",
+        "email": "CJTreder@gmail.com",
+        "email_mailto": "cjtreder@gmail.com",
+        "phone": "(734) 787-8670",
+        "phone_tel": "+17347878670"
+      },
+      "employment_info": {
+        "title": "Employment Info",
+        "company": "McCreadie Group, Inc. - Ann Arbor, MI",
+        "employee_title": "Software Developer",
+        "start_date": "September 2019"
+      },
+      "education": {
+        "title": "Education",
+        "degree": "Associates of Computer Information Science - Programming",
+        "school": "Schoolcraft College",
+        "graduation_date": "April 2019"
+      },
+      "links": {
+        "title": "Links",
+        "array": [
+          { "title": "Github:", "link": "https://github.com/ClaytonTreder" },
+          {
+            "title": "LinkedIn:",
+            "link": "https://www.linkedin.com/in/claytontreder/"
+          },
+          {
+            "title": "FaceBook:",
+            "link": "https://www.facebook.com/clay.treder/"
+          },
+          {
+            "title": "Instagram:",
+            "link": "https://www.instagram.com/cjtreder/"
+          }
+        ],
+        "favorite_project": {
+          "title": "zacevan.com",
+          "link": "http://zacevan.com/",
+          "img_route": "../../../content/images/projects/zacevan-com.png"
+        }
+      }
+    }
+  ],
+  "email": {
+    "admin": "info@CJTDevs.com",
+    "info": "info@CJTDevs.com",
+    "hello": "info@CJTDevs.com"
+  }
+}
