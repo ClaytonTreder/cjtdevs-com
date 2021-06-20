@@ -88,7 +88,7 @@ function Contact() {
           <input
             type="text"
             className="form-control my-1 col-12"
-            placeholder={text.contact.placeholder.message}
+            placeholder={text.contact.placeholder.subject}
             onChange={(e) =>
               setValue((prevState) => ({
                 ...prevState,
