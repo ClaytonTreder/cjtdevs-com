@@ -39,6 +39,9 @@
   }
 }
 
+.menu-icon-container {
+  z-index: 100;
+}
 .menu-icon {
   width: 30px;
   height: 3px;
