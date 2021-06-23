@@ -4,6 +4,8 @@ import text from "../text.json";
 
 const axios = require("axios");
 
+require("dotenv").config();
+
 function Contact() {
   const [state, setValue] = useState({
     from: null,
@@ -17,20 +19,22 @@ function Contact() {
   function formatBody() {
     return {
       to: "info@cjtdevs.com",
-      subject: " From: " + state.from + " - Subject: " + state.subject,
+      subject: `From: ${state.from} - Subject: ${state.subject}`,
       text: state.text,
     };
   }
+
+  const headers = {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": `${process.env.REACT_APP_CJTDEVSURL}`,
+  };
 
   function sendEmail() {
     displayLoading(true);
     axios({
       method: "POST",
-      url: "https://mailer.cjtdevs.com/mail",
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "https://cjtdevs.com",
-      },
+      url:  `${process.env.REACT_APP_MAILERCJTDEVSURL}`,
+      headers: headers,
       data: formatBody(),
     })
       .then(() => {

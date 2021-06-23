@@ -1,15 +1,27 @@
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import "../content/header.css";
-import text from "./text.json";
+import profile from "modules/profile";
 import logo from "../content/images/misc/logo.png";
 import claytonTreder from "../content/images/clayton-treder.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Header() {
-  const { id } = useParams();
   const location = useLocation();
-  const [state, setState] = useState({ mobileNavClass: "mobile-nav-hide" });
+  const [state, setState] = useState({
+    mobileNavClass: "mobile-nav-hide",
+    profileIDs: null,
+  });
+
+  useEffect(() => {
+    profile.GetProfileIDs().then((profileIDs) => {
+      setState((prevState) => ({
+        ...prevState,
+        profileIDs: profileIDs ? profileIDs : null,
+      }));
+    });
+  }, []);
+
   let img, pageTitle, subTitle;
   switch (location.pathname) {
     case "/profile/clayton-treder":
@@ -23,6 +35,7 @@ function Header() {
       subTitle = "Find your new home page here";
       break;
   }
+
   function mobileNavClick() {
     const newClass =
       state.mobileNavClass === "mobile-nav-hide"
@@ -79,8 +92,8 @@ function Header() {
               Profiles
             </h5>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              {text.profiles && text.profiles.length > 0
-                ? text.profiles.map((val, ind) => {
+              {state.profileIDs && state.profileIDs.length > 0
+                ? state.profileIDs.map((val, ind) => {
                     return (
                       <a
                         key={ind}
@@ -130,8 +143,8 @@ function Header() {
               style={{ backgroundColor: "black" }}
               aria-labelledby="dropdownMenuButton"
             >
-              {text.profiles && text.profiles.length > 0
-                ? text.profiles.map((val, ind) => {
+              {state.profileIDs && state.profileIDs.length > 0
+                ? state.profileIDs.map((val, ind) => {
                     return (
                       <a
                         key={ind}
