@@ -48,24 +48,24 @@ function Header() {
   }
   return (
     <div>
+      <div className="mobile-nav justify-content-end form-row mt-2 mr-2 mb-n5">
+        <div className="menu-icon-container" onClick={mobileNavClick}>
+          <div className="menu-icon"></div>
+          <div className="menu-icon"></div>
+          <div className="menu-icon"></div>
+        </div>
+      </div>
       <div class="form-inline">
-        <div className="col-sm-4">
+        <div className="col-sm-4 px-0">
           <div class="form-inline col-form-label">
             <img
               src={img}
-              style={{ borderRadius: "100%", width: "11em" }}
+              style={{ borderRadius: "100%", width: "10em" }}
               alt="header logo"
             />
             <div className="col">
               <div className="form-row">
                 <h1 className="mt-3 col-10 px-0">{pageTitle}</h1>
-                <div className="mobile-nav">
-                  <div onClick={mobileNavClick}>
-                    <div className="menu-icon"></div>
-                    <div className="menu-icon"></div>
-                    <div className="menu-icon"></div>
-                  </div>
-                </div>
               </div>
               <div className="form-row">
                 <small>
