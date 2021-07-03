@@ -7,8 +7,6 @@ require("dotenv").config();
 
 app.use(express.json());
 
-app.use("/", express.static('build'));
-
 var corsOptions = {
   origin: process.env.CORSORIGIN,
   methods: "POST, GET, PUT, DELETE",
