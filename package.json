@@ -21,7 +21,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "concurrently --kill-others-on-fail \"react-scripts start\" \"node server.js \"",
+    "start": "npm run-script build && node server.js",
     "start-dev": "concurrently --kill-others-on-fail \"react-scripts start .env.local .env\" \"node -r dotenv/config server.js dotenv_config_path=./.env.local\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
