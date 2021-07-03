@@ -1,1 +1,1 @@
-React.js source code for cjtdevs' website.
+source code for cjtdevs' website.
