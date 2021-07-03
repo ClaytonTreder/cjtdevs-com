@@ -1,6 +1,5 @@
 const ProfileModel = require("../models/ProfileModel");
 const axios = require("axios");
-
 exports.create = async (profile, callback) => {
   return await ProfileModel.create(profile)
     .then((profile) => {
@@ -12,33 +11,26 @@ exports.create = async (profile, callback) => {
 };
 exports.read = async (query, callback) => {
   return await ProfileModel.find(query, (err, profiles) => {
-    profiles.map((val) => {
-      val.profile ? (val.profile.imgLink = null) : false;
-    });
-    return callback(err, profiles);
+    return Promise.all(
+      profiles.map((profile) => {
+        return axios({
+          type: "GET",
+          url: profile.imgLink,
+          responseType: "arraybuffer",
+        }).then((info) => {
+          profile.imgBit = new Buffer.from(info.data, "binary").toString(
+            "base64"
+          );
+        });
+      })
+    )
+      .then(() => callback(err, profiles))
+      .catch(() => callback(err, null));
   });
 };
 exports.readOne = async (id, callback) => {
   return await ProfileModel.findOne({ id: id, live: true }, (err, profile) => {
-    return axios({
-      type: "GET",
-      url: profile.imgLink,
-    })
-      .then((info) => {
-        if (info.data || profile.imgBit) {
-          profile.imgBit = info.data || imgBit;
-        } else {
-          return callback("image not found1");
-        }
-        return callback(err, profile);
-      })
-      .catch((err) => {
-        if (profile.imgBit) {
-          return callback(err, profile);
-        } else {
-          return callback("image not found");
-        }
-      });
+    return callback(err, profile);
   });
 };
 exports.update = async (id, profile, callback) => {
