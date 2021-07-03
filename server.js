@@ -20,6 +20,11 @@ app.use("/api/profiles", cors(corsOptions), ProfileRouter);
 const MailerRouter = require("./src/routes/MailerRoute");
 app.use("/api/mailer", cors(corsOptions), MailerRouter);
 
+//health check
+app.use("/api", (req, res) => {
+  res.sendStatus(200);
+});
+
 app.listen(PORT, () => {
   console.log(`App is listening on Port: ${PORT}`);
 });
