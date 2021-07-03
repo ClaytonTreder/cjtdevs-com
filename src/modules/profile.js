@@ -2,7 +2,7 @@ const axios = require("axios");
 require("dotenv").config();
 
 const headers = {
-  "Content-Type": "application/json"
+  "Content-Type": "application/json",
 };
 
 const profile = {
@@ -20,7 +20,7 @@ const profile = {
         return null;
       });
   },
-  GetProfileIDs: async function () {
+  GetProfiles: async function () {
     return await axios({
       method: "GET",
       url: `/api/profiles/`,
@@ -28,7 +28,7 @@ const profile = {
     })
       .then((info) => {
         return info.data.map((value) => {
-          return { id: value.id, name: value.name };
+          return { profile: value };
         });
       })
       .catch((err) => {
@@ -39,4 +39,3 @@ const profile = {
 };
 
 export default profile;
-  
