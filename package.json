@@ -46,6 +46,14 @@
       "last 1 safari version"
     ]
   },
+  "devServer": {
+    "compress": true,
+    "inline": true,
+    "port": 8080,
+    "allowedHosts": [
+        ".amazonaws.com"
+    ]
+  },
   "devDependencies": {
     "nodemon": "^2.0.9"
   }
