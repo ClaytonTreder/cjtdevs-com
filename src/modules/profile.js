@@ -2,15 +2,14 @@ const axios = require("axios");
 require("dotenv").config();
 
 const headers = {
-  "Content-Type": "application/json",
-  "Access-Control-Allow-Origin": `${process.env.REACT_APP_CJTDEVSURL}`,
+  "Content-Type": "application/json"
 };
 
 const profile = {
   GetProfile: async function (props) {
     return await axios({
       method: "GET",
-      url: `${process.env.REACT_APP_APICJTDEVSURL}/api/profiles/${props.id}`,
+      url: `/api/profiles/${props.id}`,
       headers: headers,
     })
       .then((info) => {
@@ -24,7 +23,7 @@ const profile = {
   GetProfileIDs: async function () {
     return await axios({
       method: "GET",
-      url: `${process.env.REACT_APP_APICJTDEVSURL}/api/profiles/`,
+      url: `/api/profiles/`,
       headers: headers,
     })
       .then((info) => {
