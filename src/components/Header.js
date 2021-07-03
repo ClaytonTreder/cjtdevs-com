@@ -9,7 +9,7 @@ function Header() {
   const location = useLocation();
   const [state, setState] = useState({
     mobileNavClass: "mobile-nav-hide",
-    profiles: null,
+    profiles: [],
   });
 
   useEffect(() => {
@@ -21,18 +21,24 @@ function Header() {
     });
   }, []);
 
-  let img, pageTitle, subTitle;
-  switch (location.pathname) {
-    case "/profile/clayton-treder":
-      img = "http://graph.facebook.com/1879914482183147/picture?width=5000";
-      pageTitle = "Clay";
-      break;
-
-    default:
-      img = logo;
-      pageTitle = "Devs";
-      subTitle = "Find your new home page here";
-      break;
+  let imgDispaly, img, pageTitle, subTitle;
+  if (location.pathname.startsWith("/profile/")) {
+    imgDispaly = "none";
+    state.profiles.map((val) => {
+      if (location.pathname === `/profile/${val.profile.id}`) {
+        img = val.profile.imgBit
+          ? "data:image/jpg;base64, " + val.profile.imgBit
+          : val.profile.imgLink;
+        pageTitle = val.profile.nicName;
+        subTitle = val.profile.subTitle;
+        imgDispaly = "block";
+      }
+    });
+  } else {
+    imgDispaly = "block";
+    img = logo;
+    pageTitle = "Devs";
+    subTitle = "Find your new home page here";
   }
 
   function mobileNavClick() {
@@ -65,6 +71,7 @@ function Header() {
                 borderRadius: "100%",
                 width: "10em",
                 height: "10em",
+                display: imgDispaly,
               }}
               alt="header logo"
             />
