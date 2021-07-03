@@ -25,15 +25,14 @@ function Contact() {
   }
 
   const headers = {
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": `${process.env.REACT_APP_CJTDEVSURL}`,
+    "Content-Type": "application/json"
   };
 
   function sendEmail() {
     displayLoading(true);
     axios({
       method: "POST",
-      url:  `${process.env.REACT_APP_MAILERCJTDEVSURL}/api/mailer/mail`,
+      url:  `/api/mailer/mail`,
       headers: headers,
       data: formatBody(),
     })
