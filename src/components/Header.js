@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 
 import "../content/header.css";
-import profile from "modules/profile";
+import profile from "../modules/profile";
 import logo from "../content/images/misc/logo.png";
 import claytonTreder from "../content/images/clayton-treder.png";
 import { useEffect, useState } from "react";

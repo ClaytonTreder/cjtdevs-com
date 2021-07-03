@@ -33,7 +33,7 @@ function Contact() {
     displayLoading(true);
     axios({
       method: "POST",
-      url:  `${process.env.REACT_APP_MAILERCJTDEVSURL}/mail`,
+      url:  `${process.env.REACT_APP_MAILERCJTDEVSURL}/api/mailer/mail`,
       headers: headers,
       data: formatBody(),
     })
