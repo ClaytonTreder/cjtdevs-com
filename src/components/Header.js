@@ -3,21 +3,20 @@ import { useLocation } from "react-router-dom";
 import "../content/header.css";
 import profile from "../modules/profile";
 import logo from "../content/images/misc/logo.png";
-import claytonTreder from "../content/images/clayton-treder.png";
 import { useEffect, useState } from "react";
 
 function Header() {
   const location = useLocation();
   const [state, setState] = useState({
     mobileNavClass: "mobile-nav-hide",
-    profileIDs: null,
+    profiles: null,
   });
 
   useEffect(() => {
-    profile.GetProfileIDs().then((profileIDs) => {
+    profile.GetProfiles().then((profiles) => {
       setState((prevState) => ({
         ...prevState,
-        profileIDs: profileIDs ? profileIDs : null,
+        profiles: profiles ? profiles : null,
       }));
     });
   }, []);
@@ -25,7 +24,7 @@ function Header() {
   let img, pageTitle, subTitle;
   switch (location.pathname) {
     case "/profile/clayton-treder":
-      img = claytonTreder;
+      img = "http://graph.facebook.com/1879914482183147/picture?width=5000";
       pageTitle = "Clay";
       break;
 
@@ -60,7 +59,13 @@ function Header() {
           <div class="form-inline col-form-label">
             <img
               src={img}
-              style={{ borderRadius: "100%", width: "10em" }}
+              style={{
+                objectFit: "cover",
+                objectPosition: "20% 10%",
+                borderRadius: "100%",
+                width: "10em",
+                height: "10em",
+              }}
               alt="header logo"
             />
             <div className="col">
@@ -92,15 +97,15 @@ function Header() {
               Profiles
             </h5>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              {state.profileIDs && state.profileIDs.length > 0
-                ? state.profileIDs.map((val, ind) => {
+              {state.profiles && state.profiles.length > 0
+                ? state.profiles.map((val, ind) => {
                     return (
                       <a
                         key={ind}
                         class="dropdown-item"
-                        href={"/profile/" + val.id}
+                        href={"/profile/" + val.profile.id}
                       >
-                        {val.name}
+                        {val.profile.name}
                       </a>
                     );
                   })
@@ -143,15 +148,15 @@ function Header() {
               style={{ backgroundColor: "black" }}
               aria-labelledby="dropdownMenuButton"
             >
-              {state.profileIDs && state.profileIDs.length > 0
-                ? state.profileIDs.map((val, ind) => {
+              {state.profiles && state.profiles.length > 0
+                ? state.profiles.map((val, ind) => {
                     return (
                       <a
                         key={ind}
                         class="dropdown-item text-white"
-                        href={"/profile/" + val.id}
+                        href={"/profile/" + val.profile.id}
                       >
-                        {val.name}
+                        {val.profile.name}
                       </a>
                     );
                   })
