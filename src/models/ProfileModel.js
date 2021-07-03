@@ -17,6 +17,18 @@ const profileSchema = new mongoose.Schema({
   name: {
     type: String,
   },
+  nicName: {
+    type: String,
+  },
+  imgLink: {
+    type: String,
+  },
+  imgBit: {
+    type: String,    
+  },
+  subTitle: {
+    type: String,
+  },
   live: {
     type: Boolean,
   },
