@@ -21,6 +21,9 @@ app.use("/api/profiles", cors(corsOptions), ProfileRouter);
 const MailerRouter = require("./src/routes/MailerRoute");
 app.use("/api/mailer", cors(corsOptions), MailerRouter);
 
+const TestimonialRoute = require("./src/routes/TestimonialRoute");
+app.use("/api/testimonial", cors(corsOptions), TestimonialRoute);
+
 //health check
 app.use("/api", (req, res) => {
   res.sendStatus(200);

@@ -2,6 +2,8 @@ import { useParams } from "react-router";
 import profile from "modules/profile";
 import functions from "modules/functions";
 import { useEffect, useState } from "react";
+import Testimonials from "../Profiles/Testimonials";
+import Testimonial from "../Profiles/Testimonial";
 
 function Profile() {
   const { id } = useParams();
@@ -141,6 +143,14 @@ function Profile() {
                         );
                       })
                     : ""}
+                </div>
+                <div className="col-md-6">
+                  <Testimonials />
+                </div>
+              </div>
+              <div class="form-row mt-3">
+                <div className="col-md-12">
+                  <Testimonial />
                 </div>
               </div>
             </div>
