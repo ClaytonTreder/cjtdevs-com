@@ -1,59 +1,53 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { useForm } from "react-hook-form";
 import loading from "../../content/images/misc/loader.gif";
 import text from "../text.json";
+import ReCaptchaV2, { ReCAPTCHA } from "react-google-recaptcha";
+import { flushSync } from "react-dom";
 
 const axios = require("axios");
 
 require("dotenv").config();
 
 function Contact() {
-  const [state, setValue] = useState({
+  const [state, setState] = useState({
     from: null,
     subject: null,
     text: null,
     success: null,
     loading: false,
+    token: null,
+    serverErrors: [],
   });
   useEffect(() => {}, [state.success, state.loading]);
+  const reRef = useRef(ReCaptchaV2);
 
-  function formatBody() {
-    return {
-      to: "info@cjtdevs.com",
-      subject: `From: ${state.from} - Subject: ${state.subject}`,
-      text: state.text,
-    };
-  }
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const headers = {
-    "Content-Type": "application/json"
+  const handleToken = (token) => {
+    setState((currentForm) => {
+      return { ...currentForm, token };
+    });
   };
-
-  function sendEmail() {
-    displayLoading(true);
-    axios({
-      method: "POST",
-      url:  `/api/mailer/mail`,
-      headers: headers,
-      data: formatBody(),
-    })
-      .then(() => {
-        displayMessage(true);
-      })
-      .catch(() => {
-        displayMessage(false);
-      });
-  }
-
-  function displayMessage(error) {
-    setValue((prevState) => ({
+  const handleExpire = () => {
+    setState((currentForm) => {
+      return { ...currentForm, token: null };
+    });
+  };
+  function setMessage(status) {
+    setState((prevState) => ({
       ...prevState,
-      success: error,
+      success: status,
     }));
-    displayLoading(false);
+    setSubmitting(false);
   }
 
-  function displayLoading(show) {
-    setValue((prevState) => ({
+  function setSubmitting(show) {
+    setState((prevState) => ({
       ...prevState,
       loading: show,
     }));
@@ -73,70 +67,127 @@ function Contact() {
           ""
         )}
       </div>
-      <div class="col-md-4 offset-md-4">
+      <form
+        class="col-md-4 offset-md-4"
+        id="contactForm"
+        onSubmit={handleSubmit(async (formData) => {
+          setSubmitting(true);
+          setState((prevState) => ({
+            ...prevState,
+            serverErrors: [],
+          }));
+
+          const token = await reRef.current.getValue();
+          reRef.current.reset();
+
+          const response = await fetch("/api/mailer/mail", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              to: "info@cjtdevs.com",
+              subject: `From: ${formData.email} - Subject: ${formData.subject}`,
+              text: formData.message,
+              token: token,
+            }),
+          });
+          setSubmitting(false);
+          setMessage(response.status);
+        })}
+      >
         <div className="form-row">
           <input
+            name="email"
             type="text"
             className="form-control col-12"
             placeholder={text.contact.placeholder.contact}
+            {...register("email", {
+              required: true,
+              pattern:
+                /^[A-Za-z0-9\.]{1,}@{1}[A-Za-z0-9]{2,}\.{1}[A-Za-z0-9]{2,5}$/gm,
+            })}
             onChange={(e) =>
-              setValue((prevState) => ({
+              setState((prevState) => ({
                 ...prevState,
                 from: e.target.value,
               }))
             }
           />
+          <div className="alert-danger">
+            {errors.email?.type === "required" && "Email is required"}
+            {errors.email?.type === "pattern" && "Please provide a valid email"}
+          </div>
         </div>
         <div className="form-row">
           <input
+            name="subject"
             type="text"
             className="form-control my-1 col-12"
+            {...register("subject", { required: true })}
             placeholder={text.contact.placeholder.subject}
             onChange={(e) =>
-              setValue((prevState) => ({
+              setState((prevState) => ({
                 ...prevState,
                 subject: e.target.value,
               }))
             }
           />
+          <div className="alert-danger">
+            {errors.subject?.type === "required" && "Subject is required"}
+          </div>
         </div>
         <div className="form-row">
           <textarea
+            name="message"
             className="form-control col-12"
             rows="5"
             placeholder={text.contact.placeholder.message}
             onChange={(e) =>
-              setValue((prevState) => ({
+              setState((prevState) => ({
                 ...prevState,
                 text: e.target.value,
               }))
             }
           />
         </div>
+        <div className="form-row justify-content-center mt-1">
+          <ReCaptchaV2
+            ref={reRef}
+            sitekey={process.env.REACT_APP_RE_SITE_KEY}
+            onChange={handleToken}
+            onExpired={handleExpire}
+          />
+        </div>
         <div className="form-row">
           <input
-            type="button"
+            type="submit"
+            disabled={state.loading}
             className="offset-4 mt-2 col-4"
-            onClick={sendEmail}
             value="Send"
           />
         </div>
         <div className="text-center">
-          {state.success !== null ? (
-            state.success === false ? (
-              <label id="failMessage" className="alert-danger">
-                {text.contact.respone_messages.failed}
-              </label>
-            ) : (
-              <label id="successMessage" className="alert-success">
-                {text.contact.respone_messages.success}
-              </label>
-            )
-          ) : (
-            ""
-          )}
+          {state.success !== null
+            ? {
+                200: (
+                  <label className="alert-success">
+                    {text.contact.respone_messages.success}
+                  </label>
+                ),
+                401: (
+                  <label className="alert-danger">
+                    {text.contact.respone_messages.recapthca}
+                  </label>),
+                500: (
+                  <label className="alert-danger">
+                    {text.contact.respone_messages.failed}
+                  </label>
+                ),
+              }[state.success]
+            : ""}
         </div>
-      </div>
+      </form>
       <div class="text-center mt-5">
         <p>
           {text.contact.email_info + " "}
@@ -146,5 +197,4 @@ function Contact() {
     </div>
   );
 }
-
 export default Contact;

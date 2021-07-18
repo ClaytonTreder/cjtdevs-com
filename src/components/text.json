@@ -17,7 +17,8 @@
     },
     "respone_messages": {
       "failed": "Message failed. Ensure you are on a secure connection ('https://cjtdevs.com/') and try again shortly or please email us at the email below.",
-      "success": "Talk to you soon!"
+      "success": "Talk to you soon!",
+      "recapthca": "Please verify you are a human with ReCapthca"
     },
     "email_info": "You can also reach out to us through email:"
   },
