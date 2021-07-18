@@ -24,6 +24,7 @@
     "start": "npm run-script build && node server.js",
     "start-dev": "concurrently --kill-others-on-fail \"react-scripts start .env.local .env\" \"nodemon -r dotenv/config server.js dotenv_config_path=./.env.local\"",
     "build": "react-scripts build",
+    "build-dev": "npm run-script build .env.local && node -r dotenv/config server.js dotenv_config_path=./.env.local\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -51,7 +52,7 @@
     "inline": true,
     "port": 8080,
     "allowedHosts": [
-        ".amazonaws.com"
+      ".amazonaws.com"
     ]
   },
   "devDependencies": {

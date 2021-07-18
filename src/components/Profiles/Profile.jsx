@@ -144,14 +144,6 @@ function Profile() {
                       })
                     : ""}
                 </div>
-                <div className="col-md-6">
-                  <Testimonials />
-                </div>
-              </div>
-              <div class="form-row mt-3">
-                <div className="col-md-12">
-                  <Testimonial />
-                </div>
               </div>
             </div>
           </div>
