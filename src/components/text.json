@@ -16,7 +16,7 @@
       "message": "Message"
     },
     "respone_messages": {
-      "failed": "Message failed. Ensure you are on secure connection ('https://cjtdevs.com/') and try again shortly or please email us at the email below.",
+      "failed": "Message failed. Ensure you are on a secure connection ('https://cjtdevs.com/') and try again shortly or please email us at the email below.",
       "success": "Talk to you soon!"
     },
     "email_info": "You can also reach out to us through email:"
