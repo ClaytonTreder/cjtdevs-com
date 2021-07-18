@@ -2,6 +2,8 @@ import { useParams } from "react-router";
 import profile from "modules/profile";
 import functions from "modules/functions";
 import { useEffect, useState } from "react";
+import Testimonials from "./Testimonials";
+import Testimonial from "./Testimonial";
 
 function Profile() {
   const { id } = useParams();

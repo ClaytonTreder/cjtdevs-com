@@ -8,7 +8,7 @@ const transporterOptions = {
     type: "OAuth2",
     user: process.env.MAILERUSER,
     serviceClient: process.env.MAILERSERVICECLIENT,
-    privateKey: process.env.MAILERPRIVATEKEY.split('|').join('\n'),
+    privateKey: process.env.MAILERPRIVATEKEY.split("|").join("\n"),
   },
 };
 
@@ -16,7 +16,12 @@ const transporter = mailer.createTransport(transporterOptions);
 
 exports.sendEMail = async (mailOptions) => {
   await transporter.verify();
-  return await transporter.sendMail(mailOptions).then((info) => {
-    return info ? false : true; 
-  });
+  return await transporter
+    .sendMail(mailOptions)
+    .then((info) => {
+      return info;
+    })
+    .catch((err) => {
+      return false;
+    });
 };
