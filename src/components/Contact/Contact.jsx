@@ -2,10 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import loading from "../../content/images/misc/loader.gif";
 import text from "../text.json";
-import ReCaptchaV2, { ReCAPTCHA } from "react-google-recaptcha";
-import { flushSync } from "react-dom";
-
-const axios = require("axios");
+import ReCaptchaV2 from "react-google-recaptcha";
 
 require("dotenv").config();
 
@@ -17,9 +14,9 @@ function Contact() {
     success: null,
     loading: false,
     token: null,
-    serverErrors: [],
   });
   useEffect(() => {}, [state.success, state.loading]);
+
   const reRef = useRef(ReCaptchaV2);
 
   const {
@@ -28,30 +25,6 @@ function Contact() {
     formState: { errors },
   } = useForm();
 
-  const handleToken = (token) => {
-    setState((currentForm) => {
-      return { ...currentForm, token };
-    });
-  };
-  const handleExpire = () => {
-    setState((currentForm) => {
-      return { ...currentForm, token: null };
-    });
-  };
-  function setMessage(status) {
-    setState((prevState) => ({
-      ...prevState,
-      success: status,
-    }));
-    setSubmitting(false);
-  }
-
-  function setSubmitting(show) {
-    setState((prevState) => ({
-      ...prevState,
-      loading: show,
-    }));
-  }
   return (
     <div class="col-md-12 px-0">
       <div class="d-flex justify-content-center mb-5 mt-2">
@@ -63,28 +36,20 @@ function Contact() {
             className="img-fluid float col-2"
             style={{ position: "fixed", zIndex: "999" }}
           />
-        ) : (
-          ""
-        )}
+        ) : null}
       </div>
       <form
         class="col-md-4 offset-md-4"
         id="contactForm"
         onSubmit={handleSubmit(async (formData) => {
-          setSubmitting(true);
-          setState((prevState) => ({
-            ...prevState,
-            serverErrors: [],
-          }));
+          setState((prevState) => ({ ...prevState, loading: true }));
 
           const token = await reRef.current.getValue();
           reRef.current.reset();
 
           const response = await fetch("/api/mailer/mail", {
             method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               to: "info@cjtdevs.com",
               subject: `From: ${formData.email} - Subject: ${formData.subject}`,
@@ -92,8 +57,12 @@ function Contact() {
               token: token,
             }),
           });
-          setSubmitting(false);
-          setMessage(response.status);
+
+          setState((prevState) => ({
+            ...prevState,
+            loading: false,
+            success: response.status,
+          }));
         })}
       >
         <div className="form-row">
@@ -155,8 +124,16 @@ function Contact() {
           <ReCaptchaV2
             ref={reRef}
             sitekey={process.env.REACT_APP_RE_SITE_KEY}
-            onChange={handleToken}
-            onExpired={handleExpire}
+            onChange={(token) => {
+              setState((currentForm) => {
+                return { ...currentForm, token };
+              });
+            }}
+            onExpired={() => {
+              setState((currentForm) => {
+                return { ...currentForm, token: null };
+              });
+            }}
           />
         </div>
         <div className="form-row">
@@ -178,14 +155,15 @@ function Contact() {
                 401: (
                   <label className="alert-danger">
                     {text.contact.respone_messages.recapthca}
-                  </label>),
+                  </label>
+                ),
                 500: (
                   <label className="alert-danger">
                     {text.contact.respone_messages.failed}
                   </label>
                 ),
               }[state.success]
-            : ""}
+            : null}
         </div>
       </form>
       <div class="text-center mt-5">
