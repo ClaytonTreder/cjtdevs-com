@@ -101,6 +101,7 @@ function Contact() {
                 subject: e.target.value,
               }))
             }
+            value={state.subject}
           />
           <div className="alert-danger">
             {errors.subject?.type === "required" && "Subject is required"}
