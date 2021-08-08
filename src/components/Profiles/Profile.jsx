@@ -19,7 +19,7 @@ function Profile() {
   return (
     <div>
       {state.profile ? (
-        <div className="col-12">
+        <div className="col-12 fade-in-text-lg">
           <div className="form-row form-group">
             <h2 className="offset-md-1 col">{state.profile.name}</h2>
           </div>

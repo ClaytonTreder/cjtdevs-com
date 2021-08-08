@@ -22,6 +22,7 @@ exports.sendEMail = async (mailOptions) => {
       return info;
     })
     .catch((err) => {
+      console.log(err);
       return false;
     });
 };

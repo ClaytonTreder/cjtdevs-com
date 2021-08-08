@@ -60,21 +60,35 @@ function Header() {
           <div className="menu-icon"></div>
         </div>
       </div>
-      <div class="form-inline">
-        <div className="col-sm-4 px-0">
+      <div
+        style={{
+          height: "10em",
+        }}
+        class="form-inline"
+      >
+        <div className={`${
+          location.pathname.startsWith("/profile/") && "fade-in-text-lg"
+        } col-sm-4 px-0`}>
           <div class="form-inline col-form-label">
-            <img
-              src={img}
+            <div
               style={{
-                objectFit: "cover",
-                objectPosition: "20% 10%",
-                borderRadius: "100%",
-                width: "10em",
                 height: "10em",
-                display: imgDispaly,
+                width: "10em",
               }}
-              alt="header logo"
-            />
+            >
+              <img
+                src={img}
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "20% 10%",
+                  borderRadius: "100%",
+                  width: "10em",
+                  height: "10em",
+                  display: imgDispaly,
+                }}
+                alt="header logo"
+              />
+            </div>
             <div className="col">
               <div className="form-row">
                 <h1 className="mt-3 col-10 px-0">{pageTitle}</h1>

@@ -2,7 +2,7 @@ import React from "react";
 
 function Project(props) {
   return (
-    <div className="col-sm">
+    <div className="col-sm fade-in-image">
       <div class="d-flex justify-content-center">
         <a href={props.href} target="_blank" rel="noreferrer">
           <div class="d-flex justify-content-start ml-4 mt-2">
