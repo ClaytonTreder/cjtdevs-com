@@ -8,7 +8,7 @@ function Main() {
     <div>
       <div className="form-row">
         <div className="col-sm-7 px-2 offset-sm-1 mb-4">
-          <small>Welcome to CJT Devs. Looking to create a new website or mobile / desktop application? You have come to the right place.
+          <small className="fade-in-text">Welcome to CJT Devs. Looking to create a new website or mobile / desktop application? You have come to the right place.
             Check out some of the recent projects completed by our devs below. If you like any of them or you would like 
             to work with us, head over to our contact page to reach us. Thanks for stopping by!
           </small>

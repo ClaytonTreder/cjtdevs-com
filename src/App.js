@@ -8,6 +8,9 @@ import Footer from "./components/Footer";
 import Profile from "./components/Profiles/Profile";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
+import Admin from "./components/Admin/Admin";
+
+import "./content/animations.css"
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
         </Route>
         <Route path="/contact">
           <Contact />
+        </Route>
+        <Route path="/admin">
+          <Admin />
         </Route>
       </div>
       <Footer />
