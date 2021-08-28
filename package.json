@@ -26,7 +26,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "npm run-script build && node server.js",
+    "start": "node server.js",
     "start-dev": "concurrently --kill-others-on-fail \"react-scripts start .env.local .env\" \"nodemon -r dotenv/config server.js dotenv_config_path=./.env.local\"",
     "build": "react-scripts build",
     "build-dev": "npm run-script build .env.local && node -r dotenv/config server.js dotenv_config_path=./.env.local\"",
@@ -50,14 +50,6 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
-  },
-  "devServer": {
-    "compress": true,
-    "inline": true,
-    "port": 8080,
-    "allowedHosts": [
-      ".amazonaws.com"
     ]
   },
   "devDependencies": {
