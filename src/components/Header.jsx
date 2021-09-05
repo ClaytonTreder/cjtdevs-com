@@ -86,7 +86,7 @@ function Header() {
                   height: "10em",
                   display: imgDispaly,
                 }}
-                alt="header logo"
+                alt="CJTDevs Header Logo"
               />
             </div>
             <div className="col">
