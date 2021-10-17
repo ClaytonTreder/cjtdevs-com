@@ -66,9 +66,11 @@ function Header() {
         }}
         class="form-inline"
       >
-        <div className={`${
-          location.pathname.startsWith("/profile/") && "fade-in-text-lg"
-        } col-sm-4 px-0`}>
+        <div
+          className={`${
+            location.pathname.startsWith("/profile/") && "fade-in-text-lg"
+          } col-sm-4 px-0`}
+        >
           <div class="form-inline col-form-label">
             <div
               style={{
