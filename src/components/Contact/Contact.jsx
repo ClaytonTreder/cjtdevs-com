@@ -37,7 +37,7 @@ function Contact() {
     <div>
       {state.contact ? (
         <div class="fade-in-text col-md-12 px-0">
-          <div class="d-flex justify-content-center mb-5 mt-2">
+          <div class="d-flex justify-content-center mb-3 mt-2">
             <h4>{state.contact.title}</h4>
             {state.loading === true ? (
               <img
