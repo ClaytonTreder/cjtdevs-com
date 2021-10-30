@@ -6,7 +6,7 @@ import contact from "modules/contact";
 
 require("dotenv").config();
 
-function Contact() {
+function Contact(props) {
   const [state, setState] = useState({
     from: null,
     subject: null,
@@ -23,6 +23,12 @@ function Contact() {
         contact: contact.data ? contact.data : null,
       }));
     });
+    if (props?.preFilledMessage) {
+      setState((prevState) => ({
+        ...prevState,
+        message: props.preFilledMessage,
+      }));
+    }
   }, [state.success, state.loading]);
 
   const reRef = useRef(ReCaptchaV2);
@@ -49,7 +55,7 @@ function Contact() {
             ) : null}
           </div>
           <form
-            class="col-md-4 offset-md-4"
+            class="col-md-12"
             id="contactForm"
             onSubmit={handleSubmit(async (formData) => {
               setState((prevState) => ({ ...prevState, loading: true }));
@@ -63,7 +69,7 @@ function Contact() {
                 body: JSON.stringify({
                   to: "info@cjtdevs.com",
                   subject: `From: ${formData.email} - Subject: ${formData.subject}`,
-                  text: formData.message,
+                  text: state.message,
                   token: token,
                 }),
               });
@@ -129,6 +135,7 @@ function Contact() {
                     message: e.target.value,
                   }))
                 }
+                value={state.message}
               />
             </div>
             <div className="form-row justify-content-center mt-1">

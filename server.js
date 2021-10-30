@@ -8,7 +8,6 @@ const Auth0Strategy = require("passport-auth0");
 
 require("dotenv").config();
 
-
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());

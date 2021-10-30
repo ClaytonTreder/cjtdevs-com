@@ -1,0 +1,25 @@
+.fc-daygrid-day-events {
+  display: none !important;
+}
+.fc .fc-scrollgrid-section > * {
+  border: none;
+}
+.fc-scrollgrid,
+.fc-daygrid-day,
+.fc-col-header-cell {
+  border: none !important;
+  border-right-width: none !important;
+}
+.fc-daygrid-day-top {
+  align-items: center;
+  justify-content: center;
+}
+.fc-daygrid-day-top {
+  border: solid;
+  border-width: 0.5px;
+  padding: 25%;
+  border-color: grey;
+}
+.fc-day-today {
+  background-color: transparent !important;
+}

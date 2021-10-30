@@ -7,7 +7,7 @@ function Main() {
   return (
     <div>
       <div className="form-row">
-        <div className="col-sm-7 px-2 offset-sm-1 mb-4">
+        <div className="col-sm-7 px-2 offset-sm-1 mb-4 mt-2">
           <span className="fade-in-text">
             Welcome to CJT Devs. Looking to create a new website or mobile /
             desktop application? You have come to the right place. Check out
