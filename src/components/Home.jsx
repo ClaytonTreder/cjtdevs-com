@@ -35,7 +35,7 @@ function Home() {
         <About />
         <hr />
       </div>
-      <div id={contactSection} className="card-contact">
+      <div id={contactSection} className="card-contact col-md-6 offset-md-3">
         <Contact />
       </div>
     </React.Fragment>

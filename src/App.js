@@ -9,6 +9,7 @@ import Home from "./components/Home";
 import Admin from "./components/Admin/Admin";
 
 import "./content/animations.css";
+import EventCalendar from "components/Calendar/Calendar";
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
         </Route>
         <Route exact path={["/", "/about", "/contact"]}>
           <Home />
+        </Route>
+        <Route exact path="/calendar">
+          <EventCalendar />
         </Route>
       </div>
       <Footer />

@@ -141,6 +141,9 @@ function Header() {
           <h5 class="mr-3">
             <a href="/contact">Contact</a>
           </h5>
+          <h5 class="mr-3">
+            <a href="/calendar">Calendar</a>
+          </h5>
         </div>
       </div>
       <div className={state.mobileNavClass + " col"}>
@@ -198,6 +201,13 @@ function Header() {
           <h5 class="mb-0 py-4">
             <a href="/contact" className="pl-3 ">
               Contact
+            </a>
+          </h5>
+        </div>
+        <div className="form-row">
+          <h5 class="mb-0 py-4">
+            <a href="/calendar" className="pl-3 ">
+              Calendar
             </a>
           </h5>
         </div>
