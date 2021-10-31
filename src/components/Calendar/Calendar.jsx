@@ -6,6 +6,7 @@ import "../../content/fullcalendar.css";
 import { useState } from "react";
 import config from "../../config.json";
 import Contact from "components/Contact/Contact";
+import { scollToBottomOfEl } from "modules/functions";
 
 export default function EventCalendar() {
   var cal;
@@ -32,6 +33,7 @@ export default function EventCalendar() {
         return x !== undefined && x !== null;
       })
     );
+    scollToBottomOfEl("divTimes");
   };
   useEffect(() => {
     let calendarEl = document.getElementById("cal");
@@ -66,16 +68,16 @@ export default function EventCalendar() {
     <div>
       <div className="col-sm-7 px-2 offset-sm-1 mb-4 mt-2">
         <span className="fade-in-text">
-          Below are days a dev is available to speak with you. Select a day,
-          pick a time, and a prefilled message will show. Fill in your
-          name/email and anything else you would like to include and we will be
-          able to talk to you then!
+          Below are days a dev is available to speak with you. Select a day that
+          is highligthed in blue, pick a time, and a prefilled message will
+          show. Fill in your name/email and anything else you would like to
+          include and we will be able to talk to you then!
         </span>
       </div>
       <div className="form-row">
         <div className="col-md-6 offset-md-2 fade-in-text" id="cal"></div>
         {availableTimes?.length ? (
-          <div className="col-md-4 fade-in-text">
+          <div id="divTimes" className="col-md-4 fade-in-text">
             <div
               style={{
                 border: "solid",

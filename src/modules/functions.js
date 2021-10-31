@@ -20,3 +20,13 @@ exports.scrollTo = (elementId) => {
     });
   }, 100);
 };
+exports.scollToBottomOfEl = (elementId) => {
+  const element = document.getElementById(elementId);
+
+  setTimeout(() => {
+    window.scrollTo({
+      behavior: element ? "smooth" : "auto",
+      top: element ? element.offsetTop - element.clientHeight : 0,
+    });
+  }, 100);
+};
