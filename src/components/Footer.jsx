@@ -1,8 +1,8 @@
 import fbImg from "../content/images/misc/img-FB.png";
 function Footer() {
   return (
-    <footer class="offset-md-1 col-md-10 px-0 mb-3">
-      <div class="col-md-12 px-0">
+    <footer className="offset-md-1 col-md-10 px-0 mb-3">
+      <div className="col-md-12 px-0">
         <hr />
         <div className="col">
           <div className="form-row">

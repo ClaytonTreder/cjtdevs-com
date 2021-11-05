@@ -42,8 +42,8 @@ function Contact(props) {
   return (
     <div>
       {state.contact ? (
-        <div class="fade-in-text col-md-12 px-0">
-          <div class="d-flex justify-content-center mb-3 mt-2">
+        <div className="fade-in-text col-md-12 px-0">
+          <div className="d-flex justify-content-center mb-3 mt-2">
             <h4>{state.contact.title}</h4>
             {state.loading === true ? (
               <img
@@ -55,7 +55,7 @@ function Contact(props) {
             ) : null}
           </div>
           <form
-            class="col-md-12"
+            className="col-md-12"
             id="contactForm"
             onSubmit={handleSubmit(async (formData) => {
               setState((prevState) => ({ ...prevState, loading: true }));
@@ -135,7 +135,7 @@ function Contact(props) {
                     message: e.target.value,
                   }))
                 }
-                value={state.message}
+                value={state.message ?? ""}
               />
             </div>
             <div className="form-row justify-content-center mt-1">
@@ -184,7 +184,7 @@ function Contact(props) {
                 : null}
             </div>
           </form>
-          <div class="text-center mt-5">
+          <div className="text-center mt-5">
             <p>
               {state.contact.email_info + " "}
               <a href={"mailto:" + state.contact.email.info}>

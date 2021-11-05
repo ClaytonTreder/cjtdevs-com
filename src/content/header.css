@@ -1,4 +1,4 @@
-@media (max-width: 576px) {
+@media (max-width: 767px) {
   .desktop-nav {
     display: none;
   }
@@ -41,6 +41,11 @@
 
 .menu-icon-container {
   z-index: 100;
+  position: -webkit-sticky;
+  /* Safari */
+  position: fixed;
+  right: 1em;
+  top: 1em;
 }
 .menu-icon {
   width: 30px;
@@ -63,4 +68,16 @@
   background-color: rgb(255, 255, 255);
   margin-bottom: 6px;
   margin-left: -20px;
+}
+
+@media (min-width: 767px) and (max-width: 1059px) {
+  .title-logo {
+    display: none;
+  }
+}
+
+@media (min-width: 1060px) {
+  .title-header {
+    display: none;
+  }
 }

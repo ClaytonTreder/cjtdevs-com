@@ -2,7 +2,7 @@ import { useParams } from "react-router";
 import profile from "modules/profile";
 import functions from "modules/functions";
 import { useEffect, useState } from "react";
-import Resume from "content/files/ClaytonTreder_Resume.pdf"
+import Resume from "content/files/ClaytonTreder_Resume.pdf";
 
 function Profile() {
   const { id } = useParams();
@@ -14,7 +14,7 @@ function Profile() {
         profile: profile ? profile.data : null,
       }));
     });
-  }, []);
+  });
 
   return (
     <div>
@@ -53,7 +53,9 @@ function Profile() {
                   </h4>
                   <div class="form-row">
                     <span class="col-md-8">
-                      <a href={Resume} target="_blank">Download</a>
+                      <a href={Resume} target="_blank" rel="noreferrer">
+                        Download
+                      </a>
                     </span>
                   </div>
                 </div>

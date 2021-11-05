@@ -18,8 +18,8 @@ function Main() {
         </div>
       </div>
       <div className="form-row">
-        <div class="col-sm-12">
-          <div class="d-flex justify-content-center mb-3">
+        <div className="col-sm-12">
+          <div className="d-flex justify-content-center mb-3">
             <h4>Recent Projects</h4>
           </div>
           <Project
@@ -28,7 +28,7 @@ function Main() {
             title="zacevan.com"
           />
           <Project
-            href="https://github.com/ClaytonTreder/cjtdevs-com/"
+            href="https://github.com/cjtdevs/cjtdevs-com/"
             img={cjtdevs}
             title="CJTDevs.com"
           />

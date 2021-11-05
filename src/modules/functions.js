@@ -26,7 +26,7 @@ exports.scollToBottomOfEl = (elementId) => {
   setTimeout(() => {
     window.scrollTo({
       behavior: element ? "smooth" : "auto",
-      top: element ? element.offsetTop - element.clientHeight : 0,
+      top: element ? element.offsetTop - 50 : 0,
     });
   }, 100);
 };

@@ -16,13 +16,17 @@ function About() {
   return (
     <div className="mb-5">
       {state.about ? (
-        <div class="col-md-12 px-0">
-          <div class="d-flex justify-content-center mb-3 mt-2">
+        <div className="col-md-12 px-0">
+          <div className="d-flex justify-content-center mb-3 mt-2">
             <h4>{state.about.title}</h4>
           </div>
-          <div class="col-md-8 offset-md-2">
-            {state.about.content.map((val) => {
-              return <p className="fade-in-text">{val}</p>;
+          <div className="col-md-8 px-0 offset-md-2">
+            {state.about.content.map((val, i) => {
+              return (
+                <p key={i} className="fade-in-text">
+                  {val}
+                </p>
+              );
             })}
           </div>
         </div>

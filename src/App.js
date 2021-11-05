@@ -14,7 +14,7 @@ import EventCalendar from "components/Calendar/Calendar";
 function App() {
   return (
     <Router>
-      <div class="pt-2 offset-md-1 col-md-10 px-1 body-content">
+      <div className="pt-2 offset-md-1 col-md-10 px-1 body-content">
         <Header />
         <Route path="/profile/:id">
           <Profile />
