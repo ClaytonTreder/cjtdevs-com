@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 
 import About from "./About/About";
 import Main from "./Projects/Main";
-import Contact from "./Contact/Contact";
+import Calendar from "./Calendar/Calendar";
 
 import { scrollTo } from "../modules/functions";
 
@@ -35,8 +35,8 @@ function Home() {
         <About />
         <hr />
       </div>
-      <div id={contactSection} className="card-contact col-md-6 offset-md-3">
-        <Contact />
+      <div id={contactSection} className="card-contact ">
+        <Calendar />
       </div>
     </React.Fragment>
   );

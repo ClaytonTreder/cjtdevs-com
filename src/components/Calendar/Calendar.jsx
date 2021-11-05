@@ -6,6 +6,7 @@ import "../../content/fullcalendar.css";
 import { useState } from "react";
 import config from "../../config.json";
 import Contact from "components/Contact/Contact";
+import { scrollTo } from "modules/functions";
 
 export default function EventCalendar() {
   var cal;
@@ -32,6 +33,7 @@ export default function EventCalendar() {
         return x !== undefined && x !== null;
       })
     );
+    scrollTo("divTimes");
   };
   useEffect(() => {
     let calendarEl = document.getElementById("cal");
@@ -51,6 +53,8 @@ export default function EventCalendar() {
         if (arg.event.start > new Date()) {
           arg.el.parentElement.parentElement.parentElement.firstChild.style.background =
             "rgb(153, 217, 234, 0.55)";
+          arg.el.parentElement.parentElement.parentElement.firstChild.firstChild.style.cursor =
+            "pointer";
           arg.el.parentElement.parentElement.parentElement.firstChild.firstChild.onclick =
             eventClick;
           arg.event.setExtendedProp("dayMonth", [
@@ -64,27 +68,24 @@ export default function EventCalendar() {
   }, []);
   return (
     <div>
-      <div className="col-sm-7 px-2 offset-sm-1 mb-4 mt-2">
+      <div className="col-sm-8 px-0 offset-sm-2 mb-4 mt-2">
+        <h4 className="text-center">Contact</h4>
         <span className="fade-in-text">
-          Below are days a dev is available to speak with you. Select a day,
-          pick a time, and a prefilled message will show. Fill in your
-          name/email and anything else you would like to include and we will be
-          able to talk to you then!
+          Below are days a dev is available to speak with you. Select a day that
+          is highligthed in blue, pick a time, and a prefilled message will
+          show. Fill in your name/email and anything else you would like to
+          include and we will be able to talk to you then!
         </span>
       </div>
       <div className="form-row">
-        <div className="col-md-6 offset-md-2 fade-in-text" id="cal"></div>
+        <div
+          className="col-md-6 offset-md-2 fade-in-text card px-0"
+          style={{ borderWidth: "0px" }}
+          id="cal"
+        ></div>
         {availableTimes?.length ? (
-          <div className="col-md-4 fade-in-text">
-            <div
-              style={{
-                border: "solid",
-                borderWidth: "1px",
-                borderColor: "grey",
-                borderRadius: "5%",
-                padding: "7%",
-              }}
-            >
+          <div id="divTimes" className="col-md-3 fade-in-text">
+            <div className="card card-body">
               <div className="form-row form-group">
                 <span className="col-md-12">
                   {availableTimes[0].event?.start?.toLocaleString("en-Us", {
@@ -156,10 +157,14 @@ export default function EventCalendar() {
         ) : null}
       </div>
       {modalOpen ? (
-        <div class="modal" id="contactModal" style={{ display: "block" }}>
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-body">
+        <div
+          className="modal my-auto"
+          id="contactModal"
+          style={{ display: "block" }}
+        >
+          <div className="modal-dialog">
+            <div className="modal-content bg-light">
+              <div className="modal-body">
                 <div
                   className="form-row"
                   onClick={() => {

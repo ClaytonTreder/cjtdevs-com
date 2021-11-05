@@ -43,3 +43,13 @@ a:hover {
   color: rgb(99, 99, 99);
   text-decoration: none;
 }
+
+.btn-link,
+.btn-link:hover {
+  color: rgb(99, 99, 99);
+  cursor: pointer;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+}
