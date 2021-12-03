@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
+import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer";
 
 import Profile from "./components/Profiles/Profile";
@@ -14,7 +15,8 @@ import EventCalendar from "components/Calendar/Calendar";
 function App() {
   return (
     <Router>
-      <div className="pt-2 offset-md-1 col-md-10 px-1 body-content">
+      <div className="body-content">
+        <NavBar />
         <Header />
         <Route path="/profile/:id">
           <Profile />
