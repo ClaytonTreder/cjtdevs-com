@@ -84,15 +84,6 @@ a:hover nav :not(a:hover .arrow-left-top) {
 
     border-right: 15px solid;
   }
-  a:hover .arrow-left-top {
-    width: 0;
-    height: 0;
-    border-top: 25px solid transparent;
-    border-bottom: 0px solid transparent;
-    display: block;
-    transition: 0.5s;
-    border-right-color: var(--color-dark);
-  }
   .arrow-left-bottom {
     width: 0;
     height: 0;
@@ -102,6 +93,15 @@ a:hover nav :not(a:hover .arrow-left-top) {
     border-right: 15px solid;
   }
 
+  a:hover .arrow-left-top {
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-bottom: 0px solid transparent;
+    display: block;
+    transition: 0.5s;
+    border-right-color: var(--color-dark);
+  }
   a:hover .arrow-left-bottom {
     width: 0;
     height: 0;
@@ -117,7 +117,6 @@ a:hover nav :not(a:hover .arrow-left-top) {
     transition: 0.5s;
     border-top: 25px solid transparent;
     border-bottom: 0px solid transparent;
-    border-right: 15px solid;
     display: block;
     border-right-color: var(--color-dark);
   }
@@ -127,7 +126,6 @@ a:hover nav :not(a:hover .arrow-left-top) {
     transition: 0.5s;
     border-top: 0px solid transparent;
     border-bottom: 25px solid transparent;
-    border-right: 15px solid;
     display: block;
     border-right-color: var(--color-dark);
   }
