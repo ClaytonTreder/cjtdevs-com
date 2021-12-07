@@ -1,9 +1,0 @@
-.flex-row {
-    display: flex;
-    flex-direction: row;
-}
-.flex-inline {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}

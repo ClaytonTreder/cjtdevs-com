@@ -2,7 +2,7 @@ import { Calendar } from "@fullcalendar/core";
 import googleCalendarPlugin from "@fullcalendar/google-calendar";
 import dayGrid from "@fullcalendar/daygrid";
 import React, { useEffect } from "react";
-import "../../content/fullcalendar.css";
+import "./Calendar.css";
 import { useState } from "react";
 import config from "../../config.json";
 import Contact from "components/Contact/Contact";

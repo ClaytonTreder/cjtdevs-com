@@ -1,29 +1,13 @@
 :root {
-  --fade-in-image-time: fadeIn 1.3s;
-  --fade-in-text-time: fadeIn 1.3s;
-  --fade-in-text-time-lg: fadeIn 1.3s;
+  --fade-in-time: fadeIn 1.3s;
 }
 
-.fade-in-text {
-  animation: var(--fade-in-text-time);
-  -webkit-animation: var(--fade-in-text-time);
-  -moz-animation: var(--fade-in-text-time);
-  -o-animation: var(--fade-in-text-time);
-  -ms-animation: var(--fade-in-text-time);
-}
-.fade-in-text-lg {
-  animation: var(--fade-in-text-time-lg);
-  -webkit-animation: var(--fade-in-text-time-lg);
-  -moz-animation: var(--fade-in-text-time-lg);
-  -o-animation: var(--fade-in-text-time-lg);
-  -ms-animation: var(--fade-in-text-time-lg);
-}
-.fade-in-image {
-  animation: var(--fade-in-image-time);
-  -webkit-animation: var(--fade-in-image-time);
-  -moz-animation: var(--fade-in-image-time);
-  -o-animation: var(--fade-in-image-time);
-  -ms-animation: var(--fade-in-image-time);
+.fade-in {
+  animation: var(--fade-in-time);
+  -webkit-animation: var(--fade-in-time);
+  -moz-animation: var(--fade-in-time);
+  -o-animation: var(--fade-in-time);
+  -ms-animation: var(--fade-in-time);
 }
 @keyframes fadeIn {
   0% {

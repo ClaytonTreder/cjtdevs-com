@@ -1,0 +1,13 @@
+.client img {
+  border-radius: 0.25rem;
+}
+.client a {
+  color: black !important;
+}
+.testimonial {
+  font-size: small;
+  display: block;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 5%;
+}
