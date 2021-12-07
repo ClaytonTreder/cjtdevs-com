@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import { useLocation } from "react-router";
 import "./NavBar.css";
 
@@ -54,8 +54,10 @@ function Navs() {
       case "/clients":
         clients.current.classList.add("nav-select");
         break;
+      default:
+        break;
     }
-  }, []);
+  }, [loc.pathname]);
   return (
     <Fragment>
       <a ref={home} href="/" className="flex-inline">

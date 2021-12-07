@@ -10,7 +10,9 @@ import Home from "screens/home/Home";
 import Footer from "components/Footer/Footer";
 import Clients from "screens/clients/Clients";
 import Contact from "screens/contact/Contact";
-import About from "screens/About/About";
+import About from "screens/about/About";
+import Blog from "screens/blog/Blog";
+import NewsLetter from "screens/newsletter/NewsLetter"
 
 function App() {
   const [mobileNavOpen, setMobileNavOpen] = useState();
@@ -36,6 +38,12 @@ function App() {
         </Route>
         <Route path="/about">
           <About />
+        </Route>
+        <Route path="/blog">
+          <Blog />
+        </Route>
+        <Route path="/newsletter">
+          <NewsLetter />
         </Route>
       </div>
       <Footer />

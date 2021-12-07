@@ -25,7 +25,7 @@ function About() {
         / website creation, or any general software development needs.
       </span>
       <div className="meet-us-container">
-        <h5>Meet us!</h5>
+        <h5>Meet Us!</h5>
         <div className="meet-us">
           <img src={clay} alt="clay" />
           <div className="meet-us-titles">

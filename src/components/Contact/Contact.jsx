@@ -30,7 +30,7 @@ function Contact(props) {
         message: props.preFilledMessage,
       }));
     }
-  }, [state.success, state.loading]);
+  }, [state.success, state.loading, props.preFilledMessage]);
 
   const reRef = useRef(ReCaptchaV2);
 
@@ -90,7 +90,7 @@ function Contact(props) {
                 {...register("email", {
                   required: true,
                   pattern:
-                    /^[A-Za-z0-9\.]{1,}@{1}[A-Za-z0-9]{2,}\.{1}[A-Za-z0-9]{2,5}$/gm,
+                    /^[A-Za-z0-9]{1,}@{1}[A-Za-z0-9]{2,}\.{1}[A-Za-z0-9]{2,5}$/gm,
                 })}
                 onChange={(e) =>
                   setState((prevState) => ({
@@ -165,22 +165,22 @@ function Contact(props) {
             <div className="text-center">
               {state.success !== null
                 ? {
-                    200: (
-                      <label className="alert-success">
-                        {state.contact.respone_messages.success}
-                      </label>
-                    ),
-                    401: (
-                      <label className="alert-danger">
-                        {state.contact.respone_messages.recapthca}
-                      </label>
-                    ),
-                    500: (
-                      <label className="alert-danger">
-                        {state.contact.respone_messages.failed}
-                      </label>
-                    ),
-                  }[state.success]
+                  200: (
+                    <label className="alert-success">
+                      {state.contact.respone_messages.success}
+                    </label>
+                  ),
+                  401: (
+                    <label className="alert-danger">
+                      {state.contact.respone_messages.recapthca}
+                    </label>
+                  ),
+                  500: (
+                    <label className="alert-danger">
+                      {state.contact.respone_messages.failed}
+                    </label>
+                  ),
+                }[state.success]
                 : null}
             </div>
           </form>

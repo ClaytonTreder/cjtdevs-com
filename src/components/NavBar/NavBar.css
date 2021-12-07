@@ -22,6 +22,10 @@ a:hover nav :not(a:hover .arrow-left-top) {
 
 /* mobile */
 @media (max-width: 767px) {
+  nav {
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+  }
   .mobilenavbar {
     display: flex;
     flex-direction: column;
@@ -84,15 +88,6 @@ a:hover nav :not(a:hover .arrow-left-top) {
 
     border-right: 15px solid;
   }
-  a:hover .arrow-left-top {
-    width: 0;
-    height: 0;
-    border-top: 25px solid transparent;
-    border-bottom: 0px solid transparent;
-    display: block;
-    transition: 0.5s;
-    border-right-color: var(--color-dark);
-  }
   .arrow-left-bottom {
     width: 0;
     height: 0;
@@ -102,6 +97,15 @@ a:hover nav :not(a:hover .arrow-left-top) {
     border-right: 15px solid;
   }
 
+  a:hover .arrow-left-top {
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-bottom: 0px solid transparent;
+    display: block;
+    transition: 0.5s;
+    border-right-color: var(--color-dark);
+  }
   a:hover .arrow-left-bottom {
     width: 0;
     height: 0;
