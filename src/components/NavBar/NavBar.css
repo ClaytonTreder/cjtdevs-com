@@ -22,6 +22,10 @@ a:hover nav :not(a:hover .arrow-left-top) {
 
 /* mobile */
 @media (max-width: 767px) {
+  nav {
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+  }
   .mobilenavbar {
     display: flex;
     flex-direction: column;
