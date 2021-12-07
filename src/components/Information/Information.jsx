@@ -8,7 +8,7 @@ export default function Information() {
   return (
     <div className="information">
       <section>
-        <img src={website} />
+        <img src={website} alt="computer"  />
         <hr />
         <p>
           We use the latest techniques and modern designs to build or improve
@@ -17,7 +17,7 @@ export default function Information() {
         </p>
       </section>
       <section>
-        <img src={phone} />
+        <img src={phone} alt="phone" />
         <hr />
         <p>
           Today's ecosystem demands apps to give you a competitive edge. Let us
@@ -26,7 +26,7 @@ export default function Information() {
         </p>
       </section>
       <section>
-        <img src={cloud} />
+        <img src={cloud} alt="cloud" />
         <hr />
         <p>
           Our developers can create custom software solutions allowing your IT

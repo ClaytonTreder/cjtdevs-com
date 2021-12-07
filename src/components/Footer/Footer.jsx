@@ -17,7 +17,7 @@ export default function Footer() {
             <hr />
           </a>
           <a href="/contact">
-            Contact
+            Contact / Feedback
             <hr />
           </a>
           <a href="/clients">
@@ -41,12 +41,12 @@ export default function Footer() {
             rel="noreferrer"
             target="_blank"
           >
-            <img src={fbImg} />
+            <img src={fbImg} alt="facebook" />
             Give us a like
             <hr />
           </a>
           <a href="mailto:info@cjtdevs.com">
-            <img src={mail} />
+            <img src={mail} alt="mail" />
             info@cjtdevs.com
             <hr />
           </a>
