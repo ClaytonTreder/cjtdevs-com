@@ -12,7 +12,8 @@ import Clients from "screens/clients/Clients";
 import Contact from "screens/contact/Contact";
 import About from "screens/about/About";
 import Blog from "screens/blog/Blog";
-import NewsLetter from "screens/newsletter/NewsLetter"
+import NewsLetter from "screens/newsletter/NewsLetter";
+import Services from "screens/services/Services";
 
 function App() {
   const [mobileNavOpen, setMobileNavOpen] = useState();
@@ -44,6 +45,9 @@ function App() {
         </Route>
         <Route path="/newsletter">
           <NewsLetter />
+        </Route>
+        <Route path="/services">
+          <Services />
         </Route>
       </div>
       <Footer />

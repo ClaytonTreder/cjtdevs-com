@@ -16,7 +16,7 @@ export default function Banner() {
           {" "}
           <button>I need an app{" >"} </button>{" "}
         </a>
-        <a href="/services#so">
+        <a href="/services#software">
           {" "}
           <button>I need software{" >"} </button>{" "}
         </a>
