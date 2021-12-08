@@ -36,7 +36,7 @@ export default function Services() {
       default:
         break;
     }
-  }, [loc.pathname]);
+  }, [loc.hash]);
   return (
     <div className="services">
       <title>
