@@ -17,8 +17,8 @@ export default function Services() {
   const loc = useLocation();
 
   const scrollOptions = {
-    behavior: "smooth",
-    block: "end",
+    behavior: "auto",
+    block: "center",
     inline: "center",
   };
 
@@ -36,7 +36,7 @@ export default function Services() {
       default:
         break;
     }
-  }, [loc.hash]);
+  });
   return (
     <div className="services">
       <title>
@@ -44,16 +44,16 @@ export default function Services() {
           <u>Available Services</u>
         </h2>
       </title>
-      <h4 ref={web}>Website Development</h4>
+      <h4>Website Development</h4>
       <section>
-        <p>
-          Using the latest platforms, frameworks, and languages, we provide and
+        <p ref={web}>
+          <img src={website} alt="computer" style={{float: "right"}}/>
+          Using the latest platforms, frameworks, and languages, we provide an
           all in one solution for your businesses website. Creating, deploying,
           and hosting a website can be a hassale. Let us handle it for you. Our
           developers have the experience to bring you your dream site, with
           ease.
         </p>
-        <img src={website} alt="computer" />
       </section>
       <div className="btn-container">
         <button
@@ -65,10 +65,10 @@ export default function Services() {
         </button>
       </div>
       <hr />
-      <h4 ref={mobile}>Mobile App Creation</h4>
+      <h4>Mobile App Creation</h4>
       <section>
-        <img src={phone} alt="phone" />
-        <p>
+        <p ref={mobile}>
+          <img src={phone} alt="phone" style={{float: "left"}} />
           Everyone has an idea for an app these days and we think you have a
           great one! And while you were busy coming up with the idea, we were
           learning how to create it. Now that we're here let's get this amazing
@@ -85,15 +85,16 @@ export default function Services() {
         </button>
       </div>
       <hr />
-      <h4 ref={software}>Software Solutions</h4>
+      <h4 >Software Solutions</h4>
       <section>
-        <p>
+        <p ref={software}> 
+          <img src={cloud} alt="cloud" style={{float: "right"}} />
           Software development comes in many shapes and forms. We don't
           discriminate. Let our developers take a deep dive into what you need.
-          Whether it is cloud hosting, continues intergration, or you just need
+          Whether it is cloud hosting, continuous intergration, or you just need
           a shopping cart added to your site, we are here for you!
         </p>
-        <img src={cloud} alt="cloud" />
+
       </section>
       <div className="btn-container">
         <button
@@ -101,12 +102,14 @@ export default function Services() {
             talk.current.scrollIntoView(scrollOptions);
           }}
         >
-          Let's do it {">"}
+          Let's solve it {">"}
         </button>
       </div>
       <hr />
-      <h4 ref={talk}>Let's Talk</h4>
-      <Contact />
+      <h4>Let's Talk</h4>
+      <div className="contact-container" ref={talk}>
+        <Contact />
+      </div>
     </div>
   );
 }

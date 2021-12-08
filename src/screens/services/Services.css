@@ -17,10 +17,51 @@
     margin-top: 10%;
     margin-bottom: 10%;
   }
+  .services section p {
+    width: 100%;
+    font-size: large;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  .services section img {
+    width: auto;
+    height: 5rem;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+  .services h4 {
+    display: flex;
+    justify-content: center;
+  }
   .services hr {
     display: flex;
     margin-left: 5%;
     margin-right: 5%;
+  }
+  .services .contact-container {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .services .contact-form {
+    margin-bottom: 10%;
+  }
+  .services .talk {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+  .services button {
+    width: 50%;
+    color: black;
+  }
+  .services .btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 5%;
+  }
+  .services .contact-form input[type=submit] {
+    color: black;
+    background-color: var(--color-light);
   }
 }
 
@@ -45,23 +86,27 @@
     justify-content: center;
   }
   .services section p {
-    width: 75%;
+    width: 100%;
     font-size: large;
   }
   .services section img {
     width: auto;
     height: 7rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   .services hr {
     display: flex;
     margin-left: 20%;
     margin-right: 20%;
   }
-  .services .contact-form {
+  .services .contact-container {
+    padding-left: 10%;
+    padding-right: 10%;
     margin-left: 20%;
     margin-right: 20%;
+  }
+  .services .contact-form {
     margin-bottom: 10%;
   }
   .services .talk {

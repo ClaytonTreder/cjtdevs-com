@@ -39,6 +39,10 @@
   .contact img {
     display: none;
   }
+  .contact .contact-form input[type=submit] {
+    color: black;
+    background-color: var(--color-light);
+  }
 }
 
 /* desktop */

@@ -42,6 +42,12 @@ title {
   background-color: var(--color-dark);
   padding: 1%;
   margin-bottom: 2%;
+
+  animation: var(--fade-in-time);
+  -webkit-animation: var(--fade-in-time);
+  -moz-animation: var(--fade-in-time);
+  -o-animation: var(--fade-in-time);
+  -ms-animation: var(--fade-in-time);
 }
 .flex-row {
   display: flex;
