@@ -3,7 +3,8 @@ import { useState } from "react";
 import axios from "axios";
 export default function NewsLetter() {
   const [email, setEmail] = useState();
-  const [fail, setFail] = useState();
+  const [regexFail, setRegexFail] = useState();
+  const [resStatus, setResStatus] = useState();
 
   const handleClick = () => {
     if (
@@ -11,19 +12,31 @@ export default function NewsLetter() {
         email
       ) === true
     ) {
-      axios.post("/api/newsletter", {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-        body: {
-          email: email,
-          subscribed: true,
-          addedOn: new Date(),
-        },
-      });
+      axios
+        .post(
+          "/api/newsletter",
+          {
+            email: email,
+            subscribed: true,
+            addedOn: new Date(),
+          },
+          { headers: { "Content-Type": "application/json" } }
+        )
+        .then((res) => {
+          if (res.status === 200) {
+            setResStatus("Success!");
+          } else {
+            setResStatus("ERROR: An issue occured please try again later.");
+          }
+        })
+        .catch(() =>
+          setResStatus(
+            "ERROR: An issue occured please try again later. You may also already be subscribed."
+          )
+        );
     } else {
-      setFail(true);
+      setRegexFail(true);
+      setResStatus(null);
     }
   };
 
@@ -34,14 +47,15 @@ export default function NewsLetter() {
         <input
           onChange={(e) => {
             setEmail(e.target.value);
-            setFail(false);
+            setRegexFail(false);
           }}
           placeholder="Email Address*"
           type="text"
         />
         <button onClick={handleClick}>Submit</button>
       </div>
-      {fail ? <div>Please provide a valid email</div> : null}
+      {regexFail ? <div>Please provide a valid email</div> : null}
+      {resStatus ? <div>{resStatus}</div> : null}
     </div>
   );
 }
