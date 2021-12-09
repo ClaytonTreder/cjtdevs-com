@@ -11,8 +11,8 @@ function About() {
       </title>
       <h4>Who?</h4>
       <span className="item">
-        CJT Devs is a collective of software developers loking to build your
-        next website or app!
+        CJT Devs is a collective of software developers looking to build you
+        your next website or app!
       </span>
       <h4>How?</h4>
       <span className="item">
@@ -66,7 +66,7 @@ function About() {
             </div>
             <em>
               <small>
-                I truly love technology and am looking forward to working with
+                I truly love techonlogy and am looking forward to working with
                 you!
               </small>
             </em>
@@ -88,7 +88,7 @@ function About() {
             {" "}
             <u>contact page</u>{" "}
           </a>
-          to reach us. We will get back to you in a very timely manner. Thanks
+          to reach us. We will get back to you in a very timely manor. Thanks
           for taking the time to look and we hope to hear from you!
         </span>
       </div>
