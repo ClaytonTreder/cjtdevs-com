@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import React, { Fragment } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
@@ -14,44 +14,35 @@ import About from "screens/about/About";
 import Blog from "screens/blog/Blog";
 import NewsLetter from "screens/newsletter/NewsLetter";
 import Services from "screens/services/Services";
-
+import NotFound from "screens/notfound/NotFound";
 function App() {
   const [mobileNavOpen, setMobileNavOpen] = useState();
   return (
-    <Router>
+    <Fragment>
       <div className="body-content">
-        <NavBar
-          setMobileNavOpen={setMobileNavOpen}
-          mobileNavOpen={mobileNavOpen}
-        />
-        <Header
-          setMobileNavOpen={setMobileNavOpen}
-          mobileNavOpen={mobileNavOpen}
-        />
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/clients">
-          <Clients />
-        </Route>
-        <Route path="/contact">
-          <Contact />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/blog">
-          <Blog />
-        </Route>
-        <Route path="/newsletter">
-          <NewsLetter />
-        </Route>
-        <Route path="/services">
-          <Services />
-        </Route>
+        <Router>
+          <NavBar
+            setMobileNavOpen={setMobileNavOpen}
+            mobileNavOpen={mobileNavOpen}
+          />
+          <Header
+            setMobileNavOpen={setMobileNavOpen}
+            mobileNavOpen={mobileNavOpen}
+          />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/clients" element={<Clients />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/newsletter" element={<NewsLetter />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Router>
       </div>
       <Footer />
-    </Router>
+    </Fragment>
   );
 }
 
