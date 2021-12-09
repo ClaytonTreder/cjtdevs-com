@@ -10,7 +10,7 @@ import Home from "screens/home/Home";
 import Footer from "components/Footer/Footer";
 import Clients from "screens/clients/Clients";
 import Contact from "screens/contact/Contact";
-import About from "screens/About/About";
+import About from "screens/about/About";
 import Blog from "screens/blog/Blog";
 import NewsLetter from "screens/newsletter/NewsLetter";
 import Services from "screens/services/Services";
