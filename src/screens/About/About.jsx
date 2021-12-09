@@ -66,7 +66,7 @@ function About() {
             </div>
             <em>
               <small>
-                I truly love techonlogy and am looking forward to working with
+                I truly love technology and am looking forward to working with
                 you!
               </small>
             </em>

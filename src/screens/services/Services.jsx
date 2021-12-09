@@ -49,7 +49,7 @@ export default function Services() {
         <p ref={web}>
           <img src={website} alt="computer" style={{ float: "right" }} />
           Using the latest platforms, frameworks, and languages, we provide an
-          all in one solution for your company's website. Creating, deploying,
+          all-in-one solution for your company's website. Creating, deploying,
           and hosting a website can be a hassle. Let us handle it for you. Our
           developers have the experience to bring you your dream site, with
           ease.
