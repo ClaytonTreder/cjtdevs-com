@@ -77,6 +77,9 @@ app.use("/api/mailer", cors(corsOptions), MailerRouter);
 const TestimonialRoute = require("./src/routes/TestimonialRoute");
 app.use("/api/testimonial", cors(corsOptions), TestimonialRoute);
 
+const NewsLetterRoute = require("./src/routes/NewsLetterRoute");
+app.use("/api/newsletter", cors(corsOptions), NewsLetterRoute);
+
 //health check
 app.use("/api", (req, res) => {
   res.sendStatus(200);
