@@ -61,7 +61,7 @@ export default function Services() {
             talk.current.scrollIntoView(scrollOptions);
           }}
         >
-          Let's develop it {" ->"}
+          Let's develop it
         </button>
       </div>
       <hr />
@@ -81,7 +81,7 @@ export default function Services() {
             talk.current.scrollIntoView(scrollOptions);
           }}
         >
-          Let's create it {" ->"}
+          Let's create it
         </button>
       </div>
       <hr />
@@ -101,7 +101,7 @@ export default function Services() {
             talk.current.scrollIntoView(scrollOptions);
           }}
         >
-          Let's solve it {" ->"}
+          Let's solve it
         </button>
       </div>
       <hr />
