@@ -11,7 +11,7 @@ function About() {
       </title>
       <h4>Who?</h4>
       <span className="item">
-        CJT Devs is a collective of software developers looking to build your
+        CJT Devs is a collective of software developers loking to build your
         next website or app!
       </span>
       <h4>How?</h4>
