@@ -1,6 +1,7 @@
 import "./Footer.css";
 import fbImg from "../../content/images/misc/img-FB.png";
 import mail from "../../content/images/misc/mail.png";
+import phone from "../../content/images/misc/phone.png";
 import { Fragment } from "react";
 
 export default function Footer() {
@@ -48,6 +49,11 @@ export default function Footer() {
           <a href="mailto:info@cjtdevs.com">
             <img src={mail} alt="mail" />
             info@cjtdevs.com
+            <hr />
+          </a>
+          <a href="tel:7347878670">
+            <img src={phone} alt="mail" />
+            (734) 787-8670
             <hr />
           </a>
         </section>
