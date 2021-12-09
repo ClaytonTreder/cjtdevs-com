@@ -8,11 +8,11 @@ export default function Information() {
   return (
     <div className="information">
       <section>
-        <img src={website} alt="computer"  />
+        <img src={website} alt="computer" />
         <hr />
         <p>
           We use the latest techniques and modern designs to build or improve
-          your website. Ready for all devices, mobile friendly layouts that
+          your website. Ready for all devices. Mobile friendly layouts that
           convert views to sales quickly.
         </p>
       </section>
@@ -30,7 +30,7 @@ export default function Information() {
         <hr />
         <p>
           Our developers can create custom software solutions allowing your IT
-          infrastructure to save you money. Custom software giving you
+          infrastructure to save you money. Custom software that will give you
           enterprise control over your business operations.
         </p>
       </section>

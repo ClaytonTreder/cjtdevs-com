@@ -49,8 +49,8 @@ export default function Services() {
         <p ref={web}>
           <img src={website} alt="computer" style={{ float: "right" }} />
           Using the latest platforms, frameworks, and languages, we provide an
-          all in one solution for your businesses website. Creating, deploying,
-          and hosting a website can be a hassale. Let us handle it for you. Our
+          all in one solution for your company's website. Creating, deploying,
+          and hosting a website can be a hassle. Let us handle it for you. Our
           developers have the experience to bring you your dream site, with
           ease.
         </p>
@@ -72,7 +72,7 @@ export default function Services() {
           Everyone has an idea for an app these days and we think you have a
           great one! And while you were busy coming up with the idea, we were
           learning how to create it. Now that we're here let's get this amazing
-          idea out of your head and into consumers hands.
+          idea out of your head and into consumer's hands.
         </p>
       </section>
       <div className="btn-container">
@@ -91,7 +91,7 @@ export default function Services() {
           <img src={cloud} alt="cloud" style={{ float: "right" }} />
           Software development comes in many shapes and forms. We don't
           discriminate. Let our developers take a deep dive into what you need.
-          Whether it is cloud hosting, continuous intergration, or you just need
+          Whether it is cloud hosting, continuous integration, or you just need
           a shopping cart added to your site, we are here for you!
         </p>
       </section>
