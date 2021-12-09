@@ -2,9 +2,9 @@ import Information from "components/Information/Information";
 import NewsLetter from "components/NewsLetter/NewsLetter";
 import { Fragment } from "react";
 import Banner from "../../components/Banner/Banner";
-import coffee from "../../content/images/misc/coffee.png"
-import portfolio from "../../content/images/misc/portfolio.png"
-import "./Home.css"
+import coffee from "../../content/images/misc/coffee.png";
+import portfolio from "../../content/images/misc/portfolio.png";
+import "./Home.css";
 function Home() {
   return (
     <Fragment>
@@ -19,13 +19,13 @@ function Home() {
         <div className="flex-inline">
           <img src={coffee} alt="coffee" />
           <a href="/contact">
-            <button>Schedule a free consultation now {">"}</button>
+            <button>Schedule a free consultation now {" ->"}</button>
           </a>
         </div>
         <div className="flex-inline">
           <img src={portfolio} alt="portfolio" />
           <a href="/clients">
-            <button>View our portfolio {">"}</button>
+            <button>View our portfolio {" ->"}</button>
           </a>
         </div>
       </div>

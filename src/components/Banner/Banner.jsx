@@ -10,15 +10,15 @@ export default function Banner() {
       <ribbon>
         <a href="/services#site">
           {" "}
-          <button>I need a website{">"} </button>{" "}
+          <button>I need a website{" ->"} </button>{" "}
         </a>
         <a href="/services#app">
           {" "}
-          <button>I need an app{">"} </button>{" "}
+          <button>I need an app{" ->"} </button>{" "}
         </a>
         <a href="/services#software">
           {" "}
-          <button>I need software{">"} </button>{" "}
+          <button>I need software{" ->"} </button>{" "}
         </a>
       </ribbon>
     </div>

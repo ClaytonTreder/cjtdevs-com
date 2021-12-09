@@ -47,7 +47,7 @@ export default function Services() {
       <h4>Website Development</h4>
       <section>
         <p ref={web}>
-          <img src={website} alt="computer" style={{float: "right"}}/>
+          <img src={website} alt="computer" style={{ float: "right" }} />
           Using the latest platforms, frameworks, and languages, we provide an
           all in one solution for your businesses website. Creating, deploying,
           and hosting a website can be a hassale. Let us handle it for you. Our
@@ -61,14 +61,14 @@ export default function Services() {
             talk.current.scrollIntoView(scrollOptions);
           }}
         >
-          Let's develop it {">"}
+          Let's develop it {" ->"}
         </button>
       </div>
       <hr />
       <h4>Mobile App Creation</h4>
       <section>
         <p ref={mobile}>
-          <img src={phone} alt="phone" style={{float: "left"}} />
+          <img src={phone} alt="phone" style={{ float: "left" }} />
           Everyone has an idea for an app these days and we think you have a
           great one! And while you were busy coming up with the idea, we were
           learning how to create it. Now that we're here let's get this amazing
@@ -81,20 +81,19 @@ export default function Services() {
             talk.current.scrollIntoView(scrollOptions);
           }}
         >
-          Let's create it {">"}
+          Let's create it {" ->"}
         </button>
       </div>
       <hr />
-      <h4 >Software Solutions</h4>
+      <h4>Software Solutions</h4>
       <section>
-        <p ref={software}> 
-          <img src={cloud} alt="cloud" style={{float: "right"}} />
+        <p ref={software}>
+          <img src={cloud} alt="cloud" style={{ float: "right" }} />
           Software development comes in many shapes and forms. We don't
           discriminate. Let our developers take a deep dive into what you need.
           Whether it is cloud hosting, continuous intergration, or you just need
           a shopping cart added to your site, we are here for you!
         </p>
-
       </section>
       <div className="btn-container">
         <button
@@ -102,7 +101,7 @@ export default function Services() {
             talk.current.scrollIntoView(scrollOptions);
           }}
         >
-          Let's solve it {">"}
+          Let's solve it {" ->"}
         </button>
       </div>
       <hr />
