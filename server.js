@@ -56,6 +56,16 @@ passport.deserializeUser((user, done) => {
   done(null, user);
 });
 
+app.use((req, res, next) => {
+  console.table({
+    url: req.path,
+    method: req.method,
+    userAgent: req.headers[3],
+    ip: req.ip,
+  });
+  next();
+});
+
 import authRouter from "./src/routes/AuthRoute.js";
 app.use("/auth", cors(corsOptions), authRouter);
 
@@ -72,7 +82,7 @@ import TextRoute from "./src/routes/TextRoute.js";
 app.use("/api/text", cors(corsOptions), TextRoute);
 
 //health check
-app.use("/api", (req, res) => {
+app.use("/api/health", (req, res) => {
   res.sendStatus(200);
 });
 
