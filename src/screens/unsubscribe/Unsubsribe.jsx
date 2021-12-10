@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 
 export default function Unsubscribe() {
   const loc = useLocation();
