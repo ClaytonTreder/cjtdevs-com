@@ -61,8 +61,8 @@ app.use((req, res, next) => {
     console.table({
       url: req.path,
       method: req.method,
-      headers: req.headers.map((h) => h),
-      ip: req.socket.remoteAddress,
+      userAgent: req.headers[3],
+      ip: req.ip,
     });
   }
   next();
