@@ -26,12 +26,14 @@ export default function NewsLetter() {
           if (res.status === 200) {
             setResStatus("Success!");
           } else {
-            setResStatus("ERROR: An issue occured please try again later.");
+            setResStatus(
+              "An issue occured, please try again later. You may already be subscribed."
+            );
           }
         })
         .catch(() =>
           setResStatus(
-            "ERROR: An issue occured please try again later. You may also already be subscribed."
+            "An issue occured, please try again later. You may already be subscribed."
           )
         );
     } else {

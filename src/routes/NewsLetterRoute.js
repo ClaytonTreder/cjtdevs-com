@@ -24,7 +24,6 @@ router.post("/", (req, res) => {
         }
       });
     } else {
-      console.log(404);
       res.sendStatus(404);
     }
   });
