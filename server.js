@@ -62,7 +62,7 @@ app.use((req, res, next) => {
       url: req.path,
       method: req.method,
       userAgent: req.headers[3],
-      ip: req.ip,
+      ip: req.headers["x-forwarded-for"] || req.socket.remoteAddress,
     });
   }
   next();
