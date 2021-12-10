@@ -15,6 +15,8 @@ import Blog from "screens/blog/Blog";
 import NewsLetter from "screens/newsletter/NewsLetter";
 import Services from "screens/services/Services";
 import NotFound from "screens/notfound/NotFound";
+import Unsubscribe from "screens/unsubscribe/Unsubsribe";
+
 function App() {
   const [mobileNavOpen, setMobileNavOpen] = useState();
   return (
@@ -37,6 +39,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/newsletter" element={<NewsLetter />} />
             <Route path="/services" element={<Services />} />
+            <Route exact path="/user/unsubscribe" element={<Unsubscribe />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>

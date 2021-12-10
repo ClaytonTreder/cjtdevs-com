@@ -1,12 +1,12 @@
-const express = require("express");
+import express from "express";
 const app = express();
-const cors = require("cors");
-const path = require("path");
-const expressSession = require("express-session");
-const passport = require("passport");
-const Auth0Strategy = require("passport-auth0");
-
-require("dotenv").config();
+import cors from "cors";
+import path from "path";
+import expressSession from "express-session";
+import passport from "passport";
+import Auth0Strategy from "passport-auth0";
+import dotenv from "dotenv";
+dotenv.config();
 
 const PORT = process.env.PORT || 5010;
 
@@ -56,36 +56,27 @@ passport.deserializeUser((user, done) => {
   done(null, user);
 });
 
-const authRouter = require("./src/routes/AuthRoute");
+import authRouter from "./src/routes/AuthRoute.js";
 app.use("/auth", cors(corsOptions), authRouter);
 
-const AdminRouter = require("./src/routes/AdminRoute");
-app.use("/api/admin", cors(corsOptions), AdminRouter);
-
-const ContactRouter = require("./src/routes/ContactRoute");
+import ContactRouter from "./src/routes/ContactRoute.js";
 app.use("/api/contact", cors(corsOptions), ContactRouter);
 
-const AboutRouter = require("./src/routes/AboutRoute");
-app.use("/api/about", cors(corsOptions), AboutRouter);
-
-const ProfileRouter = require("./src/routes/ProfileRoute");
-app.use("/api/profiles", cors(corsOptions), ProfileRouter);
-
-const MailerRouter = require("./src/routes/MailerRoute");
+import MailerRouter from "./src/routes/MailerRoute.js";
 app.use("/api/mailer", cors(corsOptions), MailerRouter);
 
-const TestimonialRoute = require("./src/routes/TestimonialRoute");
-app.use("/api/testimonial", cors(corsOptions), TestimonialRoute);
-
-const NewsLetterRoute = require("./src/routes/NewsLetterRoute");
+import NewsLetterRoute from "./src/routes/NewsLetterRoute.js";
 app.use("/api/newsletter", cors(corsOptions), NewsLetterRoute);
+
+import TextRoute from "./src/routes/TextRoute.js";
+app.use("/api/text", cors(corsOptions), TextRoute);
 
 //health check
 app.use("/api", (req, res) => {
   res.sendStatus(200);
 });
 
-app.use("/", express.static(path.join(__dirname, "./build")));
+app.use("/", express.static("./build"));
 app.get("*", (req, res) => res.sendFile(path.resolve("build", "index.html")));
 
 app.listen(PORT, () => {

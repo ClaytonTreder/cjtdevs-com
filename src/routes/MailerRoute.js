@@ -1,10 +1,10 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
 
-const mailerController = require("../controllers/MailerController");
+import { post_email } from "../controllers/MailerController.js";
 
 router.post("/mail", (req, res) => {
-  mailerController.post_email(req, (err, info) => {
+  post_email(req, (err, info) => {
     if (err && err === "ReCaptcha failed") {
       res.sendStatus(401);
     } else if (err) {
@@ -15,4 +15,4 @@ router.post("/mail", (req, res) => {
   });
 });
 
-module.exports = router;
+export default router;

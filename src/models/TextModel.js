@@ -1,5 +1,6 @@
-const mongoose = require("mongoose");
-require("dotenv").config();
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 
 mongoose
   .connect(process.env.CONNECTIONSTRING, {
@@ -10,14 +11,14 @@ mongoose
     console.log(err);
   });
 
-const aboutSchema = new mongoose.Schema({
+const textSchema = new mongoose.Schema({
   id: {
     type: String,
   },
-  title: {
+  section: {
     type: String,
   },
-  content: [{ type: String }],
+  content: {},
 });
 
-module.exports = mongoose.model("About", aboutSchema);
+export default mongoose.model("Text", textSchema);

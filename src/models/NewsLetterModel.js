@@ -1,5 +1,6 @@
-const mongoose = require("mongoose");
-require("dotenv").config();
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 
 mongoose
   .connect(process.env.CONNECTIONSTRING, {
@@ -22,4 +23,4 @@ const newsLetterSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("newsLetter", newsLetterSchema);
+export default mongoose.model("newsLetter", newsLetterSchema);

@@ -1,6 +1,6 @@
-const NewsLetterModel = require("../models/NewsLetterModel");
+import NewsLetterModel from "../models/NewsLetterModel.js";
 
-exports.create = async (newsLetter, callback) => {
+export async function create(newsLetter, callback) {
   return await NewsLetterModel.create(newsLetter)
     .then((newsLetter) => {
       callback(null, newsLetter);
@@ -8,18 +8,18 @@ exports.create = async (newsLetter, callback) => {
     .catch((err) => {
       callback(err, null);
     });
-};
-exports.read = async (query, callback) => {
+}
+export async function read(query, callback) {
   return await NewsLetterModel.find(query, (err, newsLetters) => {
     return callback(err, newsLetters);
   });
-};
-exports.readOne = async (email, callback) => {
+}
+export async function readOne(email, callback) {
   return await NewsLetterModel.findOne({ email: email }, (err, newsLetter) => {
     return callback(err, newsLetter);
   });
-};
-exports.update = async (email, newsLetter, callback) => {
+}
+export async function update(email, newsLetter, callback) {
   return await NewsLetterModel.findOneAndUpdate(
     { email: email },
     newsLetter,
@@ -28,8 +28,8 @@ exports.update = async (email, newsLetter, callback) => {
       return callback(err, newsLetter);
     }
   );
-};
-exports.delete = async (email, callback) => {
+}
+export async function deleteOne(email, callback) {
   return await NewsLetterModel.findOneAndRemove(
     { email: email },
     { useFindAndModify: false },
@@ -38,4 +38,4 @@ exports.delete = async (email, callback) => {
       return callback(null, newsLetter);
     }
   );
-};
+}

@@ -1,10 +1,10 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
 
-const ContactController = require("../controllers/ContactController");
+import { readOne } from "../controllers/ContactController.js";
 
 router.get("/:id", (req, res) => {
-  ContactController.readOne(req.params.id, (err, contact) => {
+  readOne(req.params.id, (err, contact) => {
     if (err) {
       console.log(err);
       res.sendStatus(500);
@@ -14,4 +14,4 @@ router.get("/:id", (req, res) => {
   });
 });
 
-module.exports = router;
+export default router;
