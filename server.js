@@ -57,12 +57,14 @@ passport.deserializeUser((user, done) => {
 });
 
 app.use((req, res, next) => {
-  console.table({
-    url: req.path,
-    method: req.method,
-    userAgent: req.headers[3],
-    ip: req.ip,
-  });
+  if (!(req.path.startsWith("/content") || req.path.startsWith("/static"))) {
+    console.table({
+      url: req.path,
+      method: req.method,
+      userAgent: req.headers[3],
+      ip: req.ip,
+    });
+  }
   next();
 });
 
