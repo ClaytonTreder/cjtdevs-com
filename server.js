@@ -61,7 +61,7 @@ app.use((req, res, next) => {
     console.table({
       url: req.path,
       method: req.method,
-      time: new Date(),
+      time: new Date().toLocaleDateString,
     });
   }
   next();
