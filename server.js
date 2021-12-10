@@ -61,9 +61,8 @@ app.use((req, res, next) => {
     console.table({
       url: req.path,
       method: req.method,
-      userAgent: req.headers[3],
-      ip: req.headers["x-forwarded-for"],
-      rm: req.socket.remoteAddress,
+      headers: req.headers.map((h) => h),
+      ip: req.socket.remoteAddress,
     });
   }
   next();
