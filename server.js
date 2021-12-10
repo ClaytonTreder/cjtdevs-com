@@ -61,8 +61,7 @@ app.use((req, res, next) => {
     console.table({
       url: req.path,
       method: req.method,
-      userAgent: req.headers[3],
-      ip: req.ip,
+      time: new Date(),
     });
   }
   next();

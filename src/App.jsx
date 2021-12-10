@@ -21,8 +21,8 @@ function App() {
   const [mobileNavOpen, setMobileNavOpen] = useState();
   return (
     <Fragment>
-      <div className="body-content">
-        <Router>
+      <Router>
+        <div className="body-content">
           <NavBar
             setMobileNavOpen={setMobileNavOpen}
             mobileNavOpen={mobileNavOpen}
@@ -39,12 +39,12 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/newsletter" element={<NewsLetter />} />
             <Route path="/services" element={<Services />} />
-            <Route exact path="/user/unsubscribe" element={<Unsubscribe />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/user/unsubscribe" element={<Unsubscribe />} />
           </Routes>
-        </Router>
-      </div>
-      <Footer />
+        </div>
+        <Footer />
+      </Router>
     </Fragment>
   );
 }
