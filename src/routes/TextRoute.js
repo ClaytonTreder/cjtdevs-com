@@ -17,7 +17,7 @@ router.get("/:id", (req, res) => {
   });
 });
 
-router.put("/:id", (req, res) => {
+router.put("/:id", secured, (req, res) => {
   const id = req.params.id;
   updateOne(id, req.body, (err, text) => {
     if (err) {
@@ -31,7 +31,7 @@ router.put("/:id", (req, res) => {
   });
 });
 
-router.post("/", (req, res) => {
+router.post("/", secured, (req, res) => {
   create(req.body, (err, text) => {
     if (err) {
       console.log(err);
