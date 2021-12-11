@@ -61,7 +61,7 @@ export default function Services() {
       {text.services?.map((service, i) => {
         return (
           <Fragment key={i}>
-            <h4>{service.title}t</h4>
+            <h4>{service.title}</h4>
             <section>
               <p id={service.p_id}>
                 <Picture
