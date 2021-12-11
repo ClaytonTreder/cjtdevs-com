@@ -3,11 +3,11 @@ import "./Banner.css";
 export default function Banner(props) {
   return (
     <div className="banner fade-in">
-      <div>
+      <title>
         {props.lines.map((line) => {
           return <h3>{line}</h3>;
         })}
-      </div>
+      </title>
       <ribbon>
         {props.buttons.map((button) => {
           return (

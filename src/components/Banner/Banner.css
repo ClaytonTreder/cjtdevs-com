@@ -1,10 +1,11 @@
 .banner {
   background-color: var(--color-dark);
-  padding: 3%;
+  padding-top: 2%;
 }
 
 .banner h3 {
   color: var(--color-light);
+  margin-bottom: 5%;
 }
 .banner a button {
   color: black;
@@ -35,7 +36,7 @@
     padding-left: 4%;
     padding-right: 4%;
   }
-  .banner div {
+  .banner title {
     margin-left: 5%;
     margin-right: 5%;
   }
@@ -63,10 +64,10 @@
     padding-left: 4%;
     padding-right: 4%;
   }
-  .banner div {
+  .banner title {
     display: flex;
     flex-direction: column;
-    width: 35%;
+    width: 45%;
     justify-content: space-around;
     padding-left: 4%;
     padding-right: 4%;

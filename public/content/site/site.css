@@ -1,6 +1,6 @@
 :root {
   --color-main: #99d9ea;
-  --color-dark: rgb(29, 83, 119);
+  --color-dark: rgb(28, 80, 114);
   --color-light: rgb(192, 195, 197);
   --fade-in-time: fadeIn 1.5s;
 }
@@ -42,12 +42,19 @@ title {
   background-color: var(--color-dark);
   padding: 1%;
   margin-bottom: 2%;
-
   animation: var(--fade-in-time);
   -webkit-animation: var(--fade-in-time);
   -moz-animation: var(--fade-in-time);
   -o-animation: var(--fade-in-time);
   -ms-animation: var(--fade-in-time);
+}
+title h1,
+title h2,
+title h3,
+title h4,
+title h5,
+title h6 {
+  font-family: Martel !important;
 }
 .flex-row {
   display: flex;
