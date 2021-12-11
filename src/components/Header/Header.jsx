@@ -1,10 +1,27 @@
-import logo from "../../content/images/misc/logo.png";
 import "./Header.css";
+import { useEffect } from "react";
+import Picture from "components/Picture/Picture";
+import useSessionStorage from "hooks/useSessioStorage";
 
 export default function Header(params) {
   const setMobileNavOpen = params.setMobileNavOpen;
 
-  return (
+  const [text, setText] = useSessionStorage("headerText");
+  useEffect(() => {
+    text ??
+      fetch("/api/text/Header")
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          setText(() => data.content);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+  });
+
+  return text ? (
     <header>
       <div
         className="mobile-nav-icon"
@@ -17,12 +34,12 @@ export default function Header(params) {
         <div></div>
       </div>
       <div className="flex-inline">
-        <img src={logo} alt="cjt devs" />
-        <h1 style={{ marginTop: "15px", marginLeft: "5px" }}>CJT Devs</h1>
+        <Picture s3ImgKey={text.pic.s3ImgKey} alt={text.pic.alt} />
+        <h1 style={{ marginTop: "15px", marginLeft: "5px" }}>{text.title}</h1>
       </div>
       <div className="flex-row" style={{ marginTop: "10px" }}>
-        <span>Let us build your next website or mobile app</span>
+        <span>{text.subtitle}</span>
       </div>
     </header>
-  );
+  ) : null;
 }

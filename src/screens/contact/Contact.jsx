@@ -1,23 +1,36 @@
 import ContactForm from "components/Contact/Contact";
 import "./Contact.css";
-import keyboard from "../../content/images/misc/keyboard.webp";
+import Picture from "components/Picture/Picture";
+import { useEffect } from "react";
+import useSessionStorage from "hooks/useSessioStorage";
 
 export default function Contact() {
-  return (
-    <div className="fade-in contact">
+  const [text, setText] = useSessionStorage("contactText");
+  useEffect(() => {
+    text ??
+      fetch("/api/text/Contact")
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          setText(() => data.content);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+  });
+  return text ? (
+    <div className="contact">
       <title>
         <h2>
-          <u>Contact</u>
+          <u>{text.title}</u>
         </h2>
       </title>
       <div className="subtitle">
-        <span style={{ fontSize: "large" }}>​​Let's talk</span>
+        <span style={{ fontSize: "large" }}>​​{text.subtitle}</span>
       </div>
       <div className="subtitle">
-        <span style={{ fontSize: "medium" }}>
-          ​​Thanks for your interest in our services. Please fill out the email
-          form, submit and we will get back to you soon.
-        </span>
+        <span style={{ fontSize: "medium" }}>{text.infoText}</span>
       </div>
       <hr />
       <section>
@@ -25,18 +38,15 @@ export default function Contact() {
           <ContactForm />
         </div>
         <div className="img-section">
-          <img
-            src={keyboard}
-            alt="contact"
-            style={{
-              paddingTop: "2%",
-              paddingBottom: "2%",
-              maxWidth: "100%",
-              height: "auto",
-            }}
+          <Picture
+            s3ImgKey={text.pic.s3ImgKey}
+            alt={text.pic.alt}
+            style={text.pic.style}
           />
         </div>
       </section>
     </div>
+  ) : (
+    <div style={{ height: "100vh" }}> </div>
   );
 }

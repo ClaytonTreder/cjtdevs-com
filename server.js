@@ -82,6 +82,9 @@ app.use("/api/newsletter", cors(corsOptions), NewsLetterRoute);
 import TextRoute from "./src/routes/TextRoute.js";
 app.use("/api/text", cors(corsOptions), TextRoute);
 
+import S3Route from "./src/routes/S3Route.js";
+app.use("/api/s3", cors(corsOptions), S3Route);
+
 //health check
 app.use("/api/health", (req, res) => {
   res.sendStatus(200);

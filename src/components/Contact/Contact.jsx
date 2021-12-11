@@ -1,14 +1,15 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import loading from "../../content/images/misc/loader.gif";
 import ReCaptchaV2 from "react-google-recaptcha";
 import contact from "modules/contact";
 import "./Contact.css";
+import useSessionStorage from "hooks/useSessioStorage";
 
 require("dotenv").config();
 
 function Contact(props) {
-  const [state, setState] = useState({
+  const [state, setState] = useSessionStorage("contactFormInfo", {
     from: null,
     subject: null,
     message: null,
@@ -18,19 +19,26 @@ function Contact(props) {
     contact: null,
   });
   useEffect(() => {
-    contact.getContact({ id: "contact" }).then((contact) => {
-      setState((prevState) => ({
-        ...prevState,
-        contact: contact.data ? contact.data : null,
-      }));
-    });
+    state.contact ??
+      contact.getContact({ id: "contact" }).then((contact) => {
+        setState((prevState) => ({
+          ...prevState,
+          contact: contact.data ? contact.data : null,
+        }));
+      });
     if (props?.preFilledMessage) {
       setState((prevState) => ({
         ...prevState,
         message: props.preFilledMessage,
       }));
     }
-  }, [state.success, state.loading, props.preFilledMessage]);
+  }, [
+    state.success,
+    state.loading,
+    props.preFilledMessage,
+    setState,
+    state.contact,
+  ]);
 
   const reRef = useRef(ReCaptchaV2);
 
@@ -165,22 +173,22 @@ function Contact(props) {
             <div className="text-center">
               {state.success !== null
                 ? {
-                  200: (
-                    <label className="alert-success">
-                      {state.contact.respone_messages.success}
-                    </label>
-                  ),
-                  401: (
-                    <label className="alert-danger">
-                      {state.contact.respone_messages.recapthca}
-                    </label>
-                  ),
-                  500: (
-                    <label className="alert-danger">
-                      {state.contact.respone_messages.failed}
-                    </label>
-                  ),
-                }[state.success]
+                    200: (
+                      <label className="alert-success">
+                        {state.contact.respone_messages.success}
+                      </label>
+                    ),
+                    401: (
+                      <label className="alert-danger">
+                        {state.contact.respone_messages.recapthca}
+                      </label>
+                    ),
+                    500: (
+                      <label className="alert-danger">
+                        {state.contact.respone_messages.failed}
+                      </label>
+                    ),
+                  }[state.success]
                 : null}
             </div>
           </form>

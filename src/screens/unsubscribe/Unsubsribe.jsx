@@ -11,7 +11,7 @@ export default function Unsubscribe() {
     fetch("/api/newsletter/" + email, { method: "DELETE" }).finally(() => {
       setLoading(false);
     });
-  }, []);
+  }, [loc.search]);
   return (
     <div
       style={{ display: "flex", justifyContent: "center", paddingTop: "5%" }}

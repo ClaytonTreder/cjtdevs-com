@@ -1,17 +1,16 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, Fragment } from "react";
 import { useLocation } from "react-router";
 
 import "./Services.css";
 
-import website from "../../content/images/misc/website.webp";
-import phone from "../../content/images/misc/phone.webp";
-import cloud from "../../content/images/misc/cloud.webp";
 import Contact from "components/Contact/Contact";
+import Picture from "components/Picture/Picture";
+import scrollTo from "modules/functions/scrollTo.js";
+import useSessionStorage from "hooks/useSessioStorage";
 
 export default function Services() {
-  const web = useRef(null);
-  const mobile = useRef(null);
-  const software = useRef(null);
+  const [text, setText] = useSessionStorage("services");
+
   const talk = useRef(null);
 
   const loc = useLocation();
@@ -25,90 +24,73 @@ export default function Services() {
   useEffect(() => {
     switch (loc.hash) {
       case "#site":
-        web.current.scrollIntoView(scrollOptions);
+        text && scrollTo(text?.services[0]?.p_id, scrollOptions);
         break;
       case "#app":
-        mobile.current.scrollIntoView(scrollOptions);
+        text && scrollTo(text?.services[1]?.p_id, scrollOptions);
         break;
       case "#software":
-        software.current.scrollIntoView(scrollOptions);
+        text && scrollTo(text?.services[2]?.p_id, scrollOptions);
         break;
       default:
         break;
     }
   });
-  return (
+
+  useEffect(() => {
+    text ??
+      fetch("/api/text/Services")
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          setText(() => data.content);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+  });
+
+  return text ? (
     <div className="services">
       <title>
         <h2>
-          <u>Available Services</u>
+          <u>{text.title}</u>
         </h2>
       </title>
-      <h4>Website Development</h4>
-      <section>
-        <p ref={web}>
-          <img src={website} alt="computer" style={{ float: "right" }} />
-          Using the latest platforms, frameworks, and languages, we provide an
-          all-in-one solution for your company's website. Creating, deploying,
-          and hosting a website can be a hassle. Let us handle it for you. Our
-          developers have the experience to bring you your dream site, with
-          ease.
-        </p>
-      </section>
-      <div className="btn-container">
-        <button
-          onClick={() => {
-            talk.current.scrollIntoView(scrollOptions);
-          }}
-        >
-          Let's develop it
-        </button>
-      </div>
-      <hr />
-      <h4>Mobile App Creation</h4>
-      <section>
-        <p ref={mobile}>
-          <img src={phone} alt="phone" style={{ float: "left" }} />
-          Everyone has an idea for an app these days and we think you have a
-          great one! And while you were busy coming up with the idea, we were
-          learning how to create it. Now that we're here let's get this amazing
-          idea out of your head and into consumer's hands.
-        </p>
-      </section>
-      <div className="btn-container">
-        <button
-          onClick={() => {
-            talk.current.scrollIntoView(scrollOptions);
-          }}
-        >
-          Let's create it
-        </button>
-      </div>
-      <hr />
-      <h4>Software Solutions</h4>
-      <section>
-        <p ref={software}>
-          <img src={cloud} alt="cloud" style={{ float: "right" }} />
-          Software development comes in many shapes and forms. We don't
-          discriminate. Let our developers take a deep dive into what you need.
-          Whether it is cloud hosting, continuous integration, or you just need
-          a shopping cart added to your site, we are here for you!
-        </p>
-      </section>
-      <div className="btn-container">
-        <button
-          onClick={() => {
-            talk.current.scrollIntoView(scrollOptions);
-          }}
-        >
-          Let's solve it
-        </button>
-      </div>
-      <hr />
-      <h4>Let's Talk</h4>
+      {text.services?.map((service, i) => {
+        return (
+          <Fragment key={i}>
+            <h4>{service.title}t</h4>
+            <section>
+              <p id={service.p_id}>
+                <Picture
+                  s3ImgKey={service.s3ImgKey}
+                  alt={service.imgAlt}
+                  style={{ float: service.imgFloat }}
+                />
+                {service.p_text}
+              </p>
+            </section>
+            <div className="btn-container">
+              <button
+                onClick={() => {
+                  talk.current.scrollIntoView(scrollOptions);
+                }}
+              >
+                {service.buttonText}
+              </button>
+            </div>
+            <hr />
+          </Fragment>
+        );
+      })}
+      <h4>{text.contact_title}</h4>
       <div className="contact-container" ref={talk}>
         <Contact />
       </div>
     </div>
+  ) : (
+    <div style={{ height: "100vh" }}></div>
   );
 }

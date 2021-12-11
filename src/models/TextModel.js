@@ -15,9 +15,6 @@ const textSchema = new mongoose.Schema({
   id: {
     type: String,
   },
-  section: {
-    type: String,
-  },
   content: {},
 });
 

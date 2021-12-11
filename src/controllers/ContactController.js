@@ -5,13 +5,3 @@ export async function readOne(id, callback) {
     return callback(err, contact);
   });
 }
-export async function update(id, contact, callback) {
-  return await ContactModel.findOneAndUpdate(
-    { id: id },
-    contact,
-    { useFindAndModify: false },
-    (err, contact) => {
-      return callback(err, contact);
-    }
-  );
-}

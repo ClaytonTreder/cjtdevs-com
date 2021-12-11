@@ -1,35 +1,52 @@
 import Information from "components/Information/Information";
 import NewsLetter from "components/NewsLetter/NewsLetter";
-import { Fragment } from "react";
+import Picture from "components/Picture/Picture";
+import useSessionStorage from "hooks/useSessioStorage";
+import { useEffect } from "react";
 import Banner from "../../components/Banner/Banner";
-import coffee from "../../content/images/misc/coffee.png";
-import portfolio from "../../content/images/misc/portfolio.png";
 import "./Home.css";
+
 function Home() {
-  return (
-    <Fragment>
-      <Banner />
+  const [text, setText] = useSessionStorage("homeText");
+  useEffect(() => {
+    text ??
+      fetch("/api/text/Home")
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          setText(() => data.content);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+  });
+  return text ? (
+    <div>
+      <Banner lines={text.banner.lines} buttons={text.banner.buttons} />
       <div style={{ paddingBottom: "5%", paddingTop: "7%" }}>
-        <div style={{ paddingBottom: "4% " }}>
-          <NewsLetter />
-        </div>
-        <Information />
+        {text.showNewsLetter ? (
+          <div style={{ paddingBottom: "4% " }}>
+            <NewsLetter />
+          </div>
+        ) : null}
+        <Information info={text.information} />
       </div>
       <div className="base-links">
-        <div className="flex-inline">
-          <img src={coffee} alt="coffee" />
-          <a href="/contact">
-            <button>Schedule a free consultation now</button>
-          </a>
-        </div>
-        <div className="flex-inline">
-          <img src={portfolio} alt="portfolio" />
-          <a href="/clients">
-            <button>View our portfolio</button>
-          </a>
-        </div>
+        {text.callToAction.map((action) => {
+          return (
+            <div className="flex-inline">
+              <Picture s3ImgKey={action.pic.s3ImgKey} alt={action.pic.alt} />
+              <a href="/contact">
+                <button>{action.text}</button>
+              </a>
+            </div>
+          );
+        })}
       </div>
-    </Fragment>
+    </div>
+  ) : (
+    <div style={{ height: "100vh" }}></div>
   );
 }
 

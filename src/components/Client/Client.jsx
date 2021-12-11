@@ -1,13 +1,13 @@
 import "./Client.css";
-
+import Picture from "components/Picture/Picture";
 export default function Client(params) {
   return (
     <div className="client">
       {params.link ? (
         <a href={params.link}>
           <span>{params.title}</span>
-          <img
-            src={params.img}
+          <Picture
+            s3ImgKey={params.s3ImgKey}
             alt={params.alt}
             style={{
               maxWidth: "100%",
@@ -18,8 +18,8 @@ export default function Client(params) {
       ) : (
         <div>
           <span>{params.title}</span>
-          <img
-            src={params.img}
+          <Picture
+            s3ImgKey={params.s3ImgKey}
             alt={params.alt}
             style={{
               maxWidth: "100%",
@@ -30,7 +30,7 @@ export default function Client(params) {
       )}
 
       <span className="testimonial">
-        <em>{params.tesimonial}</em>
+        <em>{params.quote}</em>
         <span> {params.author ? ` - ${params.author}` : null}</span>
       </span>
     </div>

@@ -38,7 +38,20 @@ export async function readById(_id, callback) {
 
 export async function update(query, text, callback) {
   try {
-    const updateText = await TextModel.findOneAndUpdate(query, text);
+    const updateText = await TextModel.findOneAndUpdate(query, text, {
+      useFindAndModify: false,
+    });
+    callback(null, updateText);
+  } catch (err) {
+    callback(err);
+  }
+}
+
+export async function updateOne(id, text, callback) {
+  try {
+    const updateText = await TextModel.findOneAndUpdate({ id: id }, text, {
+      useFindAndModify: false,
+    });
     callback(null, updateText);
   } catch (err) {
     callback(err);
@@ -55,7 +68,7 @@ export async function updateById(_id, text, callback) {
 
 export async function deleteOne(query, callback) {
   try {
-    await TextModel.findOneAndDelete(query);
+    await TextModel.findOneAndDelete(query, { useFindAndModify: false });
     callback(null);
   } catch (err) {
     callback(err);

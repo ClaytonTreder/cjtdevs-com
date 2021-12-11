@@ -1,25 +1,21 @@
 import "./Banner.css";
 
-export default function Banner() {
+export default function Banner(props) {
   return (
     <div className="banner fade-in">
       <div>
-        <h3>Detroit-based software developers</h3>
-        <h3>Ready to take on your next project</h3>
+        {props.lines.map((line) => {
+          return <h3>{line}</h3>;
+        })}
       </div>
       <ribbon>
-        <a href="/services#site">
-          {" "}
-          <button>I need a website</button>{" "}
-        </a>
-        <a href="/services#app">
-          {" "}
-          <button>I need an app</button>{" "}
-        </a>
-        <a href="/services#software">
-          {" "}
-          <button>I need software</button>{" "}
-        </a>
+        {props.buttons.map((button) => {
+          return (
+            <a href={button.link}>
+              <button>{button.text}</button>
+            </a>
+          );
+        })}
       </ribbon>
     </div>
   );

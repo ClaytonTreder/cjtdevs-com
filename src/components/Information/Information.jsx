@@ -1,39 +1,18 @@
 import "./Information.css";
+import Picture from "components/Picture/Picture";
 
-import website from "../../content/images/misc/website.webp";
-import phone from "../../content/images/misc/phone.webp";
-import cloud from "../../content/images/misc/cloud.webp";
-
-export default function Information() {
+export default function Information(props) {
   return (
     <div className="information">
-      <section>
-        <img src={website} alt="computer" />
-        <hr />
-        <p>
-          We use the latest techniques and modern designs to build or improve
-          your website. Ready for all devices. Mobile friendly layouts that
-          convert views to sales quickly.
-        </p>
-      </section>
-      <section>
-        <img src={phone} alt="phone" />
-        <hr />
-        <p>
-          Today's ecosystem demands apps to give you a competitive edge. Let us
-          help you build an app that exceeds expectations and does the amazing
-          things you expect from a professional app.
-        </p>
-      </section>
-      <section>
-        <img src={cloud} alt="cloud" />
-        <hr />
-        <p>
-          Our developers can create custom software solutions allowing your IT
-          infrastructure to save you money. Custom software that will give you
-          enterprise control over your business operations.
-        </p>
-      </section>
+      {props.info.map((info) => {
+        return (
+          <section>
+            <Picture s3ImgKey={info.pic.s3ImgKey} alt={info.pic.alt} />
+            <hr />
+            <p>{info.text}</p>
+          </section>
+        );
+      })}
     </div>
   );
 }

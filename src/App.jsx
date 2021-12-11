@@ -39,8 +39,8 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/newsletter" element={<NewsLetter />} />
             <Route path="/services" element={<Services />} />
-            <Route path="*" element={<NotFound />} />
             <Route path="/user/unsubscribe" element={<Unsubscribe />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
         <Footer />
