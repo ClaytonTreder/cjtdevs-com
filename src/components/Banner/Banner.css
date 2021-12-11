@@ -28,6 +28,7 @@
   .banner {
     display: flex;
     flex-direction: column;
+    padding-bottom: 2%;
   }
   .banner ribbon {
     display: flex;
@@ -37,11 +38,15 @@
     padding-right: 4%;
   }
   .banner title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     margin-left: 5%;
     margin-right: 5%;
   }
   .banner button {
     width: 25%;
+    margin-bottom: 5%;
   }
 }
 
@@ -67,7 +72,7 @@
   .banner title {
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 55%;
     justify-content: space-around;
     padding-left: 4%;
     padding-right: 4%;
