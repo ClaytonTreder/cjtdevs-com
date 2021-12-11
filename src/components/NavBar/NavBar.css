@@ -15,7 +15,7 @@ a:hover nav,
 a:hover nav :not(a:hover .arrow-left-bottom),
 a:hover nav :not(a:hover .arrow-left-top) {
   transition: 0.5s;
-  color: white !important;
+  color: #f6f8f8 !important;
   background-color: var(--color-dark);
   height: 50px;
 }
