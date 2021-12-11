@@ -1,15 +1,14 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import loading from "../../content/images/misc/loader.gif";
 import ReCaptchaV2 from "react-google-recaptcha";
 import contact from "modules/contact";
 import "./Contact.css";
-import useSessionStorage from "hooks/useSessioStorage";
 
 require("dotenv").config();
 
 function Contact(props) {
-  const [state, setState] = useSessionStorage("contactFormInfo", {
+  const [state, setState] = useState({
     from: null,
     subject: null,
     message: null,
