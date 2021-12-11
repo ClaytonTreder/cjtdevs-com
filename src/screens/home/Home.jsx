@@ -37,7 +37,7 @@ function Home() {
           return (
             <div className="flex-inline">
               <Picture s3ImgKey={action.pic.s3ImgKey} alt={action.pic.alt} />
-              <a href="/contact">
+              <a href={action.url}>
                 <button>{action.text}</button>
               </a>
             </div>
