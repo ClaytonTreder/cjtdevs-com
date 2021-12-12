@@ -1,9 +1,10 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
 
-const passport = require("passport");
+import passport from "passport";
 
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 
 router.get(
   "/login",
@@ -47,5 +48,4 @@ router.get("/loggedIn", (req, res) => {
   }
 });
 
-
-module.exports = router;
+export default router;

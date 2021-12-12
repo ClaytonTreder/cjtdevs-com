@@ -1,6 +1,6 @@
-const mailer = require("../modules/mailer");
-const axios = require("axios");
-exports.post_email = async (req, callback) => {
+import { sendEMail } from "../modules/mailer.js";
+import axios from "axios";
+export function post_email(req, callback) {
   axios({
     method: "POST",
     url: `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RE_SECRET}&response=${req.body.token}`,
@@ -10,7 +10,7 @@ exports.post_email = async (req, callback) => {
   })
     .then(async (verification) => {
       if (verification.data.success) {
-        (await mailer.sendEMail(req.body))
+        (await sendEMail(req.body))
           ? callback(null, true)
           : callback("Mailer error", null);
       } else {
@@ -20,4 +20,4 @@ exports.post_email = async (req, callback) => {
     .catch((err) => {
       callback(err, null);
     });
-};
+}

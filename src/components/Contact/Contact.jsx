@@ -1,8 +1,9 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import loading from "../../content/images/misc/loader.gif";
 import ReCaptchaV2 from "react-google-recaptcha";
 import contact from "modules/contact";
+import "./Contact.css";
 
 require("dotenv").config();
 
@@ -17,19 +18,26 @@ function Contact(props) {
     contact: null,
   });
   useEffect(() => {
-    contact.getContact({ id: "contact" }).then((contact) => {
-      setState((prevState) => ({
-        ...prevState,
-        contact: contact.data ? contact.data : null,
-      }));
-    });
+    state.contact ??
+      contact.getContact({ id: "contact" }).then((contact) => {
+        setState((prevState) => ({
+          ...prevState,
+          contact: contact.data ? contact.data : null,
+        }));
+      });
     if (props?.preFilledMessage) {
       setState((prevState) => ({
         ...prevState,
         message: props.preFilledMessage,
       }));
     }
-  }, [state.success, state.loading]);
+  }, [
+    state.success,
+    state.loading,
+    props.preFilledMessage,
+    setState,
+    state.contact,
+  ]);
 
   const reRef = useRef(ReCaptchaV2);
 
@@ -40,11 +48,10 @@ function Contact(props) {
   } = useForm();
 
   return (
-    <div>
+    <div className="contact-form">
       {state.contact ? (
         <div className="fade-in-text col-md-12 px-0">
           <div className="d-flex justify-content-center mb-3 mt-2">
-            <h4>{state.contact.title}</h4>
             {state.loading === true ? (
               <img
                 src={loading}
@@ -90,7 +97,7 @@ function Contact(props) {
                 {...register("email", {
                   required: true,
                   pattern:
-                    /^[A-Za-z0-9\.]{1,}@{1}[A-Za-z0-9]{2,}\.{1}[A-Za-z0-9]{2,5}$/gm,
+                    /^[A-Za-z0-9]{1,}@{1}[A-Za-z0-9]{2,}\.{1}[A-Za-z0-9]{2,5}$/gm,
                 })}
                 onChange={(e) =>
                   setState((prevState) => ({
@@ -109,7 +116,7 @@ function Contact(props) {
               <input
                 name="subject"
                 type="text"
-                className="form-control my-1 col-12"
+                className="form-control col-12"
                 {...register("subject", { required: true })}
                 placeholder={state.contact.placeholder.subject}
                 onChange={(e) =>
@@ -184,16 +191,8 @@ function Contact(props) {
                 : null}
             </div>
           </form>
-          <div className="text-center mt-5">
-            <p>
-              {state.contact.email_info + " "}
-              <a href={"mailto:" + state.contact.email.info}>
-                {state.contact.email.info}
-              </a>
-            </p>
-          </div>
         </div>
-      ) : null}{" "}
+      ) : null}
     </div>
   );
 }

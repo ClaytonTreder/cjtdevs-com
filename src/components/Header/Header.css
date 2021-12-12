@@ -1,32 +1,44 @@
-
-
 header {
-    background-color: rgb(192,195,197);
+  background-color: rgb(192, 195, 197);
 }
 
 header img {
-    object-fit: cover;
-    object-position: 20% 10%;
-    border-radius: 100%;
-    height: 8em;
+  object-fit: cover;
+  height: 6em;
+  width: 10em;
+  border-radius: 0.25rem;
 }
 
 /* mobile */
 @media (max-width: 767px) {
-    header {
-        padding-left: 1%;
-        padding-right: 1%;
-        padding-top: 1%;
-        padding-bottom: 1%;
-    }
+  header {
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    position: sticky;
+    top: 0;
+    z-index: 90;
+  }
+
+  .mobile-nav-icon {
+    float: right;
+    padding: 1%;
+  }
+  .mobile-nav-icon div {
+    width: 30px;
+    height: 3px;
+    background-color: rgba(0, 0, 0, 0.753);
+    margin-bottom: 6px;
+  }
 }
 
 /* desktop */
 @media (min-width: 768px) {
-    header {
-        padding-left: 30%;
-        padding-right: 30%;
-        padding-top: 1%;
-        padding-bottom: 1%;
-    }
+  header {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
 }

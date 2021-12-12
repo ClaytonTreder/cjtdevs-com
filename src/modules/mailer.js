@@ -1,4 +1,4 @@
-const mailer = require("nodemailer");
+import mailer from "nodemailer";
 
 const transporterOptions = {
   host: "smtp.gmail.com",
@@ -14,7 +14,7 @@ const transporterOptions = {
 
 const transporter = mailer.createTransport(transporterOptions);
 
-exports.sendEMail = async (mailOptions) => {
+export async function sendEMail(mailOptions) {
   await transporter.verify();
   return await transporter
     .sendMail(mailOptions)
@@ -25,4 +25,4 @@ exports.sendEMail = async (mailOptions) => {
       console.log(err);
       return false;
     });
-};
+}
