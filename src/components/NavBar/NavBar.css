@@ -3,7 +3,7 @@ nav {
   padding-bottom: 12px;
   padding-left: 36px;
   padding-right: 36px;
-  color: black !important;
+  color: #f6f8f8 !important;
   font-family: Cabin;
   font-size: large;
   border-top-right-radius: 0.25rem;
@@ -16,7 +16,7 @@ a:hover nav :not(a:hover .arrow-left-bottom),
 a:hover nav :not(a:hover .arrow-left-top) {
   transition: 0.5s;
   color: #f6f8f8 !important;
-  background-color: var(--color-dark);
+  background-color: #122d42;
   height: 50px;
 }
 
@@ -36,7 +36,7 @@ a:hover nav :not(a:hover .arrow-left-top) {
     padding-right: 2%;
     height: 100%;
     padding-left: 20%;
-    background-color: white;
+    background-color: black;
   }
   .navbar {
     display: none;
@@ -73,7 +73,7 @@ a:hover nav :not(a:hover .arrow-left-top) {
     justify-content: space-between;
     padding-right: 20%;
     padding-left: 20%;
-    background-color: var(--color-main);
+    background-color: black;
     padding-top: 1%;
     padding-bottom: 1%;
   }
@@ -104,7 +104,7 @@ a:hover nav :not(a:hover .arrow-left-top) {
     border-bottom: 0px solid transparent;
     display: block;
     transition: 0.5s;
-    border-right-color: var(--color-dark);
+    border-right-color: #122d42;
   }
   a:hover .arrow-left-bottom {
     width: 0;
@@ -113,7 +113,7 @@ a:hover nav :not(a:hover .arrow-left-top) {
     border-bottom: 25px solid transparent;
     display: block;
     transition: 0.5s;
-    border-right-color: var(--color-dark);
+    border-right-color: #122d42;
   }
   .nav-select .arrow-left-top {
     width: 0;
@@ -122,7 +122,7 @@ a:hover nav :not(a:hover .arrow-left-top) {
     border-top: 25px solid transparent;
     border-bottom: 0px solid transparent;
     display: block;
-    border-right-color: var(--color-dark);
+    border-right-color: #122d42;
   }
   .nav-select .arrow-left-bottom {
     width: 0;
@@ -131,6 +131,6 @@ a:hover nav :not(a:hover .arrow-left-top) {
     border-top: 0px solid transparent;
     border-bottom: 25px solid transparent;
     display: block;
-    border-right-color: var(--color-dark);
+    border-right-color: #122d42;
   }
 }

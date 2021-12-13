@@ -1,6 +1,6 @@
 import "./Header.css";
 import { useEffect } from "react";
-import Picture from "components/Picture/Picture";
+import logo from "../../content/images/misc/logo.svg";
 import useSessionStorage from "hooks/useSessioStorage";
 
 export default function Header(params) {
@@ -33,13 +33,7 @@ export default function Header(params) {
         <div></div>
         <div></div>
       </div>
-      <div className="flex-inline">
-        <Picture s3ImgKey={text.pic.s3ImgKey} alt={text.pic.alt} />
-        <h1 style={{ marginTop: "15px", marginLeft: "5px" }}>{text.title}</h1>
-      </div>
-      <div className="flex-row" style={{ marginTop: "10px" }}>
-        <span>{text.subtitle}</span>
-      </div>
+      <img src={logo} alt="logo" />
     </header>
   ) : null;
 }

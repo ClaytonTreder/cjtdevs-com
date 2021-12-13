@@ -8,6 +8,8 @@ import Picture from "components/Picture/Picture";
 import scrollTo from "modules/functions/scrollTo.js";
 import useSessionStorage from "hooks/useSessioStorage";
 
+import earth from "../../content/images/misc/earth.jpg";
+
 export default function Services() {
   const [text, setText] = useSessionStorage("services");
 
@@ -58,9 +60,20 @@ export default function Services() {
           <u>{text.title}</u>
         </h2>
       </title>
+      <img
+        src={earth}
+        alt=""
+        style={{
+          zIndex: "-100",
+          width: "100vw",
+          height: "100vh",
+          position: "fixed",
+          top: 0,
+        }}
+      />
       {text.services?.map((service, i) => {
         return (
-          <Fragment key={i}>
+          <div style={{ backgroundColor: "white", margin: "10%" }} key={i}>
             <h4>{service.title}</h4>
             <section>
               <p id={service.p_id}>
@@ -82,11 +95,11 @@ export default function Services() {
               </button>
             </div>
             <hr />
-          </Fragment>
+          </div>
         );
       })}
-      <h4>{text.contact_title}</h4>
       <div className="contact-container" ref={talk}>
+        <h4>{text.contact_title}</h4>
         <Contact />
       </div>
     </div>

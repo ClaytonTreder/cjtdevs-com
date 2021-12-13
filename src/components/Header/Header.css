@@ -1,21 +1,14 @@
 header {
-  background-color: rgb(192, 195, 197);
+  background-color: #122d42;
 }
 
 header img {
-  object-fit: cover;
-  height: 6em;
-  width: 10em;
-  border-radius: 0.25rem;
+  height: auto;
+  width: 100%;
 }
-
 /* mobile */
 @media (max-width: 767px) {
   header {
-    padding-left: 1%;
-    padding-right: 1%;
-    padding-top: 1%;
-    padding-bottom: 1%;
     position: sticky;
     top: 0;
     z-index: 90;
@@ -24,6 +17,7 @@ header img {
   .mobile-nav-icon {
     float: right;
     padding: 1%;
+    z-index: 100;
   }
   .mobile-nav-icon div {
     width: 30px;
@@ -35,10 +29,9 @@ header img {
 
 /* desktop */
 @media (min-width: 768px) {
-  header {
-    padding-left: 20%;
-    padding-right: 20%;
-    padding-top: 1%;
-    padding-bottom: 1%;
+  header img {
+    height: auto;
+    width: 60%;
+    margin-left: 20%;
   }
 }
