@@ -5,7 +5,7 @@ import useSessionStorage from "hooks/useSessioStorage";
 import { useEffect } from "react";
 import Banner from "../../components/Banner/Banner";
 import "./Home.css";
-
+import chip from "content/images/misc/chip.jpg";
 function Home() {
   const [text, setText] = useSessionStorage("homeText");
   useEffect(() => {
@@ -23,10 +23,18 @@ function Home() {
   });
   return text ? (
     <div>
+      <img src={chip} alt="micro-chip" className="bg-img" />
       <Banner lines={text.banner.lines} buttons={text.banner.buttons} />
+
       <div style={{ paddingBottom: "5%", paddingTop: "7%" }}>
         {text.showNewsLetter ? (
-          <div style={{ paddingBottom: "4% " }}>
+          <div
+            style={{
+              backgroundColor: "#1d496aea",
+              paddingBottom: "4% ",
+              marginBottom: "4% ",
+            }}
+          >
             <NewsLetter />
           </div>
         ) : null}
@@ -46,7 +54,7 @@ function Home() {
       </div>
     </div>
   ) : (
-    <div style={{ height: "100vh" }}></div>
+    <img src={chip} alt="micro-chip" className="bg-img" />
   );
 }
 

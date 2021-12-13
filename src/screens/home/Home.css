@@ -22,17 +22,19 @@
   .base-links {
     padding: 2.5%;
     margin-bottom: 10%;
-    background-color: var(--color-dark);
+    background-color: #1d496aea;
   }
 }
 
 /* desktop */
 @media (min-width: 768px) {
   .base-links {
+    margin-top: 5%;
     margin-left: 30%;
     margin-right: 30%;
     padding: 5%;
     margin-bottom: 5%;
-    background-color: var(--color-dark);
+    background-color: #1d496aea;
+    border-radius: 1rem;
   }
 }

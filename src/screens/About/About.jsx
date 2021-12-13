@@ -2,7 +2,7 @@ import "./About.css";
 import Picture from "components/Picture/Picture";
 import { Fragment, useEffect } from "react";
 import useSessionStorage from "hooks/useSessioStorage";
-
+import earth from "../../content/images/misc/earth.jpg";
 function About() {
   const [text, setText] = useSessionStorage("aboutText");
   useEffect(() => {
@@ -20,6 +20,7 @@ function About() {
   });
   return text ? (
     <div className="about">
+      <img src={earth} alt="earth" className="bg-img" />
       <title>
         <h2>
           <u>{text.title}</u>
@@ -82,7 +83,7 @@ function About() {
       </div>
     </div>
   ) : (
-    <div style={{ height: "100vh" }}></div>
+    <img src={earth} alt="earth" className="bg-img" />
   );
 }
 

@@ -1,4 +1,4 @@
-import { useRef, useEffect, Fragment } from "react";
+import { useRef, useEffect } from "react";
 import { useLocation } from "react-router";
 
 import "./Services.css";
@@ -7,6 +7,8 @@ import Contact from "components/Contact/Contact";
 import Picture from "components/Picture/Picture";
 import scrollTo from "modules/functions/scrollTo.js";
 import useSessionStorage from "hooks/useSessioStorage";
+
+import chip from "../../content/images/misc/chip2.jpg";
 
 export default function Services() {
   const [text, setText] = useSessionStorage("services");
@@ -58,9 +60,18 @@ export default function Services() {
           <u>{text.title}</u>
         </h2>
       </title>
+      <img src={chip} alt="chip" className="bg-img" />
       {text.services?.map((service, i) => {
         return (
-          <Fragment key={i}>
+          <div
+            style={{
+              backgroundColor: "rgba(255, 255, 255, 0.932)",
+              margin: "10%",
+              padding: "2.5%",
+              borderRadius: "1rem",
+            }}
+            key={i}
+          >
             <h4>{service.title}</h4>
             <section>
               <p id={service.p_id}>
@@ -82,15 +93,15 @@ export default function Services() {
               </button>
             </div>
             <hr />
-          </Fragment>
+          </div>
         );
       })}
-      <h4>{text.contact_title}</h4>
       <div className="contact-container" ref={talk}>
+        <h4 className="lets-talk-h">{text.contact_title}</h4>
         <Contact />
       </div>
     </div>
   ) : (
-    <div style={{ height: "100vh" }}></div>
+    <img src={chip} alt="chip" className="bg-img" />
   );
 }

@@ -15,7 +15,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Martel;
+  font-family: Cabin;
 }
 
 input,
@@ -36,10 +36,12 @@ body,
 }
 a,
 a:hover {
+  color: #122d42 !important;
   text-decoration: none;
 }
 title {
-  background-color: var(--color-dark);
+  background-color: black;
+  color: white !important;
   padding: 1%;
   margin-bottom: 2%;
   animation: var(--fade-in-time);
@@ -120,5 +122,27 @@ button {
   }
   100% {
     opacity: 1;
+  }
+}
+
+/* mobile */
+@media (max-width: 767px) {
+  .bg-img {
+    z-index: -100;
+    width: auto;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+  }
+}
+
+/* desktop */
+@media (min-width: 768px) {
+  .bg-img {
+    z-index: -100;
+    width: 100vw;
+    height: auto;
+    position: fixed;
+    top: 0;
   }
 }

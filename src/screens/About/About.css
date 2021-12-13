@@ -1,11 +1,26 @@
 .about h2 {
-  color: var(--color-light);
+  color: white;
 }
 .about hr {
   margin-left: 20%;
   margin-right: 20%;
 }
-
+.about span,
+.about p,
+.about h5,
+.about h4,
+.about h6 {
+  text-shadow: black;
+  color: white;
+}
+.about .meet-us-container,
+.about .meet-us-container span,
+.about .meet-us-container p,
+.about .meet-us-container h5,
+.about .meet-us-container h4,
+.about .meet-us-container h6 {
+  color: black;
+}
 .about a {
   color: black !important;
 }
@@ -28,7 +43,7 @@
   .about .meet-us-container {
     padding-top: 2.5%;
     padding-bottom: 2.5%;
-    background-color: var(--color-light);
+    background-color: rgb(192, 195, 197, 0.945);
     margin-bottom: 3%;
   }
   .about .meet-us {
@@ -94,7 +109,7 @@
   .about .meet-us-container {
     padding-top: 2.5%;
     padding-bottom: 2.5%;
-    background-color: var(--color-light);
+    background-color: rgb(192, 195, 197, 0.945);
     margin-bottom: 3%;
   }
   .about .meet-us {
