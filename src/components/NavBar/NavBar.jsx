@@ -65,35 +65,35 @@ function Navs() {
           <div className="arrow-left-top"></div>
           <div className="arrow-left-bottom"></div>
         </div>
-        <nav>Home</nav>
+        <span className="nav">Home</span>
       </a>
       <a ref={about} href="/about" className="flex-inline">
         <div>
           <div className="arrow-left-top"></div>
           <div className="arrow-left-bottom"></div>
         </div>
-        <nav>About</nav>
+        <span className="nav">About</span>
       </a>
       <a ref={services} href="/services" className="flex-inline">
         <div>
           <div className="arrow-left-top"></div>
           <div className="arrow-left-bottom"></div>
         </div>
-        <nav>Services</nav>
+        <span className="nav">Services</span>
       </a>
       <a ref={contact} href="/contact" className="flex-inline">
         <div>
           <div className="arrow-left-top"></div>
           <div className="arrow-left-bottom"></div>
         </div>
-        <nav>Contact</nav>
+        <span className="nav">Contact</span>
       </a>
       <a ref={clients} href="/clients" className="flex-inline">
         <div>
           <div className="arrow-left-top"></div>
           <div className="arrow-left-bottom"></div>
         </div>
-        <nav>Clients</nav>
+        <span className="nav">Clients</span>
       </a>
     </Fragment>
   );

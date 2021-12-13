@@ -1,11 +1,13 @@
 .clients h2 {
-  color: var(--color-light);
+  color: white;
 }
 .clients hr {
   margin-left: 20%;
   margin-right: 20%;
 }
-
+.clients {
+  color: white !important ;
+}
 /* mobile */
 @media (max-width: 767px) {
   .clients title {

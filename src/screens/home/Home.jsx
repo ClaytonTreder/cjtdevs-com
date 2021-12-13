@@ -23,17 +23,7 @@ function Home() {
   });
   return text ? (
     <div>
-      <img
-        src={chip}
-        alt="micro-chip"
-        style={{
-          zIndex: "-100",
-          width: "100vw",
-          height: "100vh",
-          position: "fixed",
-          top: 0,
-        }}
-      />
+      <img src={chip} alt="micro-chip" className="bg-img" />
       <Banner lines={text.banner.lines} buttons={text.banner.buttons} />
 
       <div style={{ paddingBottom: "5%", paddingTop: "7%" }}>

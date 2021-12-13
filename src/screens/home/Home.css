@@ -22,7 +22,7 @@
   .base-links {
     padding: 2.5%;
     margin-bottom: 10%;
-    background-color: var(--color-dark);
+    background-color: #1d496aea;
   }
 }
 
@@ -35,5 +35,6 @@
     padding: 5%;
     margin-bottom: 5%;
     background-color: #1d496aea;
+    border-radius: 1rem;
   }
 }

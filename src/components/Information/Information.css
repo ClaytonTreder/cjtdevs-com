@@ -19,7 +19,7 @@
     padding-right: 20%;
     padding-top: 1%;
     padding-bottom: 1%;
-    background-color: rgb(192, 195, 197);
+    background-color: rgba(192, 195, 197, 0.945);
     color: black;
   }
 }
@@ -33,7 +33,7 @@
     padding-right: 20%;
     padding-top: 1%;
     padding-bottom: 1%;
-    background-color: rgb(192, 195, 197);
+    background-color: rgb(192, 195, 197, 0.945);
     color: black;
   }
 }

@@ -1,4 +1,4 @@
-import { useRef, useEffect, Fragment } from "react";
+import { useRef, useEffect } from "react";
 import { useLocation } from "react-router";
 
 import "./Services.css";
@@ -8,7 +8,7 @@ import Picture from "components/Picture/Picture";
 import scrollTo from "modules/functions/scrollTo.js";
 import useSessionStorage from "hooks/useSessioStorage";
 
-import earth from "../../content/images/misc/earth.jpg";
+import chip from "../../content/images/misc/chip2.jpg";
 
 export default function Services() {
   const [text, setText] = useSessionStorage("services");
@@ -60,20 +60,18 @@ export default function Services() {
           <u>{text.title}</u>
         </h2>
       </title>
-      <img
-        src={earth}
-        alt=""
-        style={{
-          zIndex: "-100",
-          width: "100vw",
-          height: "100vh",
-          position: "fixed",
-          top: 0,
-        }}
-      />
+      <img src={chip} alt="chip" className="bg-img" />
       {text.services?.map((service, i) => {
         return (
-          <div style={{ backgroundColor: "white", margin: "10%" }} key={i}>
+          <div
+            style={{
+              backgroundColor: "rgba(255, 255, 255, 0.932)",
+              margin: "10%",
+              padding: "2.5%",
+              borderRadius: "1rem",
+            }}
+            key={i}
+          >
             <h4>{service.title}</h4>
             <section>
               <p id={service.p_id}>
@@ -99,7 +97,7 @@ export default function Services() {
         );
       })}
       <div className="contact-container" ref={talk}>
-        <h4>{text.contact_title}</h4>
+        <h4 className="lets-talk-h">{text.contact_title}</h4>
         <Contact />
       </div>
     </div>

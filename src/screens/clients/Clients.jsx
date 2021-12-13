@@ -2,6 +2,7 @@ import Client from "components/Client/Client";
 import "./Clients.css";
 import { useEffect } from "react";
 import useSessionStorage from "hooks/useSessioStorage";
+import room from "../../content/images/misc/room-lights.jpg";
 
 export default function Clients() {
   const [text, setText] = useSessionStorage("clientText");
@@ -20,6 +21,7 @@ export default function Clients() {
   });
   return text ? (
     <div className="clients">
+      <img src={room} alt="room" className="bg-img" />
       <title>
         <h2>
           <u>{text.title}</u>

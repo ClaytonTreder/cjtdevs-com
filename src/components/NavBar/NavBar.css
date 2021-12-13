@@ -1,4 +1,4 @@
-nav {
+.nav {
   padding-top: 12px;
   padding-bottom: 12px;
   padding-left: 36px;
@@ -10,13 +10,13 @@ nav {
   border-bottom-right-radius: 0.25rem;
 }
 
-.nav-select nav,
-a:hover nav,
-a:hover nav :not(a:hover .arrow-left-bottom),
-a:hover nav :not(a:hover .arrow-left-top) {
+.nav-select .nav,
+a:hover .nav,
+a:hover .nav :not(a:hover .arrow-left-bottom),
+a:hover .nav :not(a:hover .arrow-left-top) {
   transition: 0.5s;
   color: #f6f8f8 !important;
-  background-color: #122d42;
+  background-color: #122d42 !important;
   height: 50px;
 }
 

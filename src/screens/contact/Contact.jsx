@@ -1,6 +1,6 @@
 import ContactForm from "components/Contact/Contact";
 import "./Contact.css";
-import Picture from "components/Picture/Picture";
+import keyboard2 from "../../content/images/misc/keyboard2.png";
 import { useEffect } from "react";
 import useSessionStorage from "hooks/useSessioStorage";
 
@@ -21,6 +21,7 @@ export default function Contact() {
   });
   return text ? (
     <div className="contact">
+      <img src={keyboard2} alt="keyboard" className="bg-img" />
       <title>
         <h2>
           <u>{text.title}</u>
@@ -36,13 +37,6 @@ export default function Contact() {
       <section>
         <div className="from-section">
           <ContactForm />
-        </div>
-        <div className="img-section">
-          <Picture
-            s3ImgKey={text.pic.s3ImgKey}
-            alt={text.pic.alt}
-            style={text.pic.style}
-          />
         </div>
       </section>
     </div>

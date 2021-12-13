@@ -20,17 +20,7 @@ function About() {
   });
   return text ? (
     <div className="about">
-      <img
-        src={earth}
-        alt="earth"
-        style={{
-          zIndex: "-100",
-          width: "100vw",
-          height: "100vh",
-          position: "fixed",
-          top: 0,
-        }}
-      />
+      <img src={earth} alt="earth" className="bg-img" />
       <title>
         <h2>
           <u>{text.title}</u>
