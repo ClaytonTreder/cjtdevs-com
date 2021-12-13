@@ -41,6 +41,6 @@ export default function Contact() {
       </section>
     </div>
   ) : (
-    <div style={{ height: "100vh" }}> </div>
+    <img src={keyboard2} alt="keyboard" className="bg-img" />
   );
 }

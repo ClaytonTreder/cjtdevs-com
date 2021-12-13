@@ -83,7 +83,7 @@ function About() {
       </div>
     </div>
   ) : (
-    <div style={{ height: "100vh" }}></div>
+    <img src={earth} alt="earth" className="bg-img" />
   );
 }
 

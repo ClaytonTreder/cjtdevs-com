@@ -54,7 +54,7 @@ function Home() {
       </div>
     </div>
   ) : (
-    <div style={{ height: "100vh" }}></div>
+    <img src={chip} alt="micro-chip" className="bg-img" />
   );
 }
 

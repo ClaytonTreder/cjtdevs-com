@@ -102,6 +102,6 @@ export default function Services() {
       </div>
     </div>
   ) : (
-    <div style={{ height: "100vh" }}></div>
+    <img src={chip} alt="chip" className="bg-img" />
   );
 }

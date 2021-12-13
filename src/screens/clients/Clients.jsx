@@ -52,6 +52,6 @@ export default function Clients() {
       </section>
     </div>
   ) : (
-    <div style={{ height: "100vh" }}></div>
+    <img src={room} alt="room" className="bg-img" />
   );
 }
