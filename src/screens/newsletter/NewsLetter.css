@@ -1,31 +1,36 @@
-.newsletter section {
+.newsletter-page section {
   padding-left: 25%;
   padding-right: 25%;
   padding-top: 2.5%;
 }
-.newsletter h2 {
-  color: white;
+.newsletter-page h2 {
+  color: var(--color-white);
 }
-.newsletter div {
-  color: black !important;
+.newsletter-page div {
+  color: var(--color-black) !important;
+}
+.newsletter-page {
+  background-color: var(--color-black);
 }
 /* mobile */
 @media (max-width: 767px) {
-  .newsletter title {
+  .newsletter-page title {
     display: flex;
     flex-direction: row;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: var(--mobile-padding-x);
+    padding-right: var(--mobile-padding-x);
+    margin-bottom: 25%;
   }
 }
 
 /* desktop */
 @media (min-width: 768px) {
-  .newsletter title {
+  .newsletter-page title {
     display: flex;
     flex-direction: row;
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: var(--desktop-padding-x);
+    padding-right: var(--desktop-padding-x);
+    margin-bottom: var(--desktop-margin-y);
   }
   .newsletter section {
     display: flex;
