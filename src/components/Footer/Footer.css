@@ -1,11 +1,11 @@
 footer a {
   padding: 0%;
-  color: black !important;
+  color: var(--color-black) !important;
   border-radius: 0.25rem;
   max-height: 50px;
 }
 footer img {
-  margin-right: 5px;
+  margin-right: 2px;
   height: 1rem;
   max-width: 1rem;
 }
@@ -30,8 +30,8 @@ footer section {
     font-size: x-small;
   }
   footer {
-    padding-left: 3%;
-    padding-right: 1%;
+    padding-left: var(--mobile-padding-x);
+    padding-right: var(--mobile-padding-x);
     padding-top: 1%;
     display: flex;
     flex-direction: row;
@@ -52,8 +52,8 @@ footer section {
     font-size: small;
   }
   footer {
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: var(--desktop-padding-x);
+    padding-right: var(--desktop-padding-x);
     padding-top: 1%;
     padding-bottom: 1%;
     display: flex;

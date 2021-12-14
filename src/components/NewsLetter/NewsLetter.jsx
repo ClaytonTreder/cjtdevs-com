@@ -44,7 +44,7 @@ export default function NewsLetter() {
 
   return (
     <div className="newsletter">
-      <div>Sign up for our news letter:</div>
+      <span>Sign up for our news letter:</span>
       <div>
         <input
           onChange={(e) => {

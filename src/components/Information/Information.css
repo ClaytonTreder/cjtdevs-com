@@ -15,12 +15,12 @@
   .information {
     display: flex;
     flex-direction: column;
-    padding-left: 20%;
-    padding-right: 20%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    background-color: rgba(192, 195, 197, 0.945);
-    color: black;
+    padding-left: var(--mobile-padding-x);
+    padding-right: var(--mobile-padding-x);
+    padding-top: var(--mobile-padding-y);
+    padding-bottom: var(--mobile-padding-y);
+    background-color: var(--color-theme-light-faded);
+    color: var(--color-black);
   }
 }
 
@@ -29,11 +29,11 @@
   .information {
     display: flex;
     flex-direction: row;
-    padding-left: 20%;
-    padding-right: 20%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    background-color: rgb(192, 195, 197, 0.945);
-    color: black;
+    padding-left: var(--desktop-padding-x);
+    padding-right: var(--desktop-padding-x);
+    padding-top: var(--desktop-padding-y);
+    padding-bottom: var(--desktop-padding-y);
+    background-color: var(--color-theme-light-faded);
+    color: var(--color-black);
   }
 }

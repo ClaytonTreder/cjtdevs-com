@@ -26,18 +26,8 @@ function Home() {
       <img src={chip} alt="micro-chip" className="bg-img" />
       <Banner lines={text.banner.lines} buttons={text.banner.buttons} />
 
-      <div style={{ paddingBottom: "5%", paddingTop: "7%" }}>
-        {text.showNewsLetter ? (
-          <div
-            style={{
-              backgroundColor: "#1d496aea",
-              paddingBottom: "4% ",
-              marginBottom: "4% ",
-            }}
-          >
-            <NewsLetter />
-          </div>
-        ) : null}
+      <div>
+        {text.showNewsLetter ? <NewsLetter /> : null}
         <Information info={text.information} />
       </div>
       <div className="base-links">
