@@ -1,11 +1,15 @@
 .services h2 {
-  color: white;
+  color: var(--color-white);
 }
 .services .lets-talk-h {
-  color: black;
+  color: var(--color-black);
 }
 .services .contact-container {
   border-radius: 1rem;
+}
+.services input[type="submit"] {
+  color: var(--color-black);
+  background-color: var(--color-theme-light) !important;
 }
 /* mobile */
 @media (max-width: 767px) {
@@ -45,11 +49,14 @@
     margin-right: 5%;
   }
   .services .contact-container {
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
     padding-top: 1%;
     padding-bottom: 1%;
-    background-color: rgba(255, 255, 255, 0.932);
+    background-color: var(--color-white-faded);
+    margin-bottom: 10%;
   }
   .services .contact-form {
     margin-bottom: 10%;
@@ -60,7 +67,6 @@
   }
   .services button {
     width: 50%;
-    color: black;
   }
   .services .btn-container {
     display: flex;
@@ -69,8 +75,8 @@
     margin-bottom: 5%;
   }
   .services .contact-form input[type="submit"] {
-    color: black;
-    background-color: rgba(255, 255, 255, 0.932);
+    color: var(--color-black);
+    background-color: var(--color-white-faded);
   }
 }
 
@@ -117,7 +123,7 @@
     margin-left: 20%;
     margin-right: 20%;
     margin-bottom: 10%;
-    background-color: rgba(255, 255, 255, 0.932);
+    background-color: var(--color-white-faded);
   }
   .services .contact-form {
     margin-bottom: 10%;
