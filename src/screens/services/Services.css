@@ -67,6 +67,7 @@
   }
   .services button {
     width: 50%;
+    color: var(--color-black);
   }
   .services .btn-container {
     display: flex;
