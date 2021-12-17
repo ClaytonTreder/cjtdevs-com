@@ -8,7 +8,7 @@ export default function Unsubscribe() {
   useEffect(() => {
     setLoading(true);
     const email = loc.search.replace("?email=", "");
-    fetch("/api/newsletter/" + email, { method: "DELETE" }).finally(() => {
+    fetch({ url: "/api/newsletter/" + email, method: "DELETE" }).finally(() => {
       setLoading(false);
     });
   }, [loc.search]);
