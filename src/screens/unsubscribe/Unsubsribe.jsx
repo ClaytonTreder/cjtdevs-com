@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router";
 import { useState } from "react";
+import axios from "axios";
 
 export default function Unsubscribe() {
   const loc = useLocation();
@@ -8,7 +9,8 @@ export default function Unsubscribe() {
   useEffect(() => {
     setLoading(true);
     const email = loc.search.replace("?email=", "");
-    fetch("/api/newsletter/" + email, { method: "DELETE" }).finally(() => {
+    console.log(email);
+    axios.delete("/api/newsletter/" + email).finally(() => {
       setLoading(false);
     });
   }, [loc.search]);
