@@ -8,10 +8,10 @@ import Picture from "components/Picture/Picture";
 import scrollTo from "modules/functions/scrollTo.js";
 import useSessionStorage from "hooks/useSessioStorage";
 
-import chip from "../../content/images/misc/chip2.jpg";
-
 export default function Services() {
-  const [text, setText] = useSessionStorage("services");
+  const [text, setText] = useSessionStorage(
+    "servicesText" + new Date().getHours()
+  );
 
   const talk = useRef(null);
 
@@ -60,7 +60,11 @@ export default function Services() {
           <u>{text.title}</u>
         </h2>
       </title>
-      <img src={chip} alt="chip" className="bg-img" />
+      <Picture
+        s3ImgKey={text.pic.s3ImgKey}
+        alt={text.pic.alt}
+        className="bg-img"
+      />
       {text.services?.map((service, i) => {
         return (
           <div
@@ -101,7 +105,5 @@ export default function Services() {
         <Contact />
       </div>
     </div>
-  ) : (
-    <img src={chip} alt="chip" className="bg-img" />
-  );
+  ) : null;
 }
