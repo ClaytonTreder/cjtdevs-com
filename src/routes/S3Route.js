@@ -7,7 +7,12 @@ router.get("/:key", (req, res) => {
   getImage(req.params.key)
     .then((img) => {
       if (img) {
-        res.json(img).status(200);
+        res.writeHead(200, {
+          "Content-Type": "image/jpeg",
+          "Cache-Control": "max-age=3600",
+        });
+        res.write(img, "binary");
+        res.end(null, "binary");
       } else {
         res.sendStatus(404);
       }

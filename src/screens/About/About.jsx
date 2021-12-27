@@ -2,9 +2,11 @@ import "./About.css";
 import Picture from "components/Picture/Picture";
 import { Fragment, useEffect } from "react";
 import useSessionStorage from "hooks/useSessioStorage";
-import earth from "../../content/images/misc/earth.jpg";
+
 function About() {
-  const [text, setText] = useSessionStorage("aboutText");
+  const [text, setText] = useSessionStorage(
+    "aboutText" + new Date().getHours()
+  );
   useEffect(() => {
     text ??
       fetch("/api/text/About")
@@ -20,7 +22,11 @@ function About() {
   });
   return text ? (
     <div className="about">
-      <img src={earth} alt="earth" className="bg-img" />
+      <Picture
+        s3ImgKey={text.pic.s3ImgKey}
+        alt={text.pic.alt}
+        className="bg-img"
+      />
       <title>
         <h2>
           <u>{text.title}</u>
@@ -82,9 +88,7 @@ function About() {
         <span>{text.moreInfo.text}</span>
       </div>
     </div>
-  ) : (
-    <img src={earth} alt="earth" className="bg-img" />
-  );
+  ) : null;
 }
 
 export default About;

@@ -30,9 +30,7 @@ export const upload = multer({
 
 export async function getImage(key) {
   try {
-    return (
-      await s3.getObject({ Bucket: name, Key: key }).promise()
-    ).Body.toString("base64");
+    return (await s3.getObject({ Bucket: name, Key: key }).promise()).Body;
   } catch (ex) {
     console.log("error finding image");
     return "";

@@ -2,10 +2,12 @@ import Client from "components/Client/Client";
 import "./Clients.css";
 import { useEffect } from "react";
 import useSessionStorage from "hooks/useSessioStorage";
-import room from "../../content/images/misc/room-lights.jpg";
+import Picture from "components/Picture/Picture";
 
 export default function Clients() {
-  const [text, setText] = useSessionStorage("clientText");
+  const [text, setText] = useSessionStorage(
+    "clientText" + new Date().getHours()
+  );
   useEffect(() => {
     text ??
       fetch("/api/text/Clients")
@@ -21,7 +23,11 @@ export default function Clients() {
   });
   return text ? (
     <div className="clients">
-      <img src={room} alt="room" className="bg-img" />
+      <Picture
+        s3ImgKey={text.pic.s3ImgKey}
+        alt={text.pic.alt}
+        className="bg-img"
+      />
       <title>
         <h2>
           <u>{text.title}</u>
@@ -51,7 +57,5 @@ export default function Clients() {
         })}
       </section>
     </div>
-  ) : (
-    <img src={room} alt="room" className="bg-img" />
-  );
+  ) : null;
 }

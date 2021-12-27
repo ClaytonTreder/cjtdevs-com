@@ -5,9 +5,9 @@ import useSessionStorage from "hooks/useSessioStorage";
 import { useEffect } from "react";
 import Banner from "../../components/Banner/Banner";
 import "./Home.css";
-import chip from "content/images/misc/chip.jpg";
+
 function Home() {
-  const [text, setText] = useSessionStorage("homeText");
+  const [text, setText] = useSessionStorage("homeText" + new Date().getHours());
   useEffect(() => {
     text ??
       fetch("/api/text/Home")
@@ -23,7 +23,11 @@ function Home() {
   });
   return text ? (
     <div>
-      <img src={chip} alt="micro-chip" className="bg-img" />
+      <Picture
+        s3ImgKey={text.pic.s3ImgKey}
+        alt="micro-chip"
+        className="bg-img"
+      />
       <Banner lines={text.banner.lines} buttons={text.banner.buttons} />
 
       <div>
@@ -43,9 +47,7 @@ function Home() {
         })}
       </div>
     </div>
-  ) : (
-    <img src={chip} alt="micro-chip" className="bg-img" />
-  );
+  ) : null;
 }
 
 export default Home;
