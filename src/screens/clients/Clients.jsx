@@ -29,9 +29,7 @@ export default function Clients() {
         className="bg-img"
       />
       <title>
-        <h2>
-          <u>{text.title}</u>
-        </h2>
+        <h2>{text.title}</h2>
       </title>
       <div className="subtitle">
         <span style={{ fontSize: "large" }}>{text.subtitle}</span>
