@@ -56,9 +56,7 @@ export default function Services() {
   return text ? (
     <div className="services">
       <title>
-        <h2>
-          <u>{text.title}</u>
-        </h2>
+        <h2>{text.title}</h2>
       </title>
       <Picture
         s3ImgKey={text.pic.s3ImgKey}

@@ -28,9 +28,7 @@ function About() {
         className="bg-img"
       />
       <title>
-        <h2>
-          <u>{text.title}</u>
-        </h2>
+        <h2>{text.title}</h2>
       </title>
       {text.sections.map((section, i) => {
         return (
