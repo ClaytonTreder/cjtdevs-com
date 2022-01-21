@@ -86,7 +86,10 @@ function Home() {
         {text.home_actions.map((action) => {
           return (
             <section>
-              <img src={`./${action.ha_action.ha_action_image}`} />
+              <img
+                alt="background"
+                src={`./${action.ha_action.ha_action_image}`}
+              />
               <hr />
               <p>{action.ha_action.ha_action_text}</p>
             </section>
@@ -98,7 +101,10 @@ function Home() {
           console.log(link);
           return (
             <div className="flex-inline">
-              <img src={`./${link.hl_link.hl_link_image}`} />
+              <img
+                src={`./${link.hl_link.hl_link_image}`}
+                alt={`${link.hl_link.hl_link_image}`}
+              />
               <a href={link.hl_link.hl_link_nav}>
                 <button>{link.hl_link.hl_link_text}</button>
               </a>
