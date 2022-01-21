@@ -1,23 +1,15 @@
-backend:
-  name: git-gateway
-  branch: netlify-cms-test
-publish_mode: editorial_workflow
-media_folder: public/images
-public_folder: images
-
-collections:
-  - label: Pages
+- label: Pages
     name: pages
     files:
-      - label: Home
-        name: home
-        file: src/content/pages/home.md
-        preview_path: content/pages/home
+      - label: About
+        name: about
+        file: src/content/pages/about.md
+        preview_path: content/pages/about
         fields:
           - { label: Logo, name: site-logo, widget: image }
-          - { label: Background, name: home-bg, widget: image }
+          - { label: Background, name: about-bg, widget: image }
           - label: "Call To Action"
-            name: home_call_to_action
+            name: about_call_to_action
             widget: object
             fields:
               - label: Lines
@@ -36,14 +28,14 @@ collections:
                       - { label: Text, name: hcta_button_text, widget: string }
                       - { label: Link, name: hcta_button_link, widget: string }
           - label: Newsletter
-            name: home_news_letter
+            name: about_news_letter
             widget: object
             fields:
               - { label: Title, name: hnl_title, widget: string }
               - { label: Placeholder, name: hnl_placeholder, widget: string }
               - { label: Text, name: hnl_button, widget: string }
           - label: Actions
-            name: home_actions
+            name: about_actions
             widget: list
             fields:
               - label: Action
@@ -53,7 +45,7 @@ collections:
                   - { label: Text, name: ha_action_text, widget: string }
                   - { label: Image, name: ha_action_image, widget: image }
           - label: Links
-            name: home_links
+            name: about_links
             widget: list
             fields:
               - label: Link
@@ -63,4 +55,3 @@ collections:
                   - { label: Text, name: hl_link_text, widget: string }
                   - { label: Link, name: hl_link_nav, widget: string }
                   - { label: Image, name: hl_link_image, widget: image }
-  - includes: about.yml
