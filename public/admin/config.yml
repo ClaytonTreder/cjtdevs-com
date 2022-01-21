@@ -17,49 +17,49 @@ collections:
           - { label: Logo, name: site-logo, widget: image }
           - { label: Background, name: home-bg, widget: image }
           - label: "Call To Action"
-            name: home-call-to-action
+            name: home_call_to_action
             widget: object
             fields:
               - label: Lines
-                name: hcta-lines
+                name: hcta_lines
                 widget: list
                 fields:
-                  - { label: Line, name: hcta-line, widget: string }
+                  - { label: Line, name: hcta_line, widget: string }
               - label: Buttons
-                name: hcta-buttons
+                name: hcta_buttons
                 widget: list
                 fields:
                   - label: Button
-                    name: hcta-button
+                    name: hcta_button
                     widget: object
                     fields:
-                      - { label: Text, name: hcta-button-text, widget: string }
-                      - { label: Link, name: hcta-button-link, widget: string }
+                      - { label: Text, name: hcta_button_text, widget: string }
+                      - { label: Link, name: hcta_button_link, widget: string }
           - label: Newsletter
-            name: home-news-letter
+            name: home_news_letter
             widget: object
             fields:
-              - { label: Title, name: hnl-title, widget: string }
-              - { label: Placeholder, name: hnl-placeholder, widget: string }
-              - { label: Text, name: hnl-button, widget: string }
+              - { label: Title, name: hnl_title, widget: string }
+              - { label: Placeholder, name: hnl_placeholder, widget: string }
+              - { label: Text, name: hnl_button, widget: string }
           - label: Actions
-            name: home-actions
+            name: home_actions
             widget: list
             fields:
               - label: Action
-                name: ha-action
+                name: ha_action
                 widget: object
                 fields:
-                  - { label: Text, name: ha-action-text, widget: string }
-                  - { label: Image, name: ha-action-image, widget: image }
+                  - { label: Text, name: ha_action_text, widget: string }
+                  - { label: Image, name: ha_action_image, widget: image }
           - label: Links
-            name: home-links
+            name: home_links
             widget: list
             fields:
               - label: Link
-                name: hl-link
+                name: hl_link
                 widget: object
                 fields:
-                  - { label: Text, name: hl-link-text, widget: string }
-                  - { label: Link, name: hl-link-nav, widget: string }
-                  - { label: Image, name: hl-link-image, widget: image }
+                  - { label: Text, name: hl_link_text, widget: string }
+                  - { label: Link, name: hl_link_nav, widget: string }
+                  - { label: Image, name: hl_link_image, widget: image }

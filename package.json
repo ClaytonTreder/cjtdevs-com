@@ -38,7 +38,10 @@
     "build": "react-scripts build",
     "build-dev": "npm run-script build .env.local && node -r dotenv/config server.js dotenv_config_path=./.env.local\"",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "rewired-start": "react-app-rewired start",
+    "rewired-build": "react-app-rewired build",
+    "rewired-test": "react-app-rewired test"
   },
   "proxy": "http://localhost:5010",
   "eslintConfig": {
@@ -60,8 +63,9 @@
     ]
   },
   "devDependencies": {
+    "frontmatter-markdown-loader": "^3.6.3",
     "nodemon": "^2.0.9",
+    "react-app-rewired": "^2.1.11",
     "react-scripts": "^4.0.3"
-  },
-  "type": "module"
+  }
 }
