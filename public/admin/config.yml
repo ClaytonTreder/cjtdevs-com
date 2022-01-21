@@ -6,7 +6,7 @@ media_folder: public/images
 public_folder: images
 
 collections:
-  - laebl: Pages
+  - label: Pages
     name: pages
     files:
       - label: Home
@@ -23,7 +23,7 @@ collections:
               - label: Lines,
                 name: hcta-lines
                 widget: list
-                field: { label: Line, name: hcta-line, widget: string }
+                fields: { label: Line, name: hcta-line, widget: string }
               - label: Buttons
                 name: hcta-buttons
                 widget: list
@@ -44,7 +44,7 @@ collections:
           - label: Actions
             name: home-actions
             widget: list
-            field:
+            fields:
               - label: Action
                 name: ha-action
                 widget: object
@@ -54,7 +54,7 @@ collections:
           - label: Links
             name: home-links
             widget: list
-            field:
+            fields:
               - label: Link
                 name: hl-link
                 widget: object
