@@ -1,0 +1,64 @@
+backend:
+  name: git-gateway
+  branch: netlify-cms-test
+publish_mode: editorial_workflow
+media_folder: public/images
+public_folder: images
+
+collections:
+  - laebl: Pages
+    name: pages
+    files:
+      - label: Home
+        name: home
+        file: src/content/pages/home.md
+        preview_path: content/pages/home
+        fields:
+          - { label: Logo, name: site-logo, widget: image }
+          - { label: Background, name: home-bg, widget: image }
+          - label: "Call To Action"
+            name: home-call-to-action
+            widget: object
+            fields:
+              - label: Lines,
+                name: hcta-lines
+                widget: list
+                field: { label: Line, name: hcta-line, widget: string }
+              - label: Buttons
+                name: hcta-buttons
+                widget: list
+                field:
+                  - label: Button,
+                    name: hcta-button
+                    widget: object
+                    fields:
+                      - { label: Text, name: hcta-button-text, widget: string }
+                      - { label: Link, name: hcta-button-link, widget: string }
+          - label: Newsletter
+            name: home-news-letter
+            widget: object
+            fields:
+              - { label: Title, name: hnl-title, widget: string }
+              - { label: Placeholder, name: hnl-placeholder, widget: string }
+              - { label: Text, name: hnl-text, widget: image }
+          - label: Actions
+            name: home-actions
+            widget: list
+            field:
+              - label: Action
+                name: ha-action
+                widget: object
+                fields:
+                  - { label: Text, name: ha-action-text, widget: string }
+                  - { label: Image, name: ha-action-image, widget: image }
+          - label: Links
+            name: home-links
+            widget: list
+            field:
+              - label: Link
+                name: hl-link
+                widget: object
+                fields:
+                  - { label: Text, name: hl-link-text, widget: string }
+                  - { label: Link, name: hl-link-nav, widget: string }
+                  - { label: Image, name: hl-link-image, widget: image }
