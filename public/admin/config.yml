@@ -23,11 +23,12 @@ collections:
               - label: Lines,
                 name: hcta-lines
                 widget: list
-                fields: { label: Line, name: hcta-line, widget: string }
+                fields:
+                  - { label: Line, name: hcta-line, widget: string }
               - label: Buttons
                 name: hcta-buttons
                 widget: list
-                field:
+                fields:
                   - label: Button,
                     name: hcta-button
                     widget: object
