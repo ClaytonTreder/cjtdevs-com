@@ -5,11 +5,11 @@ publish_mode: editorial_workflow
 media_folder: public/images
 public_folder: images
 
+- includes: about.yml
 collections:
   - label: Pages
     name: pages
     files:
-      - includes: about.yml
       - label: Home
         name: home
         file: src/content/pages/home.md
