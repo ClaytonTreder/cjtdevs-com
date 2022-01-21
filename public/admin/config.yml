@@ -20,7 +20,7 @@ collections:
             name: home-call-to-action
             widget: object
             fields:
-              - label: Lines,
+              - label: Lines
                 name: hcta-lines
                 widget: list
                 fields:
