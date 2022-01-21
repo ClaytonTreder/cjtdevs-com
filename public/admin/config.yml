@@ -29,7 +29,7 @@ collections:
                 name: hcta-buttons
                 widget: list
                 fields:
-                  - label: Button,
+                  - label: Button
                     name: hcta-button
                     widget: object
                     fields:
@@ -41,7 +41,7 @@ collections:
             fields:
               - { label: Title, name: hnl-title, widget: string }
               - { label: Placeholder, name: hnl-placeholder, widget: string }
-              - { label: Text, name: hnl-text, widget: image }
+              - { label: Text, name: hnl-button, widget: string }
           - label: Actions
             name: home-actions
             widget: list
