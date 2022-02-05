@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
-import loading from "../../content/images/misc/loader.gif";
 import ReCaptchaV2 from "react-google-recaptcha";
-import contact from "modules/contact";
 import "./Contact.css";
+import Picture from "components/Picture/Picture";
 
 require("dotenv").config();
 
@@ -18,13 +17,6 @@ function Contact(props) {
     contact: null,
   });
   useEffect(() => {
-    state.contact ??
-      contact.getContact({ id: "contact" }).then((contact) => {
-        setState((prevState) => ({
-          ...prevState,
-          contact: contact.data ? contact.data : null,
-        }));
-      });
     if (props?.preFilledMessage) {
       setState((prevState) => ({
         ...prevState,
@@ -53,8 +45,8 @@ function Contact(props) {
         <div className="fade-in-text col-md-12 px-0">
           <div className="d-flex justify-content-center mb-3 mt-2">
             {state.loading === true ? (
-              <img
-                src={loading}
+              <Picture
+                src={"images/loader.gif"}
                 alt="loading"
                 className="img-fluid float col-2"
                 style={{ position: "fixed", zIndex: "999" }}

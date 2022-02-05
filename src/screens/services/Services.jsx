@@ -1,17 +1,14 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useLocation } from "react-router";
 
 import "./Services.css";
 
 import Contact from "components/Contact/Contact";
 import Picture from "components/Picture/Picture";
-import scrollTo from "modules/functions/scrollTo.js";
-import useSessionStorage from "hooks/useSessioStorage";
+import scrollTo from "shared/functions/scrollTo.js";
 
 export default function Services() {
-  const [text, setText] = useSessionStorage(
-    "servicesText" + new Date().getHours()
-  );
+  const [text, setText] = useState({});
 
   const talk = useRef(null);
 

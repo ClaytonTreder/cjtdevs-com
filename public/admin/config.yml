@@ -14,7 +14,6 @@ collections:
         file: src/content/pages/home.md
         preview_path: content/pages/home
         fields:
-          - { label: Logo, name: site-logo, widget: image }
           - { label: Background, name: home-bg, widget: image }
           - label: "Call To Action"
             name: home_call_to_action
@@ -63,3 +62,49 @@ collections:
                   - { label: Text, name: hl_link_text, widget: string }
                   - { label: Link, name: hl_link_nav, widget: string }
                   - { label: Image, name: hl_link_image, widget: image }
+      - label: About
+        name: about
+        file: src/content/pages/about.md
+        preview_path: content/pages/about
+        fields:
+          - { label: Background, name: background, widget: image }
+          - { label: Title, name: title, widget: string }
+          - label: Info Section
+            name: info
+            widget: list
+            fields:
+              - label: Section
+                name: section
+                widget: object
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Text, name: text, widget: string }
+          - label: Devs
+            name: devs
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - label: Dev
+                name: dev
+                widget: object
+                fields:
+                  - { label: Name, name: name, widget: string }
+                  - { label: Pic, name: pic, widget: string }
+                  - label: Titles
+                    name: titles
+                    widget: list
+                    fields:
+                      - { label: Title, name: title, widget: string }
+                  - label: Links
+                    name: link
+                    widget: list
+                    fields:
+                      - { label: Text, name: text, widget: string }
+                      - { label: Link, name: link, widget: string }
+                  - { label: Quote, name: quote, widget: string }
+          - label: Extra
+            name: extra
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: string }

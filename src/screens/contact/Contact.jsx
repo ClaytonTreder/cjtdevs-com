@@ -1,13 +1,9 @@
 import ContactForm from "components/Contact/Contact";
 import "./Contact.css";
 import Picture from "components/Picture/Picture";
-import { useEffect } from "react";
-import useSessionStorage from "hooks/useSessioStorage";
-
+import { useEffect, useState } from "react";
 export default function Contact() {
-  const [text, setText] = useSessionStorage(
-    "contactText" + new Date().getHours()
-  );
+  const [text, setText] = useState({});
   useEffect(() => {
     text ??
       fetch("/api/text/Contact")

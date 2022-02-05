@@ -1,36 +1,19 @@
 import "./About.css";
 import Picture from "components/Picture/Picture";
-import { Fragment, useEffect } from "react";
-import useSessionStorage from "hooks/useSessioStorage";
+import { Fragment } from "react";
+import { attributes } from "../../content/pages/about.md";
 
 function About() {
-  const [text, setText] = useSessionStorage(
-    "aboutText" + new Date().getHours()
-  );
-  useEffect(() => {
-    text ??
-      fetch("/api/text/About")
-        .then((res) => {
-          return res.json();
-        })
-        .then((data) => {
-          setText(() => data.content);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-  });
-  return text ? (
+  const text = attributes;
+  console.log(text);
+
+  return (
     <div className="about">
-      <Picture
-        s3ImgKey={text.pic.s3ImgKey}
-        alt={text.pic.alt}
-        className="bg-img"
-      />
+      <Picture src={text.background} alt="background" className="bg-img" />
       <title>
         <h2>{text.title}</h2>
       </title>
-      {text.sections.map((section, i) => {
+      {text.info.map((section, i) => {
         return (
           <Fragment key={i}>
             <h4>{section.title}</h4>
@@ -39,27 +22,28 @@ function About() {
         );
       })}
       <div className="meet-us-container">
-        <h5>{text.meetUs.title}</h5>
-        {text.meetUs.us.map((who, i) => {
+        <h5>{text.devs.title}</h5>
+        {text.devs.map((dev, i) => {
+          console.log(text);
           return (
             <Fragment key={i}>
               <div className="meet-us">
                 <Picture
-                  s3ImgKey={who.s3ImgKey}
-                  alt={who.imgAlt}
-                  style={who.imgStyle}
+                  src={dev.s3ImgKey}
+                  alt={dev.imgAlt}
+                  style={dev.imgStyle}
                 />
                 <div className="meet-us-titles">
-                  <h6>{who.name}</h6>
-                  {who.titles.map((title, i) => {
-                    return i === who.titles.length - 1 ? (
+                  <h6>{dev.name}</h6>
+                  {dev.titles.map((title, i) => {
+                    return i === dev.titles.length - 1 ? (
                       <p>{title}</p>
                     ) : (
                       <span>{title}</span>
                     );
                   })}
                   <div className="links">
-                    {who.links.map((link, i) => {
+                    {dev.links.map((link, i) => {
                       return (
                         <Fragment key={i}>
                           <u>
@@ -67,13 +51,13 @@ function About() {
                               {link.title}
                             </a>
                           </u>
-                          {i === who.links.length - 1 ? null : <span>-</span>}
+                          {i === dev.links.length - 1 ? null : <span>-</span>}
                         </Fragment>
                       );
                     })}
                   </div>
                   <em>
-                    <small>{who.quote}</small>
+                    <small>{dev.quote}</small>
                   </em>
                 </div>
               </div>
@@ -86,7 +70,7 @@ function About() {
         <span>{text.moreInfo.text}</span>
       </div>
     </div>
-  ) : null;
+  );
 }
 
 export default About;

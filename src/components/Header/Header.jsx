@@ -1,5 +1,7 @@
+import Picture from "components/Picture/Picture";
 import "./Header.css";
-import logo from "../../content/images/misc/logo.svg";
+import { attributes } from "../../content/components/header.md";
+
 export default function Header(params) {
   const setMobileNavOpen = params.setMobileNavOpen;
 
@@ -15,7 +17,7 @@ export default function Header(params) {
         <div></div>
         <div></div>
       </div>
-      <img src={logo} alt="logo" />
+      <Picture src={attributes.logo} alt="logo" />
     </header>
   );
 }

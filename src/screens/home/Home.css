@@ -54,7 +54,7 @@
     padding-bottom: var(--mobile-padding-y);
     margin-bottom: var(--mobile-margin-y);
   }
-  .banner ribbon {
+  .banner .ribbon {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -91,7 +91,7 @@
     padding-bottom: var(--desktop-padding-y);
     margin-bottom: var(--desktop-margin-y);
   }
-  .banner ribbon {
+  .banner .ribbon {
     display: flex;
     flex-direction: column;
     width: 35%;

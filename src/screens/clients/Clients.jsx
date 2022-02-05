@@ -1,13 +1,10 @@
 import Client from "components/Client/Client";
 import "./Clients.css";
-import { useEffect } from "react";
-import useSessionStorage from "hooks/useSessioStorage";
+import { useEffect, useState } from "react";
 import Picture from "components/Picture/Picture";
 
 export default function Clients() {
-  const [text, setText] = useSessionStorage(
-    "clientText" + new Date().getHours()
-  );
+  const [text, setText] = useState({});
   useEffect(() => {
     text ??
       fetch("/api/text/Clients")

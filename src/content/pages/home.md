@@ -1,5 +1,4 @@
 ---
-site_logo: images/logo.svg
 home_bg: images/chip.jpg
 home_call_to_action:
   hcta_lines:

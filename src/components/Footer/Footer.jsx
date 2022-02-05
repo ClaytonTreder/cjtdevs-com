@@ -1,8 +1,6 @@
 import "./Footer.css";
-import fbImg from "../../content/images/misc/img-FB.png";
-import mail from "../../content/images/misc/mail.png";
-import phone from "../../content/images/misc/phone.png";
 import { Fragment } from "react";
+import Picture from "components/Picture/Picture";
 
 export default function Footer() {
   return (
@@ -42,17 +40,17 @@ export default function Footer() {
             rel="noreferrer"
             target="_blank"
           >
-            <img src={fbImg} alt="facebook" />
+            <Picture src={"images/img-FB.png"} alt="facebook" />
             Give us a like
             <hr />
           </a>
           <a href="mailto:info@cjtdevs.com">
-            <img src={mail} alt="mail" />
+            <Picture src={"images/mail.png"} alt="mail" />
             info@cjtdevs.com
             <hr />
           </a>
           <a href="tel:7347878670">
-            <img src={phone} alt="mail" />
+            <Picture src={"images/phone.png"} alt="mail" />
             (734) 787-8670
             <hr />
           </a>
