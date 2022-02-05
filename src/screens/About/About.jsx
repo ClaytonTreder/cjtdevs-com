@@ -22,24 +22,19 @@ function About() {
         );
       })}
       <div className="meet-us-container">
-        <h5>{text.devs.title}</h5>
-        {text.devs.map((dev, i) => {
-          console.log(text);
+        <h5>{text.meetus.title}</h5>
+        {text.meetus.devs.map((dev, i) => {
           return (
             <Fragment key={i}>
               <div className="meet-us">
-                <Picture
-                  src={dev.s3ImgKey}
-                  alt={dev.imgAlt}
-                  style={dev.imgStyle}
-                />
+                <Picture src={dev.pic} alt={dev.imgAlt} style={dev.imgStyle} />
                 <div className="meet-us-titles">
                   <h6>{dev.name}</h6>
                   {dev.titles.map((title, i) => {
                     return i === dev.titles.length - 1 ? (
-                      <p>{title}</p>
+                      <p>{title.title}</p>
                     ) : (
-                      <span>{title}</span>
+                      <span>{title.title}</span>
                     );
                   })}
                   <div className="links">
@@ -47,8 +42,12 @@ function About() {
                       return (
                         <Fragment key={i}>
                           <u>
-                            <a target="_blank" rel="noreferrer" href={link.url}>
-                              {link.title}
+                            <a
+                              target="_blank"
+                              rel="noreferrer"
+                              href={link.link}
+                            >
+                              {link.text}
                             </a>
                           </u>
                           {i === dev.links.length - 1 ? null : <span>-</span>}
@@ -65,9 +64,9 @@ function About() {
           );
         })}
       </div>
-      <h5>{text.moreInfo.title}</h5>
+      <h5>{text.extra.title}</h5>
       <div className="more-info">
-        <span>{text.moreInfo.text}</span>
+        <span>{text.extra.text}</span>
       </div>
     </div>
   );

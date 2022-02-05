@@ -81,7 +81,7 @@ collections:
             fields:
               - { label: Title, name: title, widget: string }
               - label: Devs
-                name: dev
+                name: devs
                 widget: list
                 fields:
                   - { label: Name, name: name, widget: string }
