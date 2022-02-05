@@ -85,12 +85,8 @@ collections:
                 widget: list
                 fields:
                   - { label: Name, name: name, widget: string }
-                  - { label: Pic, name: pic, widget: string }
-                  - label: Titles
-                    name: titles
-                    widget: list
-                    fields:
-                      - { label: Title, name: title, widget: string }
+                  - { label: Pic, name: pic, widget: image }
+                  - { label: Titles, name: titles, widget: list }
                   - label: Links
                     name: link
                     widget: list
