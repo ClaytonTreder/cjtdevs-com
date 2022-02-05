@@ -92,7 +92,7 @@ collections:
                     fields:
                       - { label: Title, name: title, widget: string }
                   - label: Links
-                    name: link
+                    name: links
                     widget: list
                     fields:
                       - { label: Text, name: text, widget: string }
@@ -104,3 +104,26 @@ collections:
             fields:
               - { label: Title, name: title, widget: string }
               - { label: Text, name: text, widget: string }
+  - label: Components
+    name: components
+    files:
+      - label: Header
+        file: src/content/components/header.md
+        preview_path: content/components/home
+        fields:
+          - { label: Logo, name: logo, widget: image }
+      - label: Footer
+        file: src/content/components/footer.md
+        preview_path: content/components/home
+        fields:
+          - label: Quick links
+            name: quick
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - label: Quick Links
+                name: links
+                widget: list
+                fields:
+                  - { label: Text, name: text, widget: string }
+                  - { label: Link, name: link, widget: string }

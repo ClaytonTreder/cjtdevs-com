@@ -5,7 +5,6 @@ import { attributes } from "../../content/pages/about.md";
 
 function About() {
   const text = attributes;
-  console.log(text);
 
   return (
     <div className="about">
