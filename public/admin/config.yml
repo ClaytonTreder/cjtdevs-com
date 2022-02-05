@@ -79,29 +79,6 @@ collections:
                 fields:
                   - { label: Title, name: title, widget: string }
                   - { label: Text, name: text, widget: string }
-          - label: Devs
-            name: devs
-            widget: list
-            fields:
-              - { label: Title, name: title, widget: string }
-              - label: Dev
-                name: dev
-                widget: object
-                fields:
-                  - { label: Name, name: name, widget: string }
-                  - { label: Pic, name: pic, widget: string }
-                  - label: Titles
-                    name: titles
-                    widget: list
-                    fields:
-                      - { label: Title, name: title, widget: string }
-                  - label: Links
-                    name: link
-                    widget: list
-                    fields:
-                      - { label: Text, name: text, widget: string }
-                      - { label: Link, name: link, widget: string }
-                  - { label: Quote, name: quote, widget: string }
           - label: Extra
             name: extra
             widget: object
