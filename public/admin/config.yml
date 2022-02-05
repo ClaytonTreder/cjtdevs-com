@@ -73,20 +73,16 @@ collections:
             name: info
             widget: list
             fields:
-              - label: Section
-                name: section
-                widget: object
-                fields:
-                  - { label: Title, name: title, widget: string }
-                  - { label: Text, name: text, widget: string }
-          - label: Devs
-            name: devs
-            widget: list
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: string }
+          - label: Meet Us
+            name: meetus
+            widget: object
             fields:
               - { label: Title, name: title, widget: string }
-              - label: Dev
+              - label: Devs
                 name: dev
-                widget: object
+                widget: list
                 fields:
                   - { label: Name, name: name, widget: string }
                   - { label: Pic, name: pic, widget: string }

@@ -2,21 +2,6 @@
 background: images/earth.jpg
 title: About Us
 info:
-  - section:
-      title: Who?
-      text:
-        CJT Devs is a collective of software developers looking to build your next
-        website or app!
-  - section:
-      title: How?
-      text:
-        Working fast, efficiently, and most importantly accurately, our ultimate
-        goal is delivering exactly what is required in the desired timeline.
-  - section:
-      title: Where
-      text:
-        Based out of metro Detroit, we are available for consulting, application /
-        website creation, or any general software development needs.
 extra:
   title: More Info
   text:
