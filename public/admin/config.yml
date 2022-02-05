@@ -67,52 +67,44 @@ collections:
         file: src/content/pages/about.md
         preview_path: content/pages/about
         fields:
-          - { label: Logo, name: site-logo, widget: image }
-          - { label: Background, name: about-bg, widget: image }
-          - label: "Call To Action"
-            name: about_call_to_action
-            widget: object
+          - { label: Background, name: background, widget: image }
+          - { label: Title, name: title, widget: string }
+          - label: Info Section
+            name: info
+            widget: list
             fields:
-              - label: Lines
-                name: hcta_lines
-                widget: list
+              - label: Section
+                name: section
+                widget: object
                 fields:
-                  - { label: Line, name: hcta_line, widget: string }
-              - label: Buttons
-                name: hcta_buttons
-                widget: list
+                  - { label: Title, name: title, widget: string }
+                  - { label: Text, name: text, widget: string }
+          - label: Devs
+            name: devs
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - label: Dev
+                name: dev
+                widget: object
                 fields:
-                  - label: Button
-                    name: hcta_button
-                    widget: object
+                  - { label: Name, name: name, widget: string }
+                  - { label: Pic, name: pic, widget: string }
+                  - label: Titles
+                    name: titles
+                    widget: list
                     fields:
-                      - { label: Text, name: hcta_button_text, widget: string }
-                      - { label: Link, name: hcta_button_link, widget: string }
-          - label: Newsletter
-            name: about_news_letter
+                      - { label: Title, name: title, widget: string }
+                  - label: Links
+                    name: link
+                    widget: list
+                    fields:
+                      - { label: Text, name: text, widget: string }
+                      - { label: Link, name: link, widget: string }
+                  - { label: Quote, name: quote, widget: string }
+          - label: Extra
+            name: extra
             widget: object
             fields:
-              - { label: Title, name: hnl_title, widget: string }
-              - { label: Placeholder, name: hnl_placeholder, widget: string }
-              - { label: Text, name: hnl_button, widget: string }
-          - label: Actions
-            name: about_actions
-            widget: list
-            fields:
-              - label: Action
-                name: ha_action
-                widget: object
-                fields:
-                  - { label: Text, name: ha_action_text, widget: string }
-                  - { label: Image, name: ha_action_image, widget: image }
-          - label: Links
-            name: about_links
-            widget: list
-            fields:
-              - label: Link
-                name: hl_link
-                widget: object
-                fields:
-                  - { label: Text, name: hl_link_text, widget: string }
-                  - { label: Link, name: hl_link_nav, widget: string }
-                  - { label: Image, name: hl_link_image, widget: image }
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: string }
