@@ -182,6 +182,7 @@ collections:
                   - { label: Pic, name: pic, widget: image }
                   - { label: Text, name: text, widget: string }
       - label: Contact
+        name: contact
         file: src/content/components/contact.md
         preview_path: content/pages/contact
         fields:
