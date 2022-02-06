@@ -14,10 +14,6 @@ home_call_to_action:
     - hcta_button:
         hcta_button_text: I need software
         hcta_button_link: /services#software
-home_news_letter:
-  hnl_title: News Letter
-  hnl_placeholder: Email *
-  hnl_text: images/chip2.jpg
 home_actions:
   - ha_action:
       ha_action_text:

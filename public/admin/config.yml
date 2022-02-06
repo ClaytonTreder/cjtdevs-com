@@ -34,13 +34,6 @@ collections:
                     fields:
                       - { label: Text, name: hcta_button_text, widget: string }
                       - { label: Link, name: hcta_button_link, widget: string }
-          - label: Newsletter
-            name: home_news_letter
-            widget: object
-            fields:
-              - { label: Title, name: hnl_title, widget: string }
-              - { label: Placeholder, name: hnl_placeholder, widget: string }
-              - { label: Text, name: hnl_button, widget: string }
           - label: Actions
             name: home_actions
             widget: list
