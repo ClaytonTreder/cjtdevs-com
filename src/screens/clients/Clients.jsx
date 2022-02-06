@@ -23,11 +23,11 @@ export default function Clients() {
           return (
             <div className="item" key={i}>
               <Client
-                s3ImgKey={client.pic}
-                title={client.link.title}
-                link={client.link.link}
-                quote={client.quote.testimonial}
-                author={client.quote.author}
+                src={client.pic}
+                title={client.title}
+                link={client.link}
+                quote={client.testimonial}
+                author={client.author}
               />
             </div>
           );
