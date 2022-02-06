@@ -176,9 +176,9 @@ collections:
                   - { label: Pic, name: pic, widget: image }
                   - { label: Text, name: text, widget: string }
              - label: Phone
-                name: phone
-                widget: object
-                fields: 
+               name: phone
+               widget: object
+               fields: 
                   - { label: Pic, name: pic, widget: image }
                   - { label: Text, name: text, widget: string }
       - label: Contact
