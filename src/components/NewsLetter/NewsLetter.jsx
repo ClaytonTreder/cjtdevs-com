@@ -14,7 +14,7 @@ export default function NewsLetter() {
     ) {
       axios
         .post(
-          "/api/newsletter",
+          "/.netlify/functions/newsletter",
           {
             email: email,
             subscribed: true,
@@ -31,11 +31,12 @@ export default function NewsLetter() {
             );
           }
         })
-        .catch(() =>
+        .catch((err) => {
+          console.log(err);
           setResStatus(
             "An issue occured, please try again later. You may already be subscribed."
-          )
-        );
+          );
+        });
     } else {
       setRegexFail(true);
       setResStatus(null);

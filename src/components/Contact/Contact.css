@@ -1,0 +1,13 @@
+.contact-form input[type="text"],
+.contact-form textarea {
+  width: 100%;
+}
+
+.contact-form .recap,
+.contact-form .submit {
+  justify-content: center;
+}
+
+.contact-form input[type="submit"] {
+  width: 40%;
+}

@@ -1,9 +1,4 @@
-import { sendEMail } from "../shared/mailer.js";
-import { readOne, create, deleteOne } from "./NewsLetterController.js";
-import fs from "fs";
-import path from "path";
-
-const sendEMail = require("../shared/mailer").sendEMail;
+const sendEMail = require("../shared/mailer");
 const {
   readOne,
   create,
@@ -13,54 +8,51 @@ const fs = require("fs");
 const path = require("path");
 
 const handler = async function (event, context) {
-  switch (event.httpMethod) {
-    case "POST":
-      return readOne(event.body.email, (err, newsLetter) => {
-        if (err) {
-          return { status: 500 };
-        } else if (!newsLetter) {
-          create(event.body, (err, newNewsLetter) => {
-            if (err) {
-              return { status: 500 };
-            } else if (newNewsLetter) {
-              fs.readFile(
-                path.resolve("src/content/Emails", "NewsLetter.html"),
-                (err, html) => {
-                  if (err) {
-                    console.log(err);
-                    return { status: 500 };
-                  } else {
-                    sendEMail({
-                      to: newNewsLetter.email,
-                      subject:
-                        "Success - You have been sucessfully subscribed to CJT Devs' news letter",
-                      html: html
-                        .toString()
-                        .replace("{%UserEmail%}", newNewsLetter.email),
-                    });
-                    return { status: 200 };
-                  }
+  let statusCode = 500;
+  try {
+    switch (event.httpMethod) {
+      case "POST":
+        await readOne(JSON.parse(event.body).email).then(async (res) => {
+          if (!res) {
+            await create(JSON.parse(event.body)).then(async (res) => {
+              if (res) {
+                try {
+                  const html = fs.readFileSync(
+                    path.resolve("src/content/Emails", "NewsLetter.html"),
+                    "utf-8"
+                  );
+
+                  await sendEMail({
+                    to: res.newsLetter.email,
+                    subject:
+                      "Success - You have been sucessfully subscribed to CJT Devs' news letter",
+                    html: html
+                      .toString()
+                      .replace("{%UserEmail%}", res.newsLetter.email),
+                  });
+                  statusCode = 200;
+                } catch (err) {
+                  console.log(err);
                 }
-              );
-            } else {
-              return { status: 404 };
-            }
-          });
-        } else {
-          return { status: 404 };
-        }
-      });
-    case "DELETE":
-      return deleteOne(event.params.email, (err) => {
-        if (err) {
-          res.sendStatus(500);
-        } else {
-          res.sendStatus(200);
-        }
-      });
-    default:
-      return { status: 405 };
+              }
+            });
+          }
+        });
+        break;
+      case "DELETE":
+        deleteOne(event.body?.email, (err) => {
+          if (!err) {
+            statusCode = 200;
+          }
+        });
+        break;
+      default:
+        statusCode = 405;
+    }
+  } catch (err) {
+    console.log(err);
   }
+  return { statusCode: statusCode };
 };
 
 module.exports = { handler };

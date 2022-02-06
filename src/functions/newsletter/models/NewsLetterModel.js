@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-import dotenv from "dotenv";
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 dotenv.config();
 
 mongoose
@@ -23,4 +23,4 @@ const newsLetterSchema = new mongoose.Schema({
   },
 });
 
-export default mongoose.model("newsLetter", newsLetterSchema);
+module.exports = mongoose.model("newsLetter", newsLetterSchema);

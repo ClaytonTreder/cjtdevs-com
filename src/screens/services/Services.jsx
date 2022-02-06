@@ -1,10 +1,7 @@
 import { useRef, useEffect } from "react";
 import { useLocation } from "react-router";
-
 import "./Services.css";
-
 import { attributes } from "../../content/pages/services.md";
-
 import Contact from "components/Contact/Contact";
 import Picture from "components/Picture/Picture";
 import scrollTo from "shared/functions/scrollTo.js";

@@ -1,25 +1,26 @@
-import NewsLetterModel from "../models/NewsLetterModel.js";
+const NewsLetterModel = require("../models/NewsLetterModel.js");
 
-export async function create(newsLetter, callback) {
+async function create(newsLetter) {
   return await NewsLetterModel.create(newsLetter)
     .then((newsLetter) => {
-      callback(null, newsLetter);
+      return { err: null, newsLetter };
     })
     .catch((err) => {
-      callback(err, null);
+      console.log(err);
+      return { err, newsLetter: null };
     });
 }
-export async function read(query, callback) {
+async function read(query) {
   return await NewsLetterModel.find(query, (err, newsLetters) => {
-    return callback(err, newsLetters);
+    return { err, newsLetters };
   });
 }
-export async function readOne(email, callback) {
+async function readOne(email) {
   return await NewsLetterModel.findOne({ email: email }, (err, newsLetter) => {
-    return callback(err, newsLetter);
+    return { err, newsLetter };
   });
 }
-export async function update(email, newsLetter, callback) {
+async function update(email, newsLetter, callback) {
   return await NewsLetterModel.findOneAndUpdate(
     { email: email },
     newsLetter,
@@ -29,13 +30,15 @@ export async function update(email, newsLetter, callback) {
     }
   );
 }
-export async function deleteOne(email, callback) {
+async function deleteOne(email, callback) {
   return await NewsLetterModel.findOneAndRemove(
     { email: email },
     { useFindAndModify: false },
     (err, newsLetter) => {
-      if (err) return callback(err, null);
-      return callback(null, newsLetter);
+      if (err) return { err, newsLetter: null };
+      return { err: null, newsLetter };
     }
   );
 }
+
+module.exports = { create, readOne, update, read, deleteOne };

@@ -125,13 +125,15 @@ collections:
     name: components
     files:
       - label: Header
+        name: header
         file: src/content/components/header.md
-        preview_path: content/components/home
+        preview_path: content/pages/home
         fields:
           - { label: Logo, name: logo, widget: image }
       - label: Footer
+        name: footer
         file: src/content/components/footer.md
-        preview_path: content/components/home
+        preview_path: content/pages/home
         fields:
           - label: Quick links
             name: quick
@@ -179,3 +181,18 @@ collections:
                 fields: 
                   - { label: Pic, name: pic, widget: image }
                   - { label: Text, name: text, widget: string }
+      - label: Contact
+        file: src/content/components/contact.md
+        preview_path: content/pages/contact
+        fields:
+          - { label: Email, name: email, widget: string }
+          - { label: Subject, name: subject, widget: string }
+          - { label: Message, name: message, widget: string }
+          - { label: Button, name: button, widget: string }
+          - label: Reponse
+            name: response
+            widget: object 
+            fields:
+              - { label: Success, name: success, widget: string }
+              - { label: Recaptcha, name: recaptcha, widget: string }
+              - { label: Error, name: error, widget: string }
