@@ -115,19 +115,28 @@ collections:
               - { label: Button Text, name: button, widget: string }
               - { label: Section Tag, name: tag, widget: string }
           - { label: Contact Title, name: contactTitle, widget: string }
+      - label: Contact
+        name: contact
+        file: src/content/pages/contact.md
+        preview_path: /sevices
+        fields:
+          - { label: Background, name: background, widget: image }
+          - { label: Title, name: title, widget: string }
+          - { label: Sub Title, name: subTitle, widget: string }
+          - { label: Content, name: content, widget: string }
   - label: Components
     name: components
     files:
       - label: Header
         name: header
         file: src/content/components/header.md
-        preview_path: content/pages/home
+        preview_path: /
         fields:
           - { label: Logo, name: logo, widget: image }
       - label: Footer
         name: footer
         file: src/content/components/footer.md
-        preview_path: content/pages/home
+        preview_path: /
         fields:
           - label: Quick links
             name: quick
@@ -178,7 +187,7 @@ collections:
       - label: Contact
         name: contact
         file: src/content/components/contact.md
-        preview_path: content/pages/contact
+        preview_path: /contact
         fields:
           - { label: Email, name: email, widget: string }
           - { label: Subject, name: subject, widget: string }
