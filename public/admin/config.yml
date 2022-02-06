@@ -4,6 +4,7 @@ backend:
 publish_mode: editorial_workflow
 media_folder: public/images
 public_folder: images
+site_url: https://inspiring-bardeen-8933a8.netlify.app
 
 collections:
   - label: Pages
@@ -12,7 +13,7 @@ collections:
       - label: Home
         name: home
         file: src/content/pages/home.md
-        preview_path: content/pages/home
+        preview_path: /
         fields:
           - { label: Background, name: home-bg, widget: image }
           - label: "Call To Action"
@@ -58,7 +59,7 @@ collections:
       - label: About
         name: about
         file: src/content/pages/about.md
-        preview_path: content/pages/about
+        preview_path: /about
         fields:
           - { label: Background, name: background, widget: image }
           - { label: Title, name: title, widget: string }
@@ -100,7 +101,7 @@ collections:
       - label: Services
         name: services
         file: src/content/pages/services.md
-        preview_path: content/pages/services
+        preview_path: /sevices
         fields:
           - { label: Background, name: background, widget: image }
           - { label: Title, name: title, widget: string }
