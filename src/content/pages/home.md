@@ -1,6 +1,6 @@
 ---
 home_bg: images/chip.jpg
-home-bg: images/room-lights.jpg
+home-bg: images/keyboard2.png
 home_call_to_action:
   hcta_lines:
     - hcta_line: Detroit-based software developers
