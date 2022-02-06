@@ -108,7 +108,7 @@ collections:
         name: services
         file: src/content/pages/services.md
         preview_path: content/pages/services
-        fields: 
+        fields:
           - { label: Background, name: background, widget: image }
           - { label: Title, name: title, widget: string }
           - label: Sections
@@ -118,9 +118,9 @@ collections:
               - { label: Title, name: title, widget: string }
               - { label: Pic, name: pic, widget: image }
               - { label: Text, name: text, widget: string }
-              - { label: Button Text, name: button, widget: string}
-              - { label: Section Tag, name: tag, widget: string} 
-          - { label: Contact Title, name: contactTitle, widget: string } 
+              - { label: Button Text, name: button, widget: string }
+              - { label: Section Tag, name: tag, widget: string }
+          - { label: Contact Title, name: contactTitle, widget: string }
   - label: Components
     name: components
     files:
@@ -172,13 +172,13 @@ collections:
               - label: Email
                 name: email
                 widget: object
-                fields: 
+                fields:
                   - { label: Pic, name: pic, widget: image }
                   - { label: Text, name: text, widget: string }
-             - label: Phone
-               name: phone
-               widget: object
-               fields: 
+              - label: Phone
+                name: phone
+                widget: object
+                fields:
                   - { label: Pic, name: pic, widget: image }
                   - { label: Text, name: text, widget: string }
       - label: Contact
@@ -191,7 +191,7 @@ collections:
           - { label: Button, name: button, widget: string }
           - label: Reponse
             name: response
-            widget: object 
+            widget: object
             fields:
               - { label: Success, name: success, widget: string }
               - { label: Recaptcha, name: recaptcha, widget: string }
