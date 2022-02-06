@@ -40,7 +40,7 @@ export default function Footer() {
             {text.social.email.text}
             <hr />
           </a>
-          <a href={`tel:${text.social.phone}`}>
+          <a href={`tel:${text.social.phone.text}`}>
             <Picture src={text.social.phone.pic} alt="mail" />
             {text.social.phone.text}
             <hr />
