@@ -120,10 +120,45 @@ collections:
             name: quick
             widget: object
             fields:
-              - { label: Title, name: title, widget: string }
-              - label: Quick Links
+              - { label: Title, name: title, widget: string, required: false }
+              - label: Links
                 name: links
                 widget: list
                 fields:
                   - { label: Text, name: text, widget: string }
                   - { label: Link, name: link, widget: string }
+          - label: Middle links
+            name: middle
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string, required: false }
+              - label: Links
+                name: links
+                widget: list
+                fields:
+                  - { label: Text, name: text, widget: string }
+                  - { label: Link, name: link, widget: string }
+          - label: Social Media
+            name: social
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string, required: false }
+              - label: Links
+                name: links
+                widget: list
+                fields:
+                  - { label: Pic, name: pic, widget: image }
+                  - { label: Text, name: text, widget: string }
+                  - { label: Link, name: link, widget: string }
+              - label: Email
+                name: email
+                widget: object
+                fields: 
+                  - { label: Pic, name: pic, widget: image }
+                  - { label: Text, name: text, widget: string }
+             - label: Phone
+                name: phone
+                widget: object
+                fields: 
+                  - { label: Pic, name: pic, widget: image }
+                  - { label: Text, name: text, widget: string }

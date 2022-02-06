@@ -1,57 +1,48 @@
 import "./Footer.css";
 import { Fragment } from "react";
 import Picture from "components/Picture/Picture";
+import { attributes } from "../../content/components/footer.md";
 
 export default function Footer() {
+  const text = attributes;
   return (
     <Fragment>
       <footer>
         <section>
-          <a href="/about">
-            About Us
-            <hr />
-          </a>
-          <a href="/services">
-            Our Services
-            <hr />
-          </a>
-          <a href="/contact">
-            Contact / Feedback
-            <hr />
-          </a>
-          <a href="/clients">
-            Clients
-            <hr />
-          </a>
+          {text.quick.title ? <h6>{text.quick.title}</h6> : null}
+          {text.quick.links.map((link) => (
+            <a href={link.link}>
+              {link.text}
+              <hr />
+            </a>
+          ))}
         </section>
         <section>
-          <a href="/newsletter">
-            Sign up for the News Letter
-            <hr />
-          </a>
-          <a href="/blog">
-            Blog
-            <hr />
-          </a>
+          {text.middle.title ? <h6>{text.middle.title}</h6> : null}
+          {text.middle.links.map((link) => (
+            <a href={link.link}>
+              {link.text}
+              <hr />
+            </a>
+          ))}
         </section>
         <section>
-          <a
-            href="https://facebook.com/CJTDevelopers"
-            rel="noreferrer"
-            target="_blank"
-          >
-            <Picture src={"images/img-FB.png"} alt="facebook" />
-            Give us a like
+          {text.social.title ? <h6>{text.social.title}</h6> : null}
+          {text.social.links.map((link) => (
+            <a rel="noreferrer" target="_blank" href={link.link}>
+              <Picture src={link.pic} alt="social link" />
+              {link.text}
+              <hr />
+            </a>
+          ))}
+          <a href={`mailto:${text.social.email.text}`}>
+            <Picture src={text.social.email.pic} alt="mail" />
+            {text.social.email.text}
             <hr />
           </a>
-          <a href="mailto:info@cjtdevs.com">
-            <Picture src={"images/mail.png"} alt="mail" />
-            info@cjtdevs.com
-            <hr />
-          </a>
-          <a href="tel:7347878670">
-            <Picture src={"images/phone.png"} alt="mail" />
-            (734) 787-8670
+          <a href={`tel:${text.social.phone}`}>
+            <Picture src={text.social.phone.pic} alt="mail" />
+            {text.social.phone.text}
             <hr />
           </a>
         </section>
