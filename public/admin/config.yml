@@ -118,12 +118,34 @@ collections:
       - label: Contact
         name: contact
         file: src/content/pages/contact.md
-        preview_path: /sevices
+        preview_path: /contact
         fields:
           - { label: Background, name: background, widget: image }
           - { label: Title, name: title, widget: string }
           - { label: Sub Title, name: subTitle, widget: string }
           - { label: Content, name: content, widget: string }
+      - label: Clients
+        name: clients
+        file: src/content/pages/clients.md
+        preview_path: /clients
+        fields:
+          - { label: Background, name: background, widget: image }
+          - { label: Title, name: title, widget: string }
+          - { label: Content, name: content, widget: string }
+          - label: Clients
+            name: clients
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Link, name: link, widget: string }
+              - { label: Pic, name: pic, widget: image }
+              - {
+                  label: Testimonial,
+                  name: testimonial,
+                  widget: string,
+                  required: false,
+                }
+              - { label: Author, name: author, widget: image }
   - label: Components
     name: components
     files:
