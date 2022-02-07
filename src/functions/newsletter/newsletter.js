@@ -18,11 +18,7 @@ const handler = async function (event, context) {
               if (res) {
                 try {
                   const html = fs.readFileSync(
-                    path.resolve(
-                      __dirname,
-                      "src/content/Emails",
-                      "NewsLetter.html"
-                    ),
+                    path.resolve("src/content/Emails", "NewsLetter.html"),
                     "utf-8"
                   );
 
@@ -30,9 +26,9 @@ const handler = async function (event, context) {
                     to: res.newsLetter.email,
                     subject:
                       "Success - You have been sucessfully subscribed to CJT Devs' news letter",
-                    html: html
+                    html: `${html
                       .toString()
-                      .replace("{%UserEmail%}", res.newsLetter.email),
+                      .replace("{%UserEmail%}", res.newsLetter.email)}`,
                   });
                   statusCode = 200;
                 } catch (err) {
