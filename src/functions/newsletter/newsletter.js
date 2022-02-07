@@ -6,7 +6,6 @@ const {
 } = require("./controller/NewsLetterController");
 const fs = require("fs");
 const path = require("path");
-const email = require("../../content/Emails/NewsLetter.html");
 
 const handler = async function (event, context) {
   let statusCode = 500;
@@ -18,9 +17,11 @@ const handler = async function (event, context) {
             await create(JSON.parse(event.body)).then(async (res) => {
               if (res) {
                 try {
-                  console.log(__dirname);
                   const html = fs.readFileSync(
-                    path.resolve("src/content/Emails", "NewsLetter.html"),
+                    path.resolve(
+                      "src/functions/newsletter/Emails",
+                      "newsletter.md"
+                    ),
                     "utf-8"
                   );
 
@@ -28,9 +29,9 @@ const handler = async function (event, context) {
                     to: res.newsLetter.email,
                     subject:
                       "Success - You have been sucessfully subscribed to CJT Devs' news letter",
-                    html: `${html
+                    html: html
                       .toString()
-                      .replace("{%UserEmail%}", res.newsLetter.email)}`,
+                      .replace("{%UserEmail%}", res.newsLetter.email),
                   });
                   statusCode = 200;
                 } catch (err) {

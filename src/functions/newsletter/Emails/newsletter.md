@@ -6,7 +6,6 @@
       Be on the the look out for new and exciting things happening in not just
       CJT Devs' world but, in all of tech.
     </span>
-
     <footer>
       <p>
         <small
