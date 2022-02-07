@@ -18,7 +18,7 @@ export default function Contact() {
       </div>
       <hr />
       <section>
-        <div className="from-section">
+        <div className="form-section">
           <ContactForm />
         </div>
       </section>
