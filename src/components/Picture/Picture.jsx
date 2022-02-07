@@ -1,7 +1,7 @@
 export default function Picture(props) {
-  return props.s3ImgKey ? (
+  return props.src ? (
     <img
-      src={`/api/S3/${props.s3ImgKey}`}
+      src={`./${props.src}`}
       alt={props.imgAlt}
       style={props.style}
       className={props.className}

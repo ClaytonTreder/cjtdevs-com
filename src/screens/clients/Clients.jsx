@@ -1,33 +1,13 @@
 import Client from "components/Client/Client";
 import "./Clients.css";
-import { useEffect } from "react";
-import useSessionStorage from "hooks/useSessioStorage";
+import { attributes } from "../../content/pages/clients.md";
 import Picture from "components/Picture/Picture";
 
 export default function Clients() {
-  const [text, setText] = useSessionStorage(
-    "clientText" + new Date().getHours()
-  );
-  useEffect(() => {
-    text ??
-      fetch("/api/text/Clients")
-        .then((res) => {
-          return res.json();
-        })
-        .then((data) => {
-          setText(() => data.content);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-  });
-  return text ? (
+  const text = attributes;
+  return (
     <div className="clients">
-      <Picture
-        s3ImgKey={text.pic.s3ImgKey}
-        alt={text.pic.alt}
-        className="bg-img"
-      />
+      <Picture src={text.background} alt="background" className="bg-img" />
       <title>
         <h2>{text.title}</h2>
       </title>
@@ -35,25 +15,24 @@ export default function Clients() {
         <span style={{ fontSize: "large" }}>{text.subtitle}</span>
       </div>
       <div className="subtitle">
-        <span style={{ fontSize: "medium" }}>{text.infoText}</span>
+        <span style={{ fontSize: "medium" }}>{text.content}</span>
       </div>
       <hr />
       <section>
-        {text.clients.map((client, i) => {
+        {text.clients?.map((client, i) => {
           return (
             <div className="item" key={i}>
               <Client
-                s3ImgKey={client.pic.s3ImgKey}
-                alt={client.pic.alt}
-                title={client.link.title}
-                link={client.link.url}
-                quote={client.quote.text}
-                author={client.quote.author}
+                src={client.pic}
+                title={client.title}
+                link={client.link}
+                quote={client.testimonial}
+                author={client.author}
               />
             </div>
           );
         })}
       </section>
     </div>
-  ) : null;
+  );
 }

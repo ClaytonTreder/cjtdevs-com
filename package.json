@@ -33,14 +33,11 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "node server.js",
-    "start-dev": "concurrently --kill-others \"react-scripts start .env.local .env\" \"nodemon -r dotenv/config server.js dotenv_config_path=./.env.local\"",
-    "build": "react-scripts build",
-    "build-dev": "npm run-script build .env.local && node -r dotenv/config server.js dotenv_config_path=./.env.local\"",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test"
   },
-  "proxy": "http://localhost:5010",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -60,8 +57,9 @@
     ]
   },
   "devDependencies": {
+    "frontmatter-markdown-loader": "^3.6.3",
     "nodemon": "^2.0.9",
+    "react-app-rewired": "^2.1.11",
     "react-scripts": "^4.0.3"
-  },
-  "type": "module"
+  }
 }
