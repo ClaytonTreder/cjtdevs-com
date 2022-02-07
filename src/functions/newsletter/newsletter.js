@@ -6,6 +6,7 @@ const {
 } = require("./controller/NewsLetterController");
 const fs = require("fs");
 const path = require("path");
+const email = require("../../content/Emails/NewsLetter.html");
 
 const handler = async function (event, context) {
   let statusCode = 500;
