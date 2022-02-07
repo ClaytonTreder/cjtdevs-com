@@ -1,53 +1,64 @@
-import Information from "components/Information/Information";
-import NewsLetter from "components/NewsLetter/NewsLetter";
-import Picture from "components/Picture/Picture";
-import useSessionStorage from "hooks/useSessioStorage";
-import { useEffect } from "react";
-import Banner from "../../components/Banner/Banner";
 import "./Home.css";
+import { attributes } from "../../content/pages/home.md";
+import NewsLetter from "components/NewsLetter/NewsLetter";
 
 function Home() {
-  const [text, setText] = useSessionStorage("homeText" + new Date().getHours());
-  useEffect(() => {
-    text ??
-      fetch("/api/text/Home")
-        .then((res) => {
-          return res.json();
-        })
-        .then((data) => {
-          setText(() => data.content);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-  });
-  return text ? (
-    <div>
-      <Picture
-        s3ImgKey={text.pic.s3ImgKey}
-        alt="micro-chip"
-        className="bg-img"
-      />
-      <Banner lines={text.banner.lines} buttons={text.banner.buttons} />
+  console.log(attributes);
 
-      <div>
-        {text.showNewsLetter ? <NewsLetter /> : null}
-        <Information info={text.information} />
+  const text = attributes;
+
+  return (
+    <div>
+      <img src={`./${text.home_bg}`} alt="micro-chip" className="bg-img" />
+      <div className="banner fade-in">
+        <title>
+          {text.home_call_to_action.hcta_lines.map((line) => {
+            return <h3>{line.hcta_line}</h3>;
+          })}
+        </title>
+        <div className="ribbon">
+          {text.home_call_to_action.hcta_buttons.map((button) => {
+            return (
+              <a href={button.hcta_button.hcta_button_link}>
+                <button>{button.hcta_button.hcta_button_text}</button>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+      <NewsLetter />
+      <div className="information">
+        {text.home_actions.map((action) => {
+          return (
+            <section>
+              <img
+                alt="background"
+                src={`./${action.ha_action.ha_action_image}`}
+              />
+              <hr />
+              <p>{action.ha_action.ha_action_text}</p>
+            </section>
+          );
+        })}
       </div>
       <div className="base-links">
-        {text.callToAction.map((action) => {
+        {text.home_links.map((link) => {
+          console.log(link);
           return (
             <div className="flex-inline">
-              <Picture s3ImgKey={action.pic.s3ImgKey} alt={action.pic.alt} />
-              <a href={action.url}>
-                <button>{action.text}</button>
+              <img
+                src={`./${link.hl_link.hl_link_image}`}
+                alt={`${link.hl_link.hl_link_image}`}
+              />
+              <a href={link.hl_link.hl_link_nav}>
+                <button>{link.hl_link.hl_link_text}</button>
               </a>
             </div>
           );
         })}
       </div>
     </div>
-  ) : null;
+  );
 }
 
 export default Home;

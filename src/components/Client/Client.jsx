@@ -7,7 +7,7 @@ export default function Client(params) {
         <a href={params.link}>
           <span>{params.title}</span>
           <Picture
-            s3ImgKey={params.s3ImgKey}
+            src={params.src}
             alt={params.alt}
             style={{
               maxWidth: "100%",
@@ -19,7 +19,7 @@ export default function Client(params) {
         <div>
           <span>{params.title}</span>
           <Picture
-            s3ImgKey={params.s3ImgKey}
+            src={params.src}
             alt={params.alt}
             style={{
               maxWidth: "100%",
