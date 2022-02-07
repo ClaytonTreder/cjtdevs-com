@@ -18,7 +18,11 @@ const handler = async function (event, context) {
               if (res) {
                 try {
                   const html = fs.readFileSync(
-                    path.resolve("src/content/Emails", "NewsLetter.html"),
+                    path.resolve(
+                      __dirname,
+                      "src/content/Emails",
+                      "NewsLetter.html"
+                    ),
                     "utf-8"
                   );
 
