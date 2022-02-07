@@ -17,6 +17,7 @@ const handler = async function (event, context) {
             await create(JSON.parse(event.body)).then(async (res) => {
               if (res) {
                 try {
+                  console.log(__dirname);
                   const html = fs.readFileSync(
                     path.resolve("src/content/Emails", "NewsLetter.html"),
                     "utf-8"
