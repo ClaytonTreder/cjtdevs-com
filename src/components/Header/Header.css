@@ -15,14 +15,15 @@ header img {
   }
 
   .mobile-nav-icon {
-    float: right;
-    padding: 1%;
+    position: absolute;
+    right: 0;
+    padding: 2%;
     z-index: 100;
   }
   .mobile-nav-icon div {
     width: 30px;
     height: 3px;
-    background-color: rgba(0, 0, 0, 0.753);
+    background-color: var(--color-white);
     margin-bottom: 6px;
   }
 }
