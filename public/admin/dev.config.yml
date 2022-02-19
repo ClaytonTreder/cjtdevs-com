@@ -4,7 +4,7 @@ backend:
 publish_mode: editorial_workflow
 media_folder: public/images
 public_folder: images
-site_url: https://inspiring-bardeen-8933a8.netlify.app
+site_url: https://dev.cjtdevs.com
 
 collections:
   - label: Pages
