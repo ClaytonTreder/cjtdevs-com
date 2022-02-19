@@ -9,7 +9,7 @@ export default function Blog() {
         <h4>Coming Soon!</h4>
         <p>
           Begining March 2022, you will be able find a quartley blog post here.
-          Check back then!
+          Hope you check back then!
         </p>
       </section>
     </div>
