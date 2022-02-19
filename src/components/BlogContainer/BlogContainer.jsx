@@ -10,7 +10,7 @@ export default function BlogContainer(props) {
       {props.isActive ? (
         <div>
           <div className="flex-inline">
-            <h4>{blog.title}&nbsp; - &nbsp;</h4> <h5> {blog.subtitle}</h5>
+            <h4>{blog.title}&nbsp; - &nbsp;</h4> <h5> {blog.subTitle}</h5>
           </div>
           <Picture
             style={{
@@ -41,7 +41,7 @@ export default function BlogContainer(props) {
         <div className="flex-row" style={{ marginBottom: "2.5%" }}>
           <div className="column" style={{ width: "35%", paddingTop: "2.5%" }}>
             <h3>{blog.title}</h3>
-            <h5>{blog.subtitle}</h5>
+            <h5>{blog.subTitle}</h5>
             <p>
               <small>Author: {blog.author}</small>
             </p>
