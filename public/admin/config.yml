@@ -146,6 +146,13 @@ collections:
                   required: false,
                 }
               - { label: Author, name: author, widget: string }
+      - label: Blogs
+        name: blog
+        file: src/content/pages/blog.md
+        preview_path: /blog
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Sub Title, name: subTitle, widget: string }
   - label: Components
     name: components
     files:
@@ -222,3 +229,14 @@ collections:
               - { label: Success, name: success, widget: string }
               - { label: Recaptcha, name: recaptcha, widget: string }
               - { label: Error, name: error, widget: string }
+  - label: Blogs
+    name: blogs
+    folder: src/content/blogs
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Sub Title", name: "subTitle", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "img", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
