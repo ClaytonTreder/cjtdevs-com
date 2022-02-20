@@ -5,7 +5,7 @@ author: Clayton Treder
 date: 2022-02-19T20:39:01.813Z
 img: images/2017-11-23-11-13-32-1200x800.jpg
 ---
-Growing up I always wanted to be an architect. My mother is an artist and my father works in construction. I wanted to blend the two together and I thought it would be fun, I liked to draw. My skills in drawing faded as quick as my interest when my dad brought home our first computer. It ran Windows 95 and I thought it was *the*  coolest thing ever. I was fascinated and since I loved video games my parents got me some to play on the PC. As the years went by my love for games grew/ I remember coming home to play World of Warcraft after school and playing until my home work was due the next day. I loved it. 
+Growing up I always wanted to be an architect. My mother is an artist and my father works in construction. I wanted to blend the two together, I thought it would be fun, and I liked to draw. My skills in drawing faded as quick as my interest when my dad brought home our first computer. It ran Windows 95 and I thought it was *the*  coolest thing ever. I was fascinated and since I loved video games my parents got me some to play on the PC. As the years went by my love for games grew/ I remember coming home to play World of Warcraft after school and playing until my home work was due the next day. I loved it. 
 
 My first love was video games but, I quickly found another with music. I never played an instrument but, it mostly listening and dissecting lyrics. 
 
