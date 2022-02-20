@@ -22,6 +22,8 @@ export default function BlogContainer(props) {
             }}
             src={blog.img}
           />
+          <br />
+          <br />
           <BlogComp />
           <span>
             Thanks for reading - <i>{blog.author}</i>
