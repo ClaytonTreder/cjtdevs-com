@@ -15,7 +15,7 @@ With my poor grades and lack of direction I decided to go a local community coll
 
 I was going to be a music producer/recording engineer.  I mean I have a great understanding of computers and I love music. This was it. *This* was what I was going to do. I realized after a short while that it wasn't. In the words of my favorite professor at the school, "You have to be in the wrong place at the wrong time a thousand times before you are in the right place at the right time to make it in music."\
 \
-When I first heard that I thought, "That's cool, I'll do that. No problem, I want this." The only thing was I didn't realize how few and far between each of those times are. I gave up. I couldn't do it anymore. I took quite the break from school and worked a few dead end jobs. They paid alright and living at my parents was that bad but, I had bigger dreams than that. I wanted more. I wanted a lot more. 
+When I first heard that I thought, "That's cool, I'll do that. No problem, I want this." The only thing was I didn't realize how few and far between each of those times are. I gave up. I couldn't do it anymore. I took quite the break from school and worked a few dead end jobs. They paid alright and living at my parents wasn't that bad but, I had bigger dreams than that. I wanted more. I wanted a lot more. 
 
 After a few years of job jumping I decided I would go back to school. It was a big decision to do that, it was scary I was comfortable with what I had. I knew it would be tech and after a quick stint of networking, I found programing. It was love at first byte. The first program that I got to work was the coolest thing. It was such a rush. Regardless, I found it, this **was** it. This was the thing I was going to do for the rest of my life.
 
