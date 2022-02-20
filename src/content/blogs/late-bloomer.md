@@ -11,7 +11,7 @@ My first love was video games but, I quickly found another with music. I never p
 
 High school came and went with plenty of woes, highs and all the in between and I had to figure out what I wanted to do for the rest of my life. A big burden to put on the shoulders of a seventeen year old, or anyone for that matter. I had no idea. I thought some with electronic hardware would be cool. 
 
-With my poor grades and lack of direction I decided to go a local community college. For electrical engineering, then electronic technologist, then bio medical technology. I didn't really like any of them (I mean they are all very similar). After a little break from school. I had a brilliant idea. I would do something similar to what I wanted when I was young.
+With my poor grades and lack of direction I decided to go a local community college. For electrical engineering, then electronic technologist, then bio medical technology. I didn't really like any of them (I mean they are all very similar, I wish I would have realized sooner). After a little break from school. I had a brilliant idea. I would do something similar to what I wanted when I was young.
 
 I was going to be a music producer/recording engineer.  I mean I have a great understanding of computers and I love music. This was it. *This* was what I was going to do. I realized after a short while that it wasn't. In the words of my favorite professor at the school, "You have to be in the wrong place at the wrong time a thousand times before you are in the right place at the right time to make it in music."\
 \
