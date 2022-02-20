@@ -7,7 +7,7 @@ img: images/2017-11-23-11-13-32-1200x800.jpg
 ---
 As a child I always wanted to be an architect. My mother is an artist and my father works in construction. I wanted to blend the two together, I thought it would be fun, and I liked to draw. My skills in drawing faded as quick as my interest when my dad brought home our first computer. It ran Windows 95 and I thought it was *the*  coolest thing ever. I was fascinated and since I loved video games my parents bought some for me play on the PC. As the years went by my love for games grew. I remember coming home to play World of Warcraft after school and playing until my home work was due the next day. I loved it. 
 
-My first love was video games but, I quickly found another with music. I never played an instrument but, it mostly listening and dissecting lyrics. Feeling the emotion of some through music really meant a lot to me. 
+My first love was video games but, I quickly found another with music. I never played an instrument but, I mostly enjoyed listening and dissecting lyrics. Feeling the emotion of some through music really meant a lot to me. 
 
 High school came and went with plenty of woes, highs and all the in between and I had to figure out what I wanted to do for the rest of my life. A big burden to put on the shoulders of a seventeen year old, or anyone for that matter. I had no idea. I thought some with electronic hardware would be cool. 
 
