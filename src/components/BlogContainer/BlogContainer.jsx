@@ -9,9 +9,8 @@ export default function BlogContainer(props) {
     <Fragment>
       {props.isActive ? (
         <div>
-          <div className="flex-inline">
-            <h4>{blog.title}&nbsp; - &nbsp;</h4> <h5> {blog.subTitle}</h5>
-          </div>
+          <h4>{blog.title}</h4>
+          <h5> {blog.subTitle}</h5>
           <Picture
             style={{
               opacity: "80%",
