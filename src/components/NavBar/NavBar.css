@@ -66,26 +66,30 @@ a:hover .nav :not(a:hover .arrow-left-top) {
 }
 @media (min-width: 768px) and (max-width: 971px) {
   .navbar {
-    padding-right: 3%;
-    padding-left: 3%;
+    padding-right: 0.5%;
+    padding-left: 0.5%;
+  }
+  .nav {
+    padding-left: 18px;
+    padding-right: 18px;
   }
 }
 @media (min-width: 972px) and (max-width: 1171px) {
   .navbar {
-    padding-right: 10%;
-    padding-left: 10%;
+    padding-right: 5.5%;
+    padding-left: 5.5%;
   }
 }
 @media (min-width: 972px) and (max-width: 1186px) {
   .navbar {
-    padding-right: 10%;
-    padding-left: 10%;
+    padding-right: 5.5%;
+    padding-left: 5.5%;
   }
 }
 @media (min-width: 1187px) {
   .navbar {
-    padding-right: 20%;
-    padding-left: 20%;
+    padding-right: 15%;
+    padding-left: 15%;
   }
 }
 
