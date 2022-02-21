@@ -1,10 +1,13 @@
 import Picture from "components/Picture/Picture";
 import { Fragment } from "react";
+import LinkShare from "components/LinkShare/LinkShare";
 
 export default function BlogContainer(props) {
   const blogFile = require(`../../content/blogs/${props.fileName}`);
   const blog = blogFile.attributes;
   const BlogComp = blogFile.react;
+  const trimedFileName = props.fileName.replace(".md", "");
+
   return (
     <Fragment>
       {props.isActive ? (
@@ -27,10 +30,13 @@ export default function BlogContainer(props) {
           <span>
             Thanks for reading - <i>{blog.author}</i>
           </span>
+          <LinkShare
+            link={`${window.location.hostname}/blog?post=${trimedFileName}`}
+          />
           <div>
             <button
               onClick={() => {
-                props.buttonClick(undefined);
+                window.location.href = `/blog`;
               }}
               style={{ marginTop: "5%", width: "25%" }}
             >
@@ -46,12 +52,14 @@ export default function BlogContainer(props) {
             <p>
               <small>Author: {blog.author}</small>
             </p>
-
+            <LinkShare
+              link={`${window.location.hostname}/blog?post=${trimedFileName}`}
+            />
             <button
               onClick={() => {
-                props.buttonClick(`./${props.fileName}`);
+                window.location.href = `/blog?post=${trimedFileName}`;
               }}
-              style={{ width: "75%" }}
+              style={{ marginTop: "5%", width: "75%" }}
             >
               Read
             </button>

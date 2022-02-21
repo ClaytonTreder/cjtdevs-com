@@ -1,17 +1,25 @@
 import BlogContainer from "components/BlogContainer/BlogContainer";
 import { useState, Fragment } from "react";
-import { useLocation } from "react-router";
+import { useSearchParams } from "react-router-dom";
 import { attributes as blogContent } from "../../content/pages/blog.md";
 import "./Blog.css";
 export default function Blog() {
   const blogs = require.context("../../content/blogs", false, /\.md$/).keys();
+  const [searchParams] = useSearchParams();
 
-  const searchBlog = useLocation().search?.replace("?post=", "./") + ".md";
+  const searchBlog =
+    "./" +
+    searchParams
+      ?.get("post")
+      ?.slice(
+        searchParams.get("post").indexOf("=") + 1,
+        searchParams.get("post").length
+      ) +
+    ".md";
 
   const [activePost, setActivePost] = useState(
-    searchBlog === ".md" ? undefined : searchBlog
+    searchBlog === "./undefined.md" ? undefined : searchBlog
   );
-  console.log(searchBlog, activePost);
   return (
     <div className="blog">
       <title>
