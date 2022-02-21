@@ -2,7 +2,7 @@ import Picture from "components/Picture/Picture";
 import { useState, Fragment } from "react";
 
 export default function LinkShare(props) {
-  const [link, setLink] = useState(props.link);
+  const [link, setLink] = useState("https://" + props.link);
   const [open, setOpen] = useState(false);
 
   return (
@@ -23,7 +23,7 @@ export default function LinkShare(props) {
       >
         <div
           class="fb-share-button"
-          data-href={"https://www.cjtdevs.com/blog?post=" + link}
+          data-href={link}
           data-layout="button"
           data-size="large"
         ></div>
@@ -38,7 +38,7 @@ export default function LinkShare(props) {
           alt={`share ${link}`}
           onClick={() => {
             setOpen(!open);
-            setLink(props.link);
+            setLink("https://" + props.link);
           }}
         />
       </div>
