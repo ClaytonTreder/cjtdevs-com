@@ -5,6 +5,9 @@ subtitle: ​​Join our growing list of clients!
 content: We value hard work and high preformance. Our clients agree. Check out
   our work for yourself!
 clients:
+  - title: Client 4
+    link: https://cjtdevs.com/
+    pic: images/chip2.jpg
   - title: White Wings Studio
     link: https://whitewingsstudio.com
     pic: images/chip.jpg
