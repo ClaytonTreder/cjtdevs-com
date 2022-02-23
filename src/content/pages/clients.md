@@ -8,11 +8,13 @@ clients:
   - title: zacevan.com
     link: https://zacevan.com
     pic: images/zacevan-com.png
-    testimonial:
-      Clean and simple was what I asked for and that is exactly what I
+    testimonial: Clean and simple was what I asked for and that is exactly what I
       got. Astounding work!
     author: Zac
   - title: CJTDevs.com
     link: https://github.com/cjtdevs/cjtdevs-com/
     pic: images/cjtdevs-com.png
+  - title: White Wings Studio
+    link: https://whitewingsstudio.com
+    pic: images/chip.jpg
 ---
