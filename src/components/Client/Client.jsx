@@ -4,7 +4,7 @@ export default function Client(params) {
   return (
     <div className="client">
       {params.link ? (
-        <a href={params.link}>
+        <a href={params.link} target="_blank" rel="noreferrer">
           <span>{params.title}</span>
           <Picture
             src={params.src}
