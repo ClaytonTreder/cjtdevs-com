@@ -145,7 +145,7 @@ collections:
                   widget: string,
                   required: false,
                 }
-              - { label: Author, name: author, widget: string }
+              - { label: Author, name: author, widget: string, required: false }
       - label: Blogs
         name: blog
         file: src/content/pages/blog.md
