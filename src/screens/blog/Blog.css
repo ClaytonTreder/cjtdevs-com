@@ -1,7 +1,10 @@
 .blog h2 {
   color: white;
 }
-button {
+.blog {
+  background-color: white;
+}
+.blog button {
   color: black;
 }
 /* mobile */
