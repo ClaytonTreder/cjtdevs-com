@@ -59,8 +59,7 @@ function App() {
           />
           <div style={{ display: "none" }}>
             <img
-              style={{ display: "none" }}
-              style={{ padding: "20%" }}
+              style={{ padding: "20%", display: "none" }}
               src="./images/logo.svg"
               alt="initial loading"
             />
