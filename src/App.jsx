@@ -43,7 +43,7 @@ function App() {
   }, []);
 
   const checkLoaded = () => {
-    if (imagesLoaded.filter((il) => il.loaded !== false).length < 1) {
+    if (imagesLoaded.filter((il) => il.loaded === false).length < 1) {
       setInitLoading(false);
     }
   };
