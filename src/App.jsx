@@ -43,7 +43,7 @@ function App() {
   }, []);
 
   const checkLoaded = () => {
-    if (imagesLoaded.filter((il) => il.loaded !== true).length < 1) {
+    if (imagesLoaded.filter((il) => il.loaded !== false).length < 1) {
       setInitLoading(false);
     }
   };
@@ -59,6 +59,7 @@ function App() {
           />
           <div style={{ display: "none" }}>
             <img
+              style={{ display: "none" }}
               style={{ padding: "20%" }}
               src="./images/logo.svg"
               alt="initial loading"
@@ -66,6 +67,7 @@ function App() {
             {imagesLoaded.map((il) => {
               return (
                 <img
+                  style={{ display: "none" }}
                   src={"./" + il.image}
                   alt="imgCheck"
                   onLoad={() => {
