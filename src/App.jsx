@@ -39,6 +39,7 @@ function App() {
 
   useEffect(() => {
     setInitLoading(imagesLoaded.filter((il) => il.loaded === false).length < 1);
+    // eslint-disable-next-line
   }, []);
 
   const checkLoaded = () => {
@@ -51,7 +52,7 @@ function App() {
     <Fragment>
       {initLoading ? (
         <Fragment>
-          <img src="./images/heartbeat.gif" atl="initial loading" />
+          <img src="./images/heartbeat.gif" alt="initial loading" />
           <div style={{ display: "none" }}>
             {imagesLoaded.map((il) => {
               return (
