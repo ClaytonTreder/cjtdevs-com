@@ -27,7 +27,7 @@ import { attributes as servicesMD } from "content/pages/services.md";
 function App() {
   const [mobileNavOpen, setMobileNavOpen] = useState();
 
-  const [initLoading, setInitLoading] = useState(true);
+  const [initLoading, setInitLoading] = useState();
 
   const [imagesLoaded, setImagesLoaded] = useSessionStorage("imagesLoaded", [
     { loaded: false, key: "about", image: aboutMD.background },
@@ -38,12 +38,12 @@ function App() {
   ]);
 
   useEffect(() => {
-    setInitLoading(imagesLoaded.filter((il) => il.loaded === false).length < 1);
+    setInitLoading(imagesLoaded.filter((il) => il.loaded !== false).length < 1);
     // eslint-disable-next-line
   }, []);
 
   const checkLoaded = () => {
-    if (imagesLoaded.filter((il) => il.loaded === false).length < 1) {
+    if (imagesLoaded.filter((il) => il.loaded !== false).length < 1) {
       setInitLoading(false);
     }
   };
@@ -52,12 +52,21 @@ function App() {
     <Fragment>
       {initLoading ? (
         <Fragment>
-          <img src="./images/heartbeat.gif" alt="initial loading" />
+          <img
+            style={{ padding: "20%" }}
+            src="./images/heartbeat.gif"
+            alt="initial loading"
+          />
           <div style={{ display: "none" }}>
+            <img
+              style={{ padding: "20%" }}
+              src="./images/logo.svg"
+              alt="initial loading"
+            />
             {imagesLoaded.map((il) => {
               return (
                 <img
-                  src={"/" + il.image}
+                  src={"./" + il.image}
                   alt="imgCheck"
                   onLoad={() => {
                     setImagesLoaded((prevState) =>
