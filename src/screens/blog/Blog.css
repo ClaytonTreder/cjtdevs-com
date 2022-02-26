@@ -1,10 +1,11 @@
-.blog section {
-  padding-left: 25%;
-  padding-right: 25%;
-  padding-top: 2.5%;
-}
 .blog h2 {
   color: white;
+}
+.blog {
+  background-color: white;
+}
+.blog button {
+  color: black;
 }
 /* mobile */
 @media (max-width: 767px) {
@@ -13,6 +14,11 @@
     flex-direction: row;
     padding-left: 5%;
     padding-right: 5%;
+  }
+  .blog section {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2.5%;
   }
 }
 
@@ -23,5 +29,10 @@
     flex-direction: row;
     padding-left: 20%;
     padding-right: 20%;
+  }
+  .blog section {
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-top: 2.5%;
   }
 }

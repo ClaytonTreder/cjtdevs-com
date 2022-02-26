@@ -6,6 +6,19 @@
 
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
+    <link type="text/yaml" id="config-link-cms" rel="cms-config-url" />
+    <script>
+      let lnk = document.getElementById("config-link-cms");
+      switch (window.location.hostname) {
+        case "dev.cjtdevs.com":
+          lnk.href = "/admin/dev.config.yml";
+          break;
+        default:
+          lnk.href = "/admin/config.yml";
+          break;
+      }
+    </script>
+
     <title>Content Manager</title>
   </head>
   <body>

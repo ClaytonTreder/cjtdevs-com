@@ -36,6 +36,7 @@ function Navs() {
   const services = useRef(null);
   const contact = useRef(null);
   const clients = useRef(null);
+  const blog = useRef(null);
 
   useEffect(() => {
     switch (loc.pathname) {
@@ -53,6 +54,9 @@ function Navs() {
         break;
       case "/clients":
         clients.current.classList.add("nav-select");
+        break;
+      case "/blog":
+        blog.current.classList.add("nav-select");
         break;
       default:
         break;
@@ -94,6 +98,13 @@ function Navs() {
           <div className="arrow-left-bottom"></div>
         </div>
         <span className="nav">Clients</span>
+      </a>
+      <a ref={blog} href="/blog" className="flex-inline">
+        <div>
+          <div className="arrow-left-top"></div>
+          <div className="arrow-left-bottom"></div>
+        </div>
+        <span className="nav">Blog</span>
       </a>
     </Fragment>
   );
