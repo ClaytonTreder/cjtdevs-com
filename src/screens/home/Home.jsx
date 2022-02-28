@@ -1,6 +1,7 @@
 import "./Home.css";
 import { attributes } from "../../content/pages/home.md";
 import NewsLetter from "components/NewsLetter/NewsLetter";
+import Picture from "components/Picture/Picture";
 
 function Home() {
   console.log(attributes);
@@ -9,7 +10,7 @@ function Home() {
 
   return (
     <div>
-      <img src={`./${text.home_bg}`} alt="micro-chip" className="bg-img" />
+      <Picture src={text.home_bg} alt="micro-chip" className="bg-img" />
       <div className="banner fade-in">
         <title>
           {text.home_call_to_action.hcta_lines.map((line) => {
