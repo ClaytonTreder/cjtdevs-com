@@ -11,7 +11,7 @@ export default function Contact() {
         <h2>{text.title}</h2>
       </title>
       <div className="subtitle">
-        <span style={{ fontSize: "large" }}>​​{text.subTitle}</span>
+        <span style={{ fontSize: "large" }}>{text.subTitle}</span>
       </div>
       <div className="subtitle">
         <span style={{ fontSize: "medium" }}>{text.content}</span>

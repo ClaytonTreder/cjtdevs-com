@@ -23,6 +23,7 @@ import { attributes as clientsMD } from "content/pages/clients.md";
 import { attributes as contactMD } from "content/pages/contact.md";
 import { attributes as homeMD } from "content/pages/home.md";
 import { attributes as servicesMD } from "content/pages/services.md";
+import Picture from "components/Picture/Picture";
 
 function App() {
   const [mobileNavOpen, setMobileNavOpen] = useState();
@@ -52,11 +53,15 @@ function App() {
     <Fragment>
       {initLoading ? (
         <Fragment>
-          <img
-            style={{ padding: "20%" }}
-            src="./images/heartbeat.gif"
-            alt="initial loading"
-          />
+          <div style={{ padding: "5%" }} className="flex-row-center">
+            <h1 style={{ color: "var(--color-white)" }}>Hang Tight!</h1>
+            <Picture
+              style={{ marginLeft: "10%" }}
+              src="images/heartbeat.gif"
+              alt="initial loading"
+              className="bg-img"
+            />
+          </div>
           <div style={{ display: "none" }}>
             <img
               style={{ padding: "20%", display: "none" }}
