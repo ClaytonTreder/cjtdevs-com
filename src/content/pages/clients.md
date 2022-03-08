@@ -14,7 +14,7 @@ clients:
     testimonial: Clean and simple was what I asked for and that is exactly what I
       got. Astounding work!
     author: Zac
-  - title: CJTDevs.com
+  - title: CJT Devs
     link: https://github.com/cjtdevs/cjtdevs-com/
     pic: images/cjtdevs-com.png
 ---
