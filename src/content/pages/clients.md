@@ -1,5 +1,5 @@
 ---
-background: images/fiber-optic-1055946.jpg
+background: images/room-lights.jpg
 title: Clients
 subtitle: ​​Join our growing list of clients!
 content: We value hard work and high preformance. Our clients agree. Check out
