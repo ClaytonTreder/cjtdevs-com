@@ -8,6 +8,10 @@ clients:
   - title: White Wings Studio
     link: https://whitewingsstudio.com
     pic: images/screen-shot-2022-03-08-at-1.47.14-pm.jpeg
+    testimonial: Clayton takes the time to explain every detail to you, so you
+      understand what is going on in your website. I would highly recommend CJT
+      Devs to anyone needing a website built!
+    author: Katie
   - title: zacevan.com
     link: https://zacevan.com
     pic: images/zacevan-com.jpeg
