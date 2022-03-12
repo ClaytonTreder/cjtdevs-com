@@ -4,8 +4,6 @@ import NewsLetter from "components/NewsLetter/NewsLetter";
 import Picture from "components/Picture/Picture";
 
 function Home() {
-  console.log(attributes);
-
   const text = attributes;
 
   return (

@@ -6,6 +6,7 @@ export default function Picture(props) {
       alt={props.imgAlt}
       style={props.style}
       className={props.className}
+      onLoad={props.onLoad}
     />
   ) : null;
 }
