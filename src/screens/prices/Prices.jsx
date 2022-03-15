@@ -65,13 +65,13 @@ export default function Prices() {
                 <h3>{'←'}</h3>
               </button>
             </div>
-            <h3>{section.title} </h3>
+            <h3>{section.title}</h3>
             <h4>{section.text}</h4>
             {section?.subSections?.length
               ? section.subSections.map((subSection) => {
                   return (
                     <>
-                      <h5>
+                      <h5 >
                         {subSection.title} - {subSection.price}
                       </h5>
                       <section>
