@@ -12,7 +12,7 @@ sections:
         text: A website that doesn't change. We will design and place content specific for you or your business. Tell us what you want and that's it!
       - title: Dynamic Website
         price: $750
-        text: Similiar to a static website but, with the ability to add/edit content. Have some recipes to share or want to start a blog? This is the option for you!
+        text: Similiar to a static website, but with the ability to add/edit content. Have some recipes to share or want to start a blog? This is the option for you!
       - title: E-Commerce Website
         price: $1500
         text: Do you want to sell something online? Or provide a service through your website? Powered by Stripe, we can make you a beautiful place to sell online.
