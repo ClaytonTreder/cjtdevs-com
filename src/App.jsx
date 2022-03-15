@@ -18,6 +18,7 @@ import NotFound from "screens/notfound/NotFound";
 import Unsubscribe from "screens/unsubscribe/Unsubsribe";
 
 import InitLoader from "components/InitLoader/InitLoader";
+import Prices from "screens/prices/Prices";
 
 function App() {
   const [mobileNavOpen, setMobileNavOpen] = useState();
@@ -46,6 +47,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/clients" element={<Clients />} />
               <Route path="/blog" element={<Blog />} />
+              <Route path="/prices" element={<Prices />} />
               <Route path="/newsletter" element={<NewsLetter />} />
               <Route path="/user/unsubscribe" element={<Unsubscribe />} />
               <Route path="*" element={<NotFound />} />
