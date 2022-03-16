@@ -19,11 +19,12 @@ import Unsubscribe from "screens/unsubscribe/Unsubsribe";
 
 import InitLoader from "components/InitLoader/InitLoader";
 import Prices from "screens/prices/Prices";
+import useSessionStorage from 'shared/hooks/useSessionStorage';
 
 function App() {
   const [mobileNavOpen, setMobileNavOpen] = useState();
 
-  const [initLoading, setInitLoading] = useState();
+  const [initLoading, setInitLoading] = useSessionStorage("initLoading", false);
 
   return (
     <Fragment>
