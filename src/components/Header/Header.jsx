@@ -1,4 +1,3 @@
-import useSessionStorage from 'shared/hooks/useSessionStorage';
 import './Header.css';
 
 export default function Header(params) {
