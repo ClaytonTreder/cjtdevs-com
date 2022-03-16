@@ -1,6 +1,5 @@
-import Picture from "components/Picture/Picture";
-import "./Header.css";
-import { attributes } from "../../content/components/header.md";
+import './Header.css';
+import logo from './logo.svg'
 
 export default function Header(params) {
   const setMobileNavOpen = params.setMobileNavOpen;
@@ -8,7 +7,7 @@ export default function Header(params) {
   return (
     <header>
       <div
-        className="mobile-nav-icon"
+        className='mobile-nav-icon'
         onClick={(e) => {
           setMobileNavOpen(true);
         }}
@@ -17,7 +16,7 @@ export default function Header(params) {
         <div></div>
         <div></div>
       </div>
-      <Picture src={attributes.logo} alt="logo" />
+      <img src={logo} alt='logo' />
     </header>
   );
 }
