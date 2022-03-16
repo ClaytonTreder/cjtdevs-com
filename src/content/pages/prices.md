@@ -29,12 +29,12 @@ sections:
       - title: Standard
         price: $30
         text: Custom website email (you@yoursite.com) + Basic subscription
-      - title: Super
+      - title: Professional
         price: $60
         text: One hour meeting with a dev monthly + 2 hours of development time (small bug fixes/content addition) + Standard subscription
       - title: Premium
         price: $100
-        text: Same as Super subscription with 3 extra hours of development time
+        text: Same as Professional subscription with 3 extra hours of development time
   - title: Mobile App Creation
     text: Contact us for more info.
     tag: app
