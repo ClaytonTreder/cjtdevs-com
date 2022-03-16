@@ -60,6 +60,9 @@
     "frontmatter-markdown-loader": "^3.6.3",
     "nodemon": "^2.0.9",
     "react-app-rewired": "^2.1.11",
-    "react-scripts": "^4.0.3"
+    "react-scripts": "^4.0.3",
+    "imagemin": "^8.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2"
   }
 }
