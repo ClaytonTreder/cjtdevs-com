@@ -5,11 +5,11 @@ import imageminPngquant from "imagemin-pngquant";
 (async () => {
   try {
     await imagemin(["public/images/uncompressed/*.{jpg,jpeg,png}"], {
-      destination: "build/images",
+      destination: "public/images",
       plugins: [
-        imageminMozjpeg({ quality: 50 }),
+        imageminMozjpeg({ quality: 25 }),
         imageminPngquant({
-          quality: [0.6, 0.8],
+          quality: [0.25, 0.35],
         }),
       ],
     });
