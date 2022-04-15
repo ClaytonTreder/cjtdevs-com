@@ -15,6 +15,8 @@ middle:
       link: /newsletter
     - text: Blog
       link: /blog
+    - text: Admin
+      link: /admin
 social:
   links:
     - pic: images/img-FB.png
