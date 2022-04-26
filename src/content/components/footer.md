@@ -15,6 +15,8 @@ middle:
       link: /newsletter
     - text: Blog
       link: /blog
+    - text: Payments
+      link: /payments
     - text: Admin
       link: /admin
 social:

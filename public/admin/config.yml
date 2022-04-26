@@ -153,6 +153,26 @@ collections:
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Sub Title, name: subTitle, widget: string }
+      - label: Payments
+        name: payments
+        file: src/content/pages/payments.md
+        fields: 
+          - { label: Title, name: title, widget: string }
+          - { label: Sub Title, name: subTitle, widget: string }
+          - { label: Description, name: description, widget: string }
+          - label: Types 
+            name: types 
+            widget: object 
+            fields: 
+              - { label: "One Time", name: oneTime, widget: string }
+              - { label: "Subscription", name: subscription, widget: string } 
+          - label: Subscription Types 
+            name: subcription
+            widget: object 
+            fields: 
+              - { label: "Monthly", name: monthly, widget: string }
+              - { label: "Quarterly", name: quarterly, widget: string }
+              - { label: "Yearly", name: yearly, widget: string } 
   - label: Components
     name: components
     files:
