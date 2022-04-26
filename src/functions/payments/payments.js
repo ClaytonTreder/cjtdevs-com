@@ -18,7 +18,7 @@ const getReccuring = (init_interval) => {
   return { interval, interval_count };
 };
 
-const handler = async function (event) {
+const handler = async function (event, context) {
   try {
     let statusCode = 500;
     const body = JSON.parse(event.body);
