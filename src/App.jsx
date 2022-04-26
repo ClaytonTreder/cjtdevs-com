@@ -20,6 +20,7 @@ import Unsubscribe from 'screens/unsubscribe/Unsubsribe';
 import InitLoader from 'components/InitLoader/InitLoader';
 import Prices from 'screens/prices/Prices';
 import useSessionStorage from 'shared/hooks/useSessionStorage';
+import Payments from 'screens/payments/Payments';
 
 function App() {
   const [mobileNavOpen, setMobileNavOpen] = useState();
@@ -47,6 +48,7 @@ function App() {
               <Route path='/clients' element={<Clients />} />
               <Route path='/blog' element={<Blog />} />
               <Route path='/prices' element={<Prices />} />
+              <Route path='/payments' element={<Payments />} />
               <Route path='/newsletter' element={<NewsLetter />} />
               <Route path='/user/unsubscribe' element={<Unsubscribe />} />
               <Route path='*' element={<NotFound />} />

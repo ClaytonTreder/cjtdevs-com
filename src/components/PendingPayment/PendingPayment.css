@@ -1,0 +1,20 @@
+.pendingPayment div {
+  padding-bottom: 1.5%;
+}
+/* mobile */
+@media (max-width: 767px) {
+  .pendingPayment section {
+    padding-left: var(--mobile-padding-x);
+    padding-right: var(--mobile-padding-x);
+    padding-bottom: 25%;
+  }
+}
+
+/* desktop */
+@media (min-width: 768px) {
+  .pendingPayment section {
+    padding-left: var(--desktop-padding-x);
+    padding-right: var(--desktop-padding-x);
+    padding-bottom: 5%;
+  }
+}

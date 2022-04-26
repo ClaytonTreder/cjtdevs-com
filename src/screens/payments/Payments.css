@@ -1,0 +1,38 @@
+.payments {
+  background-color: white;
+}
+
+.payments .success a {
+  padding-bottom: 5%;
+}
+/* mobile */
+@media (max-width: 767px) {
+  .payments title {
+    display: flex;
+    flex-direction: row;
+    padding-left: var(--mobile-padding-x);
+    padding-right: var(--mobile-padding-x);
+  }
+  .payments .success {
+    display: flex;
+    flex-direction: row;
+    padding-left: var(--mobile-padding-x);
+    padding-right: var(--mobile-padding-x);
+  }
+}
+
+/* desktop */
+@media (min-width: 768px) {
+  .payments title {
+    display: flex;
+    flex-direction: row;
+    padding-left: var(--desktop-padding-x);
+    padding-right: var(--desktop-padding-x);
+  }
+  .payments .success {
+    display: flex;
+    flex-direction: row;
+    padding-left: var(--desktop-padding-x);
+    padding-right: var(--desktop-padding-x);
+  }
+}
