@@ -3,16 +3,13 @@ background: images/earth.jpg
 title: About Us
 info:
   - title: Who?
-    text:
-      CJT Devs is a collective of software developers looking to build your next
+    text: CJT Devs is a collective of software developers looking to build your next
       website or app!
   - title: How?
-    text:
-      Working fast, efficiently, and most importantly accurately, our ultimate
+    text: Working fast, efficiently, and most importantly accurately, our ultimate
       goal is delivering exactly what is required in the desired timeline.
   - title: Where?
-    text:
-      Based out of metro Detroit, we are available for consulting, application /
+    text: Based out of metro Detroit, we are available for consulting, application /
       website creation, or any general software development needs.
 meetus:
   title: Meet Us!
@@ -26,13 +23,12 @@ meetus:
         - link: https://github.com/ClaytonTreder
           text: Github
       titles:
-        - title: Founder
+        - title: Founder/Owner
         - title: Fullstack developer
         - title: Tech enthusiast
 extra:
   title: More Info
-  text:
-    Looking to create a new website or mobile / desktop application? You have
+  text: Looking to create a new website or mobile / desktop application? You have
     come to the right place. Check out some of the recent projects completed by
     our devs on our clients page. If you like any of them or you would like to
     work with us, head over to our contact page to reach us. We will get back to
