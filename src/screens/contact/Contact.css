@@ -5,7 +5,7 @@
   margin-left: 20%;
   margin-right: 20%;
 }
-.contact title,
+.contact .title,
 .contact .subtitle {
   color: white;
 }
@@ -15,7 +15,7 @@
 }
 /* mobile */
 @media (max-width: 767px) {
-  .contact title {
+  .contact .title {
     display: flex;
     flex-direction: row;
     padding-left: 5%;
@@ -57,7 +57,7 @@
 
 /* desktop */
 @media (min-width: 768px) {
-  .contact title {
+  .contact .title {
     display: flex;
     flex-direction: row;
     padding-left: 20%;

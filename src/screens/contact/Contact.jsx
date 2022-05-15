@@ -7,9 +7,9 @@ export default function Contact() {
   return (
     <div className="contact">
       <Picture src={text.background} alt="background" className="bg-img" />
-      <title>
+      <div className='title'>
         <h2>{text.title}</h2>
-      </title>
+      </div>
       <div className="subtitle">
         <span style={{ fontSize: "large" }}>{text.subTitle}</span>
       </div>

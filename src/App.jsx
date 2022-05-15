@@ -1,5 +1,6 @@
 import { Fragment, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import './content/animations.css';
 
@@ -29,6 +30,25 @@ function App() {
 
   return (
     <Fragment>
+      <Helmet>
+        <meta
+          property='og:title'
+          content='CJT Devs - Find your home page here'
+        />
+        <meta property='og:url' content='https://cjtdevs.com/' />
+        <meta
+          property='og:description'
+          content='CJT Devs is a colletive of software
+    developers looking to create your next website or mobile application.'
+        />
+        <meta property='og:image' content='%PUBLIC_URL%/images/preview.png' />
+        <meta name='robots' content='index, follow' />
+        <meta
+          name='description'
+          content='CJT Devs is a colletive of software developers looking to create your next website or mobile application.'
+        />
+        <title>CJT Devs</title>
+      </Helmet>
       {initLoading ? (
         <Router>
           <div className='body-content'>

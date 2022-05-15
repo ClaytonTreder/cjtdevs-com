@@ -61,7 +61,7 @@
     padding-left: 4%;
     padding-right: 4%;
   }
-  .banner title {
+  .banner .title {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -96,7 +96,7 @@
     flex-direction: column;
     width: 35%;
   }
-  .banner title {
+  .banner .title {
     display: flex;
     flex-direction: column;
     width: 55%;

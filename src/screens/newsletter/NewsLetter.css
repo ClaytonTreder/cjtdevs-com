@@ -14,7 +14,7 @@
 }
 /* mobile */
 @media (max-width: 767px) {
-  .newsletter-page title {
+  .newsletter-page .title {
     display: flex;
     flex-direction: row;
     padding-left: var(--mobile-padding-x);
@@ -25,7 +25,7 @@
 
 /* desktop */
 @media (min-width: 768px) {
-  .newsletter-page title {
+  .newsletter-page .title {
     display: flex;
     flex-direction: row;
     padding-left: var(--desktop-padding-x);

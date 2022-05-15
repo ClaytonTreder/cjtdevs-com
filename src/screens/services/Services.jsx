@@ -41,9 +41,9 @@ export default function Services() {
 
   return text ? (
     <div className='services'>
-      <title>
+      <div className='title'>
         <h2>{text.title}</h2>
-      </title>
+      </div>
       <Picture src={text.background} alt='background pic' className='bg-img' />
       {text.sections?.map((section, i) => {
         return (

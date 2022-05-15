@@ -7,7 +7,7 @@
 }
 /* mobile */
 @media (max-width: 767px) {
-  .payments title {
+  .payments .title {
     display: flex;
     flex-direction: row;
     padding-left: var(--mobile-padding-x);
@@ -23,7 +23,7 @@
 
 /* desktop */
 @media (min-width: 768px) {
-  .payments title {
+  .payments .title {
     display: flex;
     flex-direction: row;
     padding-left: var(--desktop-padding-x);

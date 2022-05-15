@@ -10,11 +10,11 @@ function Home() {
     <div>
       <Picture src={text.home_bg} alt="micro-chip" className="bg-img" />
       <div className="banner fade-in">
-        <title>
+        <div className='title'>
           {text.home_call_to_action.hcta_lines.map((line) => {
             return <h3>{line.hcta_line}</h3>;
           })}
-        </title>
+        </div>
         <div className="ribbon">
           {text.home_call_to_action.hcta_buttons.map((button) => {
             return (

@@ -9,9 +9,9 @@ function About() {
   return (
     <div className="about">
       <Picture src={text.background} alt="background" className="bg-img" />
-      <title>
+      <div className='title'>
         <h2>{text.title}</h2>
-      </title>
+      </div>
       {text.info.map((section, i) => {
         return (
           <Fragment key={i}>

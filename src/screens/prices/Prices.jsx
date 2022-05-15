@@ -38,9 +38,9 @@ export default function Prices() {
 
   return text ? (
     <div className='prices'>
-      <title>
+      <div className='title'>
         <h2>{text.title}</h2>
-      </title>
+      </div>
       {text.subTitle ? <span>{text.subTitle}</span> : null}
       <Picture src={text.background} alt='background pic' className='bg-img' />
       {text.sections?.map((section, i) => {

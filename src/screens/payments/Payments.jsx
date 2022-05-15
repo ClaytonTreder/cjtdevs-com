@@ -20,9 +20,9 @@ export default function Payments(params) {
 
   return (
     <div className='payments'>
-      <title>
+      <div className='title'>
         <h2>{text.title}</h2>
-      </title>
+      </div>
       {sucessfulPayment ? (
         <div>
           <section className='success'>

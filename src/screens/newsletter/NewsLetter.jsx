@@ -5,9 +5,9 @@ export default function NewLetter() {
   return (
     <Fragment>
       <div className="newsletter-page">
-        <title>
+        <div className='title'>
           <h2>News Letter</h2>
-        </title>
+        </div>
       </div>
       <NewsLetterForm />
     </Fragment>

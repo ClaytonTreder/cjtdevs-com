@@ -23,9 +23,9 @@ export default function Blog() {
   return (
     <>
       <div className='blog'>
-        <title>
+        <div className='title'>
           <h2>{blogContent.title}</h2>
-        </title>
+        </div>
         {!activePost && (
           <section>
             <h5>{blogContent.subTitle}</h5>

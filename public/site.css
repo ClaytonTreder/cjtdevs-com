@@ -59,7 +59,7 @@ a:hover {
   color: var(--color-theme-main) !important;
   text-decoration: none;
 }
-title {
+.title {
   background-color: black;
   color: var(--color-white) !important;
   animation: var(--fade-in-time);
@@ -116,7 +116,7 @@ textarea {
 
 /* mobile */
 @media (max-width: 767px) {
-  title {
+  .title {
     padding-left: var(--mobile-x);
     padding-right: var(--mobile-x);
   }
@@ -138,7 +138,7 @@ textarea {
     position: fixed;
     top: 0;
   }
-  title {
+  .title {
     padding-left: var(--desktop-x);
     padding-right: var(--desktop-x);
     padding-top: 1%;

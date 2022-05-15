@@ -12,7 +12,7 @@
 }
 /* mobile */
 @media (max-width: 767px) {
-  .clients title {
+  .clients .title {
     display: flex;
     flex-direction: row;
     padding-left: 5%;
@@ -42,7 +42,7 @@
 
 /* desktop */
 @media (min-width: 768px) {
-  .clients title {
+  .clients .title {
     display: flex;
     flex-direction: row;
     padding-left: 20%;

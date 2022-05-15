@@ -26,8 +26,11 @@ export default function BlogContainer(props) {
             property='og:image'
             content={`%PUBLIC_URL%/images/${blog.img}`}
           />
-          <meta name='description' content={blog.subTitle} />
-          <title>CJT Devs - {blog.title}</title>
+          <meta
+            name='description'
+            content={`CJT Devs Blog - ${blog.subTitle}`}
+          />
+          <title>CJT Devs Blog - {blog.title}</title>
         </Helmet>
       )}
       {props.isActive ? (
