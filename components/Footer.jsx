@@ -9,8 +9,8 @@ export default function Footer() {
             <div className={styles.footer}>
                 <section>
                     {text.quick.title ? <h6>{text.quick.title}</h6> : null}
-                    {text.quick.links.map((link) => (
-                        <div className={styles.link}>
+                    {text.quick.links.map((link, i) => (
+                        <div key={i} className={styles.link}>
                             <a href={link.link}>{link.text}</a>
                             <hr />
                         </div>
@@ -18,8 +18,8 @@ export default function Footer() {
                 </section>
                 <section>
                     {text.middle.title ? <h6>{text.middle.title}</h6> : null}
-                    {text.middle.links.map((link) => (
-                        <div className={styles.link}>
+                    {text.middle.links.map((link, i) => (
+                        <div key={i} className={styles.link}>
                             <a href={link.link}>{link.text}</a>
                             <hr />
                         </div>
@@ -27,8 +27,8 @@ export default function Footer() {
                 </section>
                 <section>
                     {text.social.title ? <h6>{text.social.title}</h6> : null}
-                    {text.social.links.map((link) => (
-                        <div className={styles.link}>
+                    {text.social.links.map((link, i) => (
+                        <div key={i} className={styles.link}>
                             <a
                                 rel="noreferrer"
                                 target="_blank"

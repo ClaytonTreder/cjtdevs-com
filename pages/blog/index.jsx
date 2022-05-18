@@ -49,7 +49,6 @@ export default function Blog({ posts }) {
 }
 
 export async function getStaticProps({ ...ctx }) {
-    console.log(ctx, 'hi')
     try {
         const posts = ((context) => {
             const keys = context.keys()

@@ -56,9 +56,10 @@ export default function InitLoader(props) {
                     src="images/logo.svg"
                     alt="initial loading"
                 />
-                {imagesLoaded.map((il) => {
+                {imagesLoaded.map((il, i) => {
                     return (
                         <Image
+                            key={i}
                             style={{ width: '1%' }}
                             src={il.image}
                             alt="imgCheck"

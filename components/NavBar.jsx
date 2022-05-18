@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import { useRef, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import styles from '../styles/components/NavBar.module.css'
+import Link from 'next/link'
 
 export default function NavBar(params) {
     const navOpen = params.mobileNavOpen
@@ -40,7 +41,6 @@ function Navs() {
     const blog = useRef(null)
 
     useEffect(() => {
-        console.log(loc)
         switch (loc.asPath) {
             case '/':
                 home.current.classList.add(`${styles['nav-select']}`)
@@ -66,48 +66,60 @@ function Navs() {
     }, [loc.pathname])
     return (
         <Fragment>
-            <a ref={home} href="/" className="flex-inline">
-                <div>
-                    <div className={styles['arrow-left-top']}></div>
-                    <div className={styles['arrow-left-bottom']}></div>
-                </div>
-                <span className={styles['nav']}>Home</span>
-            </a>
-            <a ref={about} href="/about" className="flex-inline">
-                <div>
-                    <div className={styles['arrow-left-top']}></div>
-                    <div className={styles['arrow-left-bottom']}></div>
-                </div>
-                <span className={styles['nav']}>About</span>
-            </a>
-            <a ref={services} href="/services" className="flex-inline">
-                <div>
-                    <div className={styles['arrow-left-top']}></div>
-                    <div className={styles['arrow-left-bottom']}></div>
-                </div>
-                <span className={styles['nav']}>Services</span>
-            </a>
-            <a ref={contact} href="/contact" className="flex-inline">
-                <div>
-                    <div className={styles['arrow-left-top']}></div>
-                    <div className={styles['arrow-left-bottom']}></div>
-                </div>
-                <span className={styles['nav']}>Contact</span>
-            </a>
-            <a ref={clients} href="/clients" className="flex-inline">
-                <div>
-                    <div className={styles['arrow-left-top']}></div>
-                    <div className={styles['arrow-left-bottom']}></div>
-                </div>
-                <span className={styles['nav']}>Clients</span>
-            </a>
-            <a ref={blog} href="/blog" className="flex-inline">
-                <div>
-                    <div className={styles['arrow-left-top']}></div>
-                    <div className={styles['arrow-left-bottom']}></div>
-                </div>
-                <span className={styles['nav']}>Blog</span>
-            </a>
+            <Link href="/">
+                <a ref={home} className="flex-inline">
+                    <div>
+                        <div className={styles['arrow-left-top']}></div>
+                        <div className={styles['arrow-left-bottom']}></div>
+                    </div>
+                    <span className={styles['nav']}>Home</span>
+                </a>
+            </Link>
+            <Link href="/about">
+                <a ref={about} className="flex-inline">
+                    <div>
+                        <div className={styles['arrow-left-top']}></div>
+                        <div className={styles['arrow-left-bottom']}></div>
+                    </div>
+                    <span className={styles['nav']}>About</span>
+                </a>
+            </Link>
+            <Link href="/services">
+                <a ref={services} className="flex-inline">
+                    <div>
+                        <div className={styles['arrow-left-top']}></div>
+                        <div className={styles['arrow-left-bottom']}></div>
+                    </div>
+                    <span className={styles['nav']}>Services</span>
+                </a>
+            </Link>
+            <Link href="/contact">
+                <a ref={contact} className="flex-inline">
+                    <div>
+                        <div className={styles['arrow-left-top']}></div>
+                        <div className={styles['arrow-left-bottom']}></div>
+                    </div>
+                    <span className={styles['nav']}>Contact</span>
+                </a>
+            </Link>
+            <Link href="/clients">
+                <a ref={clients} className="flex-inline">
+                    <div>
+                        <div className={styles['arrow-left-top']}></div>
+                        <div className={styles['arrow-left-bottom']}></div>
+                    </div>
+                    <span className={styles['nav']}>Clients</span>
+                </a>
+            </Link>
+            <Link href="/blog">
+                <a ref={blog} className="flex-inline">
+                    <div>
+                        <div className={styles['arrow-left-top']}></div>
+                        <div className={styles['arrow-left-bottom']}></div>
+                    </div>
+                    <span className={styles['nav']}>Blog</span>
+                </a>
+            </Link>
         </Fragment>
     )
 }

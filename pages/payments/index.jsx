@@ -1,5 +1,5 @@
 import styles from '../../styles/pages/Payments.module.css'
-
+import Link from 'next/link'
 import { attributes as text } from '!!frontmatter-markdown-loader!../../content/pages/payments.md'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
@@ -13,11 +13,10 @@ export default function Payments(params) {
     const loc = useRouter()
 
     useEffect(() => {
-        console.log(loc)
         if (loc.query?.session_id) {
             setSucessfulPayment(true)
         }
-    }, [params, loc.search])
+    }, [params, loc.query])
 
     return (
         <div className={styles.payments}>
@@ -39,9 +38,11 @@ export default function Payments(params) {
                         <p> {loc.query.session_id}</p>
                     </section>
                     <section className={styles.success}>
-                        <a href="/">
-                            <input type="button" value="Home" />
-                        </a>
+                        <Link href="/">
+                            <a>
+                                <input type="button" value="Home" />
+                            </a>
+                        </Link>
                     </section>
                 </div>
             ) : (
