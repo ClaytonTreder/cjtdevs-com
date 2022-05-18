@@ -1,7 +1,7 @@
 module.exports = {
     distDir: 'build',
-    webpack: (cfg) => {
-        cfg.module.rules.push(
+    webpack: (config) => {
+        config.module.rules.push(
             {
                 test: /\.md$/,
                 loader: 'frontmatter-markdown-loader',
@@ -12,6 +12,6 @@ module.exports = {
                 use: 'raw-loader',
             }
         )
-        return cfg
+        return config
     },
 }
