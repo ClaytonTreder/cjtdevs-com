@@ -1,0 +1,17 @@
+/* mobile */
+@media (max-width: 767px) {
+    .post  {
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 2.5%;
+    }
+}
+
+/* desktop */
+@media (min-width: 768px) {
+    .post {
+        padding-left: 25%;
+        padding-right: 25%;
+        padding-top: 2.5%;
+    }
+}

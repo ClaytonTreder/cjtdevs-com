@@ -1,0 +1,38 @@
+.Header {
+  background-color: var(--color-main-dark);
+}
+
+.Header img {
+  height: auto;
+  width: 100%;
+}
+/* mobile */
+@media (max-width: 767px) {
+  .Header {
+    position: sticky;
+    top: 0;
+    z-index: 90;
+  }
+
+  .MobileNavIcon {
+    position: absolute;
+    right: 0;
+    padding: 1%;
+    z-index: 100;
+  }
+  .MobileNavIcon div {
+    width: 30px;
+    height: 3px;
+    background-color: var(--color-white);
+    margin-bottom: 6px;
+  }
+}
+
+/* desktop */
+@media (min-width: 768px) {
+  .Header img {
+    height: auto;
+    width: 40%;
+    margin-left: 30%;
+  }
+}
