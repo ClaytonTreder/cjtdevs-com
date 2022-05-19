@@ -13,7 +13,7 @@ export default function BlogPost({ frontmatter, markdownBody }) {
     return (
         <>
             <Meta
-                url="https://zesty-selkie-1384ae.netlify.app"
+                url={`https://zesty-selkie-1384ae.netlify.app/blog/post/${blog.slug}`}
                 title={`CJT Devs Blog - ${blog.title}`}
                 description={blog.subTitle}
                 image={blog.img}
