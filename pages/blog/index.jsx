@@ -4,6 +4,7 @@ import { attributes } from '!!frontmatter-markdown-loader!../../content/pages/bl
 import styles from '../../styles/pages/Blog.module.css'
 import BlogContainer from '../../components/BlogContainer'
 import matter from 'gray-matter'
+import Meta from '../meta'
 
 export default function Blog({ posts }) {
     const blogs = JSON.parse(posts) ?? []
@@ -19,6 +20,7 @@ export default function Blog({ posts }) {
     )
     return (
         <>
+            <Meta />
             <div className={styles.blog}>
                 <div className="title">
                     <h2>{attributes.title}</h2>

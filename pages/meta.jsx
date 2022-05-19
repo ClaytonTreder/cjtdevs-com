@@ -1,12 +1,13 @@
 import Head from 'next/head'
 export default function Meta(params) {
+    const url = 'https://zesty-selkie-1384ae.netlify.app'
     const description =
         'CJT Devs is a colletive of software developers looking to create your next website or mobile application.'
     return (
         <Head>
             <meta
                 property="og:url"
-                content={params.url ?? 'https://cjtdevs.com'}
+                content={params.url ? `${url}${params.url}` : url}
             />
             <meta
                 key="ogtitle"
@@ -21,9 +22,7 @@ export default function Meta(params) {
             <meta
                 key="ogimage"
                 property="og:image"
-                content={`${params.url ?? 'https://cjtdevs.com'}${
-                    params.image ?? '/images/preview.png'
-                }`}
+                content={`${url}/${params.image ?? 'images/preview.png'}`}
             />
             <meta
                 key="description"
