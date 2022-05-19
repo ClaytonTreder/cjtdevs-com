@@ -93,3 +93,19 @@ export async function getStaticPaths() {
         fallback: false,
     }
 }
+
+export async function getServerSideProps({ ...ctx }) {
+    const { postname } = ctx.params
+
+    const content = await import(
+        `!!raw-loader!../../../content/blogs/${postname}.md`
+    )
+    const data = matter(content.default)
+
+    return {
+        props: {
+            frontmatter: JSON.stringify(data.data),
+            markdownBody: JSON.stringify(data.content),
+        },
+    }
+}
