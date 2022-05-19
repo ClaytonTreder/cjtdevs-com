@@ -57,7 +57,7 @@ export default function BlogPost({ frontmatter, markdownBody }) {
                         <span>
                             Thanks for reading - <i>{blog.author}</i>
                         </span>
-                        <LinkShare link={`/blog?post=${blog.slug}`} />
+                        <LinkShare link={`/blog/post/${blog.slug}`} />
                         <div>
                             <button
                                 onClick={() => {
