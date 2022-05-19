@@ -11,7 +11,7 @@ export default function NavBar(params) {
     return (
         <Fragment>
             <div className={styles['navbar']}>
-                <Navs />
+                <Navs closeNav={() => {}} />
             </div>
             {navOpen ? (
                 <div className={styles['mobilenavbar']}>

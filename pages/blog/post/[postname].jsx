@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown'
 import Picture from '../../../components/Picture'
 import LinkShare from '../../../components/LinkShare'
 import styles from '../../../styles/pages/Post.module.css'
+import Head from 'next/head'
 
 export default function BlogPost({ frontmatter, markdownBody }) {
     if (!frontmatter) return <></>
@@ -10,41 +11,67 @@ export default function BlogPost({ frontmatter, markdownBody }) {
     const blog = JSON.parse(frontmatter)
 
     return (
-        <div className={styles.post}>
-            <div className="flex-row" style={{ marginBottom: '2.5%' }}>
-                <div className="column">
-                    <h4>{blog.title}</h4>
-                    <h5>{blog.subTitle}</h5>
-                    <Picture
-                        style={{
-                            opacity: '80%',
-                            width: '100%',
-                            height: '20vh',
-                            objectFit: 'cover',
-                            objectPosition: 'center',
-                        }}
-                        src={blog.img}
-                    />
-                    <ReactMarkdown>{JSON.parse(markdownBody)}</ReactMarkdown>
-                    <br />
-                    <br />
-                    <span>
-                        Thanks for reading - <i>{blog.author}</i>
-                    </span>
-                    <LinkShare link={`/blog?post=${blog.slug}`} />
-                    <div>
-                        <button
-                            onClick={() => {
-                                window.location.href = `/blog`
+        <>
+            <Head>
+                <meta
+                    key="ogtitle"
+                    property="og:title"
+                    content={`CJT Devs Blog - ${blog.title}`}
+                />
+                <meta
+                    key="ogdescription"
+                    property="og:description"
+                    content={blog.subTitle}
+                />
+                <meta
+                    key="ogimage"
+                    property="og:image"
+                    content={blog.img}
+                />
+                <meta
+                    key="description"
+                    name="description"
+                    content={blog.subTitle}
+                />
+            </Head>
+            <div className={styles.post}>
+                <div className="flex-row" style={{ marginBottom: '2.5%' }}>
+                    <div className="column">
+                        <h4>{blog.title}</h4>
+                        <h5>{blog.subTitle}</h5>
+                        <Picture
+                            style={{
+                                opacity: '80%',
+                                width: '100%',
+                                height: '20vh',
+                                objectFit: 'cover',
+                                objectPosition: 'center',
                             }}
-                            style={{ marginTop: '5%', width: '25%' }}
-                        >
-                            Back
-                        </button>
+                            src={blog.img}
+                        />
+                        <ReactMarkdown>
+                            {JSON.parse(markdownBody)}
+                        </ReactMarkdown>
+                        <br />
+                        <br />
+                        <span>
+                            Thanks for reading - <i>{blog.author}</i>
+                        </span>
+                        <LinkShare link={`/blog?post=${blog.slug}`} />
+                        <div>
+                            <button
+                                onClick={() => {
+                                    window.location.href = `/blog`
+                                }}
+                                style={{ marginTop: '5%', width: '25%' }}
+                            >
+                                Back
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 
