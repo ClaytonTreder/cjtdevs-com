@@ -59,40 +59,40 @@ export default function BlogPost({ frontmatter, markdownBody }) {
     )
 }
 
-export async function getStaticProps({ ...ctx }) {
-    const { postname } = ctx.params
+// export async function getStaticProps({ ...ctx }) {
+//     const { postname } = ctx.params
 
-    const content = await import(
-        `!!raw-loader!../../../content/blogs/${postname}.md`
-    )
-    const data = matter(content.default)
+//     const content = await import(
+//         `!!raw-loader!../../../content/blogs/${postname}.md`
+//     )
+//     const data = matter(content.default)
 
-    return {
-        props: {
-            frontmatter: JSON.stringify(data.data),
-            markdownBody: JSON.stringify(data.content),
-        },
-    }
-}
+//     return {
+//         props: {
+//             frontmatter: JSON.stringify(data.data),
+//             markdownBody: JSON.stringify(data.content),
+//         },
+//     }
+// }
 
-export async function getStaticPaths() {
-    const blogSlugs = ((context) => {
-        const keys = context.keys()
-        const data = keys.map((key, index) => {
-            let slug = key.replace(/^.*[\\\/]/, '').slice(0, -3)
+// export async function getStaticPaths() {
+//     const blogSlugs = ((context) => {
+//         const keys = context.keys()
+//         const data = keys.map((key, index) => {
+//             let slug = key.replace(/^.*[\\\/]/, '').slice(0, -3)
+//             console.log(slug)
+//             return slug
+//         })
+//         return data
+//     })(require.context('../../../content/blogs', true, /\.md$/))
 
-            return slug
-        })
-        return data
-    })(require.context('../../../content/blogs', true, /\.md$/))
+//     const paths = blogSlugs.map((slug) => `/blog/post/${slug}`)
 
-    const paths = blogSlugs.map((slug) => `/blog/post/${slug}`)
-
-    return {
-        paths,
-        fallback: false,
-    }
-}
+//     return {
+//         paths,
+//         fallback: false,
+//     }
+// }
 
 export async function getServerSideProps({ ...ctx }) {
     const { postname } = ctx.params
