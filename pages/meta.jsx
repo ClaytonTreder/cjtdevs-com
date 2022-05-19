@@ -6,7 +6,7 @@ export default function Meta(params) {
         <Head>
             <meta
                 property="og:url"
-                content={params.url ?? 'https://cjtdevs.com/'}
+                content={params.url ?? 'https://cjtdevs.com'}
             />
             <meta
                 key="ogtitle"
@@ -21,7 +21,7 @@ export default function Meta(params) {
             <meta
                 key="ogimage"
                 property="og:image"
-                content={`${params.url?? 'https://cjtdevs.com'}${params.image ?? '/images/preview.png'}`}
+                content={params.image ?? '/images/preview.png'}
             />
             <meta
                 key="description"

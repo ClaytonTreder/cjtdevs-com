@@ -2,17 +2,12 @@ import styles from '../styles/pages/Home.module.css'
 import { attributes } from '!!frontmatter-markdown-loader!../content/pages/home.md'
 import NewsLetter from '../components/NewsLetter'
 import Picture from '../components/Picture'
-import Meta from './meta'
 
 function Home() {
     const text = attributes
 
     return (
         <>
-            <Meta
-                url="https://zesty-selkie-1384ae.netlify.app"
-                title="CJT Devs - Find your home page here"
-            />
             <div>
                 <Picture
                     src={text.home_bg}

@@ -15,7 +15,7 @@ export default function BlogPost({ postname, frontmatter, markdownBody }) {
             <Meta
                 url={`https://zesty-selkie-1384ae.netlify.app/blog/post/${postname}`}
                 title={`CJT Devs Blog - ${blog.title}`}
-                description={blog.subTitle}
+                description={`${blog.subTitle} - ${blog.author}`}
                 image={blog.img}
             />
             <div className={styles.post}>
@@ -58,41 +58,6 @@ export default function BlogPost({ postname, frontmatter, markdownBody }) {
         </>
     )
 }
-
-// export async function getStaticProps({ ...ctx }) {
-//     const { postname } = ctx.params
-
-//     const content = await import(
-//         `!!raw-loader!../../../content/blogs/${postname}.md`
-//     )
-//     const data = matter(content.default)
-
-//     return {
-//         props: {
-//             frontmatter: JSON.stringify(data.data),
-//             markdownBody: JSON.stringify(data.content),
-//         },
-//     }
-// }
-
-// export async function getStaticPaths() {
-//     const blogSlugs = ((context) => {
-//         const keys = context.keys()
-//         const data = keys.map((key, index) => {
-//             let slug = key.replace(/^.*[\\\/]/, '').slice(0, -3)
-//             console.log(slug)
-//             return slug
-//         })
-//         return data
-//     })(require.context('../../../content/blogs', true, /\.md$/))
-
-//     const paths = blogSlugs.map((slug) => `/blog/post/${slug}`)
-
-//     return {
-//         paths,
-//         fallback: false,
-//     }
-// }
 
 export async function getServerSideProps({ ...ctx }) {
     const { postname } = ctx.params
