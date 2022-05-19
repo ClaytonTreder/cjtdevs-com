@@ -5,7 +5,7 @@ import LinkShare from '../../../components/LinkShare'
 import styles from '../../../styles/pages/Post.module.css'
 import Meta from '../../meta'
 
-export default function BlogPost({ frontmatter, markdownBody }) {
+export default function BlogPost({ postname, frontmatter, markdownBody }) {
     if (!frontmatter) return <></>
 
     const blog = JSON.parse(frontmatter)
@@ -13,7 +13,7 @@ export default function BlogPost({ frontmatter, markdownBody }) {
     return (
         <>
             <Meta
-                url={`https://zesty-selkie-1384ae.netlify.app/blog/post/${blog.slug}`}
+                url={`https://zesty-selkie-1384ae.netlify.app/blog/post/${postname}`}
                 title={`CJT Devs Blog - ${blog.title}`}
                 description={blog.subTitle}
                 image={blog.img}
@@ -41,7 +41,7 @@ export default function BlogPost({ frontmatter, markdownBody }) {
                         <span>
                             Thanks for reading - <i>{blog.author}</i>
                         </span>
-                        <LinkShare link={`/blog/post/${blog.slug}`} />
+                        <LinkShare link={`/blog/post/${postname}`} />
                         <div>
                             <button
                                 onClick={() => {
@@ -104,6 +104,7 @@ export async function getServerSideProps({ ...ctx }) {
 
     return {
         props: {
+            postname,
             frontmatter: JSON.stringify(data.data),
             markdownBody: JSON.stringify(data.content),
         },
