@@ -1,9 +1,15 @@
 import Picture from './Picture'
 import { useState, Fragment } from 'react'
-import { FacebookIcon, FacebookShareButton } from 'react-share'
+import {
+    FacebookIcon,
+    FacebookShareButton,
+    LinkedinIcon,
+    LinkedinShareButton
+} from 'react-share'
 
 export default function LinkShare(props) {
-    const [link, setLink] = useState('https://cjtdevs.com'  + props.link)
+    const baseUrl = 'https://zesty-selkie-1384ae.netlify.app'
+    const [link, setLink] = useState(baseUrl + props.link)
     const [open, setOpen] = useState(false)
 
     return (
@@ -25,18 +31,20 @@ export default function LinkShare(props) {
                 <FacebookShareButton url={link}>
                     <FacebookIcon />
                 </FacebookShareButton>
+                <LinkedinShareButton url={link}>
+                    <LinkedinIcon />
+                </LinkedinShareButton>
                 <Picture
                     style={{
-                        marginLeft: '2%',
                         width: 'auto',
-                        maxHeight: '2rem',
+                        maxHeight: '3.75rem',
                         cursor: 'pointer',
                     }}
                     src={'images/share.png'}
-                    alt={`share ${'https://' + props.link}`}
+                    alt={`share ${baseUrl + props.link}`}
                     onClick={() => {
                         setOpen(!open)
-                        setLink('https://' + props.link)
+                        setLink(baseUrl + props.link)
                     }}
                 />
             </div>
@@ -61,14 +69,14 @@ export default function LinkShare(props) {
                     <Picture
                         onClick={() => {
                             navigator.clipboard
-                                .writeText('https://' + props.link)
+                                .writeText(baseUrl + props.link)
                                 .then(() => {
                                     setLink('Copied!')
                                 })
                         }}
                         style={{ width: 'auto', maxHeight: '3rem' }}
                         src={'images/clipboard.png'}
-                        alt={`click to share ${'https://' + props.link}`}
+                        alt={`click to share ${baseUrl + props.link}`}
                     />
                 </div>
             ) : null}
