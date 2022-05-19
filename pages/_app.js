@@ -6,15 +6,10 @@ function MyApp({ Component, pageProps }) {
     return (
         <>
             <Head>
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Cabin"
-                    rel="stylesheet"
-                />
                 <meta
                     property="og:url"
                     content="https://zesty-selkie-1384ae.netlify.app"
                 />
-                <meta name="robots" content="index, follow" />
                 <meta
                     key="ogtitle"
                     property="og:title"
