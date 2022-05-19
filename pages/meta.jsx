@@ -21,7 +21,7 @@ export default function Meta(params) {
             <meta
                 key="ogimage"
                 property="og:image"
-                content={params.image ?? '/images/preview.png'}
+                content={`${params.url?? 'https://cjtdevs.com'}${params.image ?? '/images/preview.png'}`}
             />
             <meta
                 key="description"
