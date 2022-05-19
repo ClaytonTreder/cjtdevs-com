@@ -47,7 +47,7 @@ export default function BlogPost({ postname, frontmatter, markdownBody }) {
                                 onClick={() => {
                                     window.location.href = `/blog`
                                 }}
-                                style={{ marginTop: '5%', width: '25%' }}
+                                style={{ marginTop: '5%', width: '25%', color: "black" }}
                             >
                                 Back
                             </button>

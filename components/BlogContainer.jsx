@@ -22,17 +22,19 @@ export default function BlogContainer(props) {
                     <p>
                         <small>Author: {blog.author}</small>
                     </p>
-                    <LinkShare
-                        link={`/blog/post/${trimedFileName}`}
-                    />
                     <button
                         onClick={() => {
                             window.location.href = `/blog/post/${trimedFileName}`
                         }}
-                        style={{ marginTop: '5%', width: '75%' }}
+                        style={{
+                            marginTop: '5%',
+                            width: '75%',
+                            color: 'black',
+                        }}
                     >
                         Read
                     </button>
+                    <LinkShare link={`/blog/post/${trimedFileName}`} />
                 </div>
                 <div className="column" style={{ width: '65%' }}>
                     <Picture

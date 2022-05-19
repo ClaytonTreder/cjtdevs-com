@@ -4,13 +4,14 @@ import {
     FacebookIcon,
     FacebookShareButton,
     LinkedinIcon,
-    LinkedinShareButton
+    LinkedinShareButton,
+    EmailIcon,
+    EmailShareButton,
 } from 'react-share'
 
 export default function LinkShare(props) {
     const baseUrl = 'https://zesty-selkie-1384ae.netlify.app'
-    const [link, setLink] = useState(baseUrl + props.link)
-    const [open, setOpen] = useState(false)
+    const [link] = useState(baseUrl + props.link)
 
     return (
         <Fragment>
@@ -29,57 +30,15 @@ export default function LinkShare(props) {
                 className="flex-inline"
             >
                 <FacebookShareButton url={link}>
-                    <FacebookIcon />
+                    <FacebookIcon size={'2.5rem'} />
                 </FacebookShareButton>
                 <LinkedinShareButton url={link}>
-                    <LinkedinIcon />
+                    <LinkedinIcon size={'2.5rem'} />
                 </LinkedinShareButton>
-                <Picture
-                    style={{
-                        width: 'auto',
-                        maxHeight: '3.75rem',
-                        cursor: 'pointer',
-                    }}
-                    src={'images/share.png'}
-                    alt={`share ${baseUrl + props.link}`}
-                    onClick={() => {
-                        setOpen(!open)
-                        setLink(baseUrl + props.link)
-                    }}
-                />
+                <EmailShareButton url={link}>
+                    <EmailIcon size={'2.5rem'} />
+                </EmailShareButton>
             </div>
-            {open ? (
-                <div
-                    className="flex-row"
-                    style={{
-                        borderWidth: '2px',
-                        borderType: 'solid',
-                        borderColor: 'grey',
-                        padding: '1%',
-                    }}
-                >
-                    <input
-                        style={{ width: '60%', maxHeight: '3rem', margin: 0 }}
-                        type="text"
-                        onChange={() => {
-                            setLink(link)
-                        }}
-                        value={link}
-                    />
-                    <Picture
-                        onClick={() => {
-                            navigator.clipboard
-                                .writeText(baseUrl + props.link)
-                                .then(() => {
-                                    setLink('Copied!')
-                                })
-                        }}
-                        style={{ width: 'auto', maxHeight: '3rem' }}
-                        src={'images/clipboard.png'}
-                        alt={`click to share ${baseUrl + props.link}`}
-                    />
-                </div>
-            ) : null}
         </Fragment>
     )
 }
