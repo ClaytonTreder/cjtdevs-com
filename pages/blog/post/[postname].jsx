@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown'
 import Picture from '../../../components/Picture'
 import LinkShare from '../../../components/LinkShare'
 import styles from '../../../styles/pages/Post.module.css'
-import Head from 'next/head'
+import Meta from '../../meta'
 
 export default function BlogPost({ frontmatter, markdownBody }) {
     if (!frontmatter) return <></>
@@ -12,28 +12,12 @@ export default function BlogPost({ frontmatter, markdownBody }) {
 
     return (
         <>
-            <Head>
-                <meta
-                    key="ogtitle"
-                    property="og:title"
-                    content={`CJT Devs Blog - ${blog.title}`}
-                />
-                <meta
-                    key="ogdescription"
-                    property="og:description"
-                    content={blog.subTitle}
-                />
-                <meta
-                    key="ogimage"
-                    property="og:image"
-                    content={blog.img}
-                />
-                <meta
-                    key="description"
-                    name="description"
-                    content={blog.subTitle}
-                />
-            </Head>
+            <Meta
+                url="https://zesty-selkie-1384ae.netlify.app"
+                title={`CJT Devs Blog - ${blog.title}`}
+                description={blog.subTitle}
+                image={blog.img}
+            />
             <div className={styles.post}>
                 <div className="flex-row" style={{ marginBottom: '2.5%' }}>
                     <div className="column">
