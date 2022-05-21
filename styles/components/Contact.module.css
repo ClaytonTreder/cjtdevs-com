@@ -1,0 +1,15 @@
+.contactForm input[type="text"],
+.contactForm textarea {
+  width: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.contactForm .recap,
+.contactForm .submit {
+  justify-content: center;
+}
+
+.contactForm input[type="submit"] {
+  width: 40%;
+}

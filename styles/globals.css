@@ -1,0 +1,323 @@
+html,
+body {
+    margin: 0;
+    font-family: Cabin -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.flex-inline {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+:root {
+    --color-white: white;
+    --color-black: black;
+    --color-main-dark: #122d42;
+    --color-main-light: #3dd2cc;
+    --color-main: #f6f8f8;
+    --color-dark: rgb(61, 114, 150);
+    --color-light: rgb(192, 195, 197);
+
+    --fade-in-time: fadeIn 1.5s;
+
+    --mobile-padding-x: 2%;
+    --mobile-padding-y: 5%;
+
+    --mobile-margin-x: 2%;
+    --mobile-margin-y: 5%;
+
+    --desktop-padding-x: 20%;
+    --desktop-padding-y: 3%;
+
+    --desktop-margin-x: 20%;
+    --desktop-margin-y: 5%;
+
+    --color-white: rgb(255, 255, 255);
+    --color-white-faded: rgba(255, 255, 255, 0.9);
+
+    --color-off-white: rgb(246, 248, 248);
+    --color-off-white-faded: rgba(246, 248, 248, 0.9);
+
+    --color-black: rgb(0, 0, 0);
+    --color-black-faded: rgba(0, 0, 0, 0.9);
+
+    --color-theme-main: rgb(18, 45, 66);
+    --color-theme-main-faded: rgba(18, 45, 66, 0.9);
+
+    --color-theme-secondary: rgb(29, 73, 106);
+    --color-theme-secondary-faded: rgba(29, 73, 106, 0.9);
+
+    --color-theme-light: rgb(192, 195, 197);
+    --color-theme-light-faded: rgba(192, 195, 197, 0.9);
+}
+
+.title {
+    background-color: var(--color-black);
+    color: var(--color-white) !important;
+    animation: var(--fade-in-time);
+    -webkit-animation: var(--fade-in-time);
+    -moz-animation: var(--fade-in-time);
+    -o-animation: var(--fade-in-time);
+    -ms-animation: var(--fade-in-time);
+}
+
+button {
+    background-color: var(--color-theme-light);
+    border: 1px solid transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button:not(:disabled),
+[type='button']:not(:disabled),
+[type='reset']:not(:disabled),
+[type='submit']:not(:disabled) {
+    cursor: pointer;
+}
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+    -webkit-appearance: button;
+}
+input,
+textarea {
+    background-color: rgb(226, 225, 225);
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    border-color: #ced4da;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+.flex-row-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.flex-inline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* mobile */
+@media (max-width: 767px) {
+    .bg-img {
+        z-index: -100;
+        width: auto;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+    }
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-left: var(--mobile-padding-x);
+        padding-right: var(--mobile-padding-x);
+        padding-bottom: var(--mobile-padding-y);
+        background-color: black;
+        color: var(--color-white) !important;
+        animation: var(--fade-in-time);
+        -webkit-animation: var(--fade-in-time);
+        -moz-animation: var(--fade-in-time);
+        -o-animation: var(--fade-in-time);
+        -ms-animation: var(--fade-in-time);
+    }
+}
+
+/* desktop */
+@media (min-width: 768px) {
+    .bg-img {
+        z-index: -100;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+    }
+    h2 {
+        margin-bottom: 0;
+    }
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-left: var(--desktop-padding-x);
+        padding-right: var(--desktop-padding-x);
+        margin-bottom: var(--mobile-margin-y);
+        background-color: black;
+        color: var(--color-white) !important;
+        animation: var(--fade-in-time);
+        -webkit-animation: var(--fade-in-time);
+        -moz-animation: var(--fade-in-time);
+        -o-animation: var(--fade-in-time);
+        -ms-animation: var(--fade-in-time);
+    }
+}
+
+:root {
+    --fade-in-time: fadeIn 1.3s;
+}
+
+.fade-in {
+    animation: var(--fade-in-time);
+    -webkit-animation: var(--fade-in-time);
+    -moz-animation: var(--fade-in-time);
+    -o-animation: var(--fade-in-time);
+    -ms-animation: var(--fade-in-time);
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h1,
+.h1 {
+    font-size: 2.5rem;
+}
+
+h2,
+.h2 {
+    font-size: 2rem;
+}
+
+h3,
+.h3 {
+    font-size: 1.75rem;
+}
+
+h4,
+.h4 {
+    font-size: 1.5rem;
+}
+
+h5,
+.h5 {
+    font-size: 1.25rem;
+}
+
+h6,
+.h6 {
+    font-size: 1rem;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.text-center {
+    text-align: center !important;
+  }

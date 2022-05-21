@@ -1,0 +1,67 @@
+.paymentForm {
+  background-color: white;
+}
+.paymentForm div {
+  padding-bottom: 1.5%;
+}
+.paymentForm .type {
+  width: 65%;
+}
+.paymentForm span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.paymentForm input[type='number'] {
+  background-color: #fff !important;
+}
+.paymentForm input[type='button'] {
+  width: 25%;
+}
+.paymentForm input[type='radio'] {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+  cursor: pointer;
+  margin-right: 5%;
+  display: grid;
+  place-content: center;
+}
+.paymentForm input[type='radio']::before {
+  content: '';
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #29b3ad;
+}
+
+.paymentForm input[type='radio']:checked::before {
+  transform: scale(1);
+}
+/* mobile */
+@media (max-width: 767px) {
+  .paymentForm section {
+    padding-left: var(--mobile-padding-x);
+    padding-right: var(--mobile-padding-x);
+  }
+}
+
+/* desktop */
+@media (min-width: 768px) {
+  .paymentForm .interval {
+    justify-content: space-between;
+    width: 65%;
+  }
+  .paymentForm section {
+    padding-left: var(--desktop-padding-x);
+    padding-right: var(--desktop-padding-x);
+  }
+}

@@ -1,0 +1,142 @@
+.services h2 {
+  color: var(--color-white);
+}
+.services .lets-talk-h {
+  color: var(--color-black);
+}
+.services .contact-container {
+  border-radius: 1rem;
+}
+.services input[type="submit"] {
+  color: var(--color-black);
+  background-color: var(--color-theme-light) !important;
+}
+/* mobile */
+@media (max-width: 767px) {
+  .services .title {
+    display: flex;
+    flex-direction: row;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .services section {
+    display: flex;
+    flex-direction: row;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  .services section p {
+    width: 100%;
+    font-size: large;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  .services section img {
+    width: auto;
+    height: 5rem;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+  .services h4 {
+    display: flex;
+    justify-content: center;
+  }
+  .services hr {
+    display: flex;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .services .contactContainer {
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: var(--color-white-faded);
+    margin-bottom: 10%;
+  }
+  .services .contactForm {
+    margin-bottom: 10%;
+  }
+  .services .talk {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+  .services button {
+    width: 50%;
+    color: var(--color-black);
+  }
+  .services .btnContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 5%;
+  }
+  .services .contactForm input[type="submit"] {
+    color: var(--color-black);
+    background-color: var(--color-white-faded);
+  }
+}
+
+/* desktop */
+@media (min-width: 768px) {
+  .services .title {
+    display: flex;
+    flex-direction: row;
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+  .services section {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-top: 2%;
+  }
+  .services h4 {
+    display: flex;
+    justify-content: center;
+  }
+  .services section p {
+    width: 100%;
+    font-size: large;
+  }
+  .services section img {
+    width: auto;
+    height: 7rem;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .services hr {
+    display: flex;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  .services .contactContainer {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 10%;
+    background-color: var(--color-white-faded);
+  }
+  .services .contactForm {
+    margin-bottom: 10%;
+  }
+  .services .talk {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+  .services button {
+    width: 20%;
+  }
+  .services .btnContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
