@@ -1,4 +1,3 @@
-import Picture from './Picture'
 import { useState, Fragment } from 'react'
 import {
     FacebookIcon,
@@ -10,7 +9,7 @@ import {
 } from 'react-share'
 
 export default function LinkShare(props) {
-    const baseUrl = 'https://zesty-selkie-1384ae.netlify.app'
+    const baseUrl = 'https://cjtdevs.com'
     const [link] = useState(baseUrl + props.link)
 
     return (

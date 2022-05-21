@@ -9,8 +9,9 @@ class MyDocument extends Document {
                         rel="stylesheet"
                     />
                     <meta name="robots" content="index, follow" />
+                    <link rel="shortcut icon" href="/favicon.ico" />
+                    <title>CJT Devs</title>
                 </Head>
-                <title>CJT Devs</title>
                 <body>
                     <Main />
                     <NextScript />
