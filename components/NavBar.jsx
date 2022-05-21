@@ -55,7 +55,6 @@ function Navs(props) {
 
     useEffect(() => {
         removeAll()
-        console.log(loc)
         switch (loc.pathname) {
             case '/':
                 home.current.classList.add(`${styles['nav-select']}`)

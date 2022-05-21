@@ -20,7 +20,7 @@ export default function BlogPost({ postname, frontmatter, markdownBody }) {
             />
             <div className={styles.post}>
                 <div className="flex-row" style={{ marginBottom: '2.5%' }}>
-                    <div className="column">
+                    <div className="column" style={{ width: '100%' }}>
                         <h4>{blog.title}</h4>
                         <h5>{blog.subTitle}</h5>
                         <Picture
@@ -47,7 +47,11 @@ export default function BlogPost({ postname, frontmatter, markdownBody }) {
                                 onClick={() => {
                                     window.location.href = `/blog`
                                 }}
-                                style={{ marginTop: '5%', width: '25%', color: "black" }}
+                                style={{
+                                    marginTop: '5%',
+                                    width: '25%',
+                                    color: 'black',
+                                }}
                             >
                                 Back
                             </button>
