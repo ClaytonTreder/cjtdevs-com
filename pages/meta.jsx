@@ -1,6 +1,6 @@
 import Head from 'next/head'
 export default function Meta(params) {
-    const url = 'https://zesty-selkie-1384ae.netlify.app'
+    const url = 'https://cjtdevs.com'
     const description =
         'CJT Devs is a colletive of software developers looking to create your next website or mobile application.'
     return (
@@ -29,6 +29,7 @@ export default function Meta(params) {
                 name="description"
                 content={params.description ?? description}
             />
+            <title>CJT Devs</title>
         </Head>
     )
 }

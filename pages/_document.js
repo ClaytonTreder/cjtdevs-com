@@ -10,7 +10,6 @@ class MyDocument extends Document {
                     />
                     <meta name="robots" content="index, follow" />
                     <link rel="shortcut icon" href="/favicon.ico" />
-                    <title>CJT Devs</title>
                 </Head>
                 <body>
                     <Main />
