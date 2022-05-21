@@ -1,5 +1,4 @@
-import { useState, Fragment } from 'react'
-import { useRouter } from 'next/router'
+import { Fragment } from 'react'
 import { attributes } from '!!frontmatter-markdown-loader!../../content/pages/blog.md'
 import styles from '../../styles/pages/Blog.module.css'
 import BlogContainer from '../../components/BlogContainer'
@@ -8,16 +7,6 @@ import Meta from '../meta'
 
 export default function Blog({ posts }) {
     const blogs = JSON.parse(posts) ?? []
-    const loc = useRouter()
-
-    const searchBlog = loc.asPath.slice(
-        loc.asPath.indexOf('?post=') + '?post='.length,
-        loc.asPath.length
-    )
-
-    const [activePost, setActivePost] = useState(
-        searchBlog === '' ? undefined : searchBlog
-    )
     return (
         <>
             <Meta />
@@ -25,21 +14,13 @@ export default function Blog({ posts }) {
                 <div className="title">
                     <h2>{attributes.title}</h2>
                 </div>
-                {!activePost && (
-                    <section>
-                        <h5>{attributes.subTitle}</h5>
-                    </section>
-                )}
                 <section>
                     {blogs
-                        .sort((a, b) => a - b)
+                        .sort((a, b) => (a.date > b.date ? 1 : -1))
                         .map((blog, i) => {
                             return (
                                 <Fragment key={i}>
-                                    <BlogContainer
-                                        isActive={blog.slug === activePost}
-                                        blog={blog}
-                                    />
+                                    <BlogContainer blog={blog} />
                                     <br /> <br /> <br />
                                 </Fragment>
                             )
