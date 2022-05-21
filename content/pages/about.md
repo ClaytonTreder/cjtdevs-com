@@ -23,7 +23,7 @@ meetus:
         - link: https://github.com/ClaytonTreder
           text: Github
       titles:
-        - title: Founder/Owner
+        - title: Founder
         - title: Fullstack developer
         - title: Tech enthusiast
 extra:
