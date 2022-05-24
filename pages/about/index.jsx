@@ -9,10 +9,7 @@ function About() {
 
     return (
         <>
-            <Meta
-                url="/about"
-                title="CJT Devs - Find your home page here"
-            />{' '}
+            <Meta />
             <div className={styles.about}>
                 <Picture
                     src={text.background}
