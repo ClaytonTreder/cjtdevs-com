@@ -34,7 +34,7 @@ meetus:
           link: https://www.linkedin.com/in/jake-treder-4879b0138/
       quote: Finding you the best product is my goal.
     - name: Chris Calleja
-      pic: images/img_4163.jpeg
+      pic: images/img_4163-2.jpeg
       titles:
         - title: Frontend Intern
       links:
