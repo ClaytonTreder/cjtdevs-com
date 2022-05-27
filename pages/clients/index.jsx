@@ -13,6 +13,9 @@ export default function Clients() {
                 style={{
                     background: `url(/${text.background}) no-repeat center center fixed`,
                     backgroundSize: 'cover',
+                    webkitBackgroundSize: 'cover',
+                    mozBackgroundSize: 'cover',
+                    oBackgroundSize: 'cover',
                 }}
             >
                 <div className="title">

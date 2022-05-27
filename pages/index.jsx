@@ -15,6 +15,9 @@ function Home() {
                 style={{
                     background: `url(/${text.home_bg}) no-repeat center center fixed`,
                     backgroundSize: 'cover',
+                    webkitBackgroundSize: 'cover',
+                    mozBackgroundSize: 'cover',
+                    oBackgroundSize: 'cover',
                 }}
             >
                 <div className={`${styles.banner} fade-in`}>
