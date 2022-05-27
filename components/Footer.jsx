@@ -1,6 +1,7 @@
 import styles from '../styles/components/Footer.module.css'
 import { attributes } from '!!frontmatter-markdown-loader!../content/components/footer.md'
-import Picture from './Picture'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Footer() {
     const text = attributes
@@ -27,31 +28,56 @@ export default function Footer() {
                 </section>
                 <section>
                     {text.social.title ? <h6>{text.social.title}</h6> : null}
-                    {text.social.links.map((link, i) => (
+                    {text.social.links.map((sLink, i) => (
                         <div key={i} className={styles.link}>
-                            <a
-                                rel="noreferrer"
-                                target="_blank"
-                                href={link.link}
-                            >
-                                <Picture src={link.pic} alt="social link" />
-                                {link.text}
-                            </a>
+                            <Link href={sLink.link}>
+                                <a rel="noreferrer" target="_blank">
+                                    <Image
+                                        width={20}
+                                        height={20}
+                                        src={`/${sLink.pic}`}
+                                        alt="social link"
+                                    />
+
+                                    <span style={{ marginLeft: '2px' }}>
+                                        {sLink.text}
+                                    </span>
+                                </a>
+                            </Link>
                             <hr />
                         </div>
                     ))}
                     <div className={styles.link}>
-                        <a href={`mailto:${text.social.email.text}`}>
-                            <Picture src={text.social.email.pic} alt="mail" />
-                            {text.social.email.text}
-                        </a>
+                        <Link href={`mailto:${text.social.email.text}`}>
+                            <a>
+                                <Image
+                                    width={20}
+                                    height={20}
+                                    src={`/${text.social.email.pic}`}
+                                    alt="mail"
+                                />
+
+                                <span style={{ marginLeft: '2px' }}>
+                                    {text.social.email.text}
+                                </span>
+                            </a>
+                        </Link>
                         <hr />
                     </div>
                     <div className={styles.link}>
-                        <a href={`tel:${text.social.phone.text}`}>
-                            <Picture src={text.social.phone.pic} alt="tel" />
-                            {text.social.phone.text}
-                        </a>
+                        <Link href={`tel:${text.social.phone.text}`}>
+                            <a>
+                                <Image
+                                    width={20}
+                                    height={20}
+                                    src={`/${text.social.phone.pic}`}
+                                    alt="tel"
+                                />
+                                <span style={{ marginLeft: '2px' }}>
+                                    {text.social.phone.text}
+                                </span>
+                            </a>
+                        </Link>
                         <hr />
                     </div>
                 </section>
