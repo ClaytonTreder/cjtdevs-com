@@ -142,7 +142,7 @@ textarea {
 @media (max-width: 767px) {
     .bg-img {
         z-index: -100;
-        width: 100vw;
+        width: 100%;
         height: 100vh;
         position: fixed;
         top: 0;
@@ -153,7 +153,6 @@ textarea {
         justify-content: space-around;
         padding-left: var(--mobile-padding-x);
         padding-right: var(--mobile-padding-x);
-        padding-bottom: var(--mobile-padding-y);
         background-color: black;
         color: var(--color-white) !important;
         animation: var(--fade-in-time);
