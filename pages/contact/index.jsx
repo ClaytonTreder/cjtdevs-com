@@ -8,16 +8,13 @@ export default function Contact() {
     return (
         <>
             <Meta />
-            <div
-                className={styles.contact}
-                style={{
-                    background: `url(/${text.background}) no-repeat center center fixed`,
-                    backgroundSize: 'cover',
-                    WebkitBackgroundSize: 'cover',
-                    MozBackgroundSize: 'cover',
-                    OBackgroundSize: 'cover',
-                }}
-            >
+            <div className={styles.contact}>
+                <div
+                    style={{
+                        backgroundImage: `url(/${text.background})`,
+                    }}
+                    className="bg-img"
+                ></div>
                 <div className="title">
                     <h2>{text.title}</h2>
                 </div>

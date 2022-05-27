@@ -40,16 +40,13 @@ export default function Prices() {
         <>
             <Meta />
             {text ? (
-                <div
-                    className={styels.prices}
-                    style={{
-                        background: `url(/${text.background}) no-repeat center center fixed`,
-                        backgroundSize: 'cover',
-                        WebkitBackgroundSize: 'cover',
-                        MozBackgroundSize: 'cover',
-                        OBackgroundSize: 'cover',
-                    }}
-                >
+                <div className={styels.prices}>
+                    <div
+                        style={{
+                            backgroundImage: `url(/${text.background})`,
+                        }}
+                        className="bg-img"
+                    ></div>
                     <div className="title">
                         <h2>{text.title}</h2>
                     </div>

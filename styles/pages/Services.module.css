@@ -49,6 +49,7 @@
     margin-right: 5%;
   }
   .services .contactContainer {
+    border-radius: 1rem;
     margin-left: 10%;
     margin-right: 10%;
     padding-top: 1%;
@@ -115,6 +116,7 @@
     margin-right: 20%;
   }
   .services .contactContainer {
+    border-radius: 1rem;
     padding-left: 10%;
     padding-right: 10%;
     padding-top: 2.5%;

@@ -45,16 +45,13 @@ export default function Services() {
         <>
             <Meta />
             {text ? (
-                <div
-                    className={styles.services}
-                    style={{
-                        background: `url(/${text.background}) no-repeat center center fixed`,
-                        backgroundSize: 'cover',
-                        WebkitBackgroundSize: 'cover',
-                        MozBackgroundSize: 'cover',
-                        OBackgroundSize: 'cover',
-                    }}
-                >
+                <div className={styles.services}>
+                    <div
+                        style={{
+                            backgroundImage: `url(/${text.background})`,
+                        }}
+                        className="bg-img"
+                    ></div>
                     <div className="title">
                         <h2>{text.title}</h2>
                     </div>
