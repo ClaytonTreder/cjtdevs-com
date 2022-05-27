@@ -11,15 +11,13 @@ function Home() {
     return (
         <>
             <Meta />
-            <div
-                style={{
-                    background: `url(/${text.home_bg}) no-repeat center center fixed`,
-                    backgroundSize: 'cover',
-                    WebkitBackgroundSize: 'cover',
-                    MozBackgroundSize: 'cover',
-                    OBackgroundSize: 'cover',
-                }}
-            >
+            <div>
+                <div
+                    style={{
+                        backgroundImage: `url(/${text.home_bg})`,
+                    }}
+                    className="bg-img"
+                ></div>
                 <div className={`${styles.banner} fade-in`}>
                     <div className={`${styles.title}`}>
                         {text.home_call_to_action.hcta_lines.map((line, i) => {
