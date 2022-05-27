@@ -4,9 +4,11 @@ import styles from '../../styles/pages/Services.module.css'
 import { attributes } from '!!frontmatter-markdown-loader!../../content/pages/services.md'
 import Contact from '../../components/Contact'
 import Picture from '../../components/Picture'
+import BackgroundImage from '../../components/BackgroundImage'
 import scrollTo from '../../hooks/scrollTo.js'
 import { useMemo } from 'react'
 import Meta from '../meta'
+import Link from 'next/link'
 
 export default function Services() {
     const text = attributes
@@ -48,11 +50,7 @@ export default function Services() {
                     <div className="title">
                         <h2>{text.title}</h2>
                     </div>
-                    <Picture
-                        src={text.background}
-                        alt="background pic"
-                        className="bg-img"
-                    />
+                    <BackgroundImage src={text.background} alt="background" />
                     {text.sections?.map((section, i) => {
                         return (
                             <div
@@ -89,12 +87,11 @@ export default function Services() {
                                     </button>
                                 </div>
                                 <div className={styles.btnContainer}>
-                                    <a
-                                        style={{ marginTop: '1%' }}
-                                        href={'/prices#' + section.tag}
-                                    >
-                                        <u>Prices</u>
-                                    </a>
+                                    <Link href={'/prices#' + section.tag}>
+                                        <a style={{ marginTop: '1%' }}>
+                                            <u>Prices</u>
+                                        </a>
+                                    </Link>
                                 </div>
                                 <hr />
                             </div>

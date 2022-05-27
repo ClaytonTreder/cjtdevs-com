@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { attributes } from '!!frontmatter-markdown-loader!../../content/pages/prices.md'
 import scrollTo from '../../hooks/scrollTo.js'
 import { useMemo } from 'react'
-import Picture from '../../components/Picture'
+import BackgroundImage from '../../components/BackgroundImage'
 import Meta from '../meta'
 
 export default function Prices() {
@@ -46,11 +46,7 @@ export default function Prices() {
                         <h2>{text.title}</h2>
                     </div>
                     {text.subTitle ? <span>{text.subTitle}</span> : null}
-                    <Picture
-                        src={text.background}
-                        alt="background pic"
-                        className="bg-img"
-                    />
+                    <BackgroundImage src={text.background} alt="background" />
                     {text.sections?.map((section, i) => {
                         return (
                             <div
