@@ -24,7 +24,7 @@ meetus:
           text: Github
       titles:
         - title: Founder/Owner
-        - title: Fullstack developer
+        - title: Fullstack Developer
     - name: Jacob Treder
       pic: images/jake.png
       titles:
