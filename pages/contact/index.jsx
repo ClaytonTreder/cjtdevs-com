@@ -13,9 +13,9 @@ export default function Contact() {
                 style={{
                     background: `url(/${text.background}) no-repeat center center fixed`,
                     backgroundSize: 'cover',
-                    webkitBackgroundSize: 'cover',
-                    mozBackgroundSize: 'cover',
-                    oBackgroundSize: 'cover',
+                    WebkitBackgroundSize: 'cover',
+                    MozBackgroundSize: 'cover',
+                    OBackgroundSize: 'cover',
                 }}
             >
                 <div className="title">
