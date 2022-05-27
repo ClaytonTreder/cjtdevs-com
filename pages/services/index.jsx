@@ -68,6 +68,7 @@ export default function Services() {
                                     margin: '10%',
                                     padding: '2 .5%',
                                     borderRadius: '1rem',
+                                    paddingTop: '2.5%',
                                 }}
                                 key={i}
                             >
