@@ -4,7 +4,7 @@ export default function BackgroundImage(props) {
     return props.src ? (
         <div className="bg-img">
             <Image
-                quality={50}
+                quality={25}
                 src={`/${props.src}`}
                 width={0}
                 height={0}
