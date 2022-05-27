@@ -2,7 +2,6 @@ import styles from '../styles/pages/Home.module.css'
 import { attributes } from '!!frontmatter-markdown-loader!../content/pages/home.md'
 import NewsLetter from '../components/NewsLetter'
 import Meta from './meta'
-import BackgroundImage from '../components/BackgroundImage'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -12,8 +11,12 @@ function Home() {
     return (
         <>
             <Meta />
-            <div>
-                <BackgroundImage src={text.home_bg} alt="micro-chip" />
+            <div
+                style={{
+                    background: `url(/${text.home_bg}) no-repeat center center fixed`,
+                    backgroundSize: 'cover',
+                }}
+            >
                 <div className={`${styles.banner} fade-in`}>
                     <div className={`${styles.title}`}>
                         {text.home_call_to_action.hcta_lines.map((line, i) => {

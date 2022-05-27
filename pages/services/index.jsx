@@ -4,7 +4,6 @@ import styles from '../../styles/pages/Services.module.css'
 import { attributes } from '!!frontmatter-markdown-loader!../../content/pages/services.md'
 import Contact from '../../components/Contact'
 import Picture from '../../components/Picture'
-import BackgroundImage from '../../components/BackgroundImage'
 import scrollTo from '../../hooks/scrollTo.js'
 import { useMemo } from 'react'
 import Meta from '../meta'
@@ -46,11 +45,16 @@ export default function Services() {
         <>
             <Meta />
             {text ? (
-                <div className={styles.services}>
+                <div
+                    className={styles.services}
+                    style={{
+                        background: `url(/${text.background}) no-repeat center center fixed`,
+                        backgroundSize: 'cover',
+                    }}
+                >
                     <div className="title">
                         <h2>{text.title}</h2>
                     </div>
-                    <BackgroundImage src={text.background} alt="background" />
                     {text.sections?.map((section, i) => {
                         return (
                             <div
@@ -59,7 +63,7 @@ export default function Services() {
                                     backgroundColor:
                                         'rgba(255, 255, 255, 0.932)',
                                     margin: '10%',
-                                    padding: '2.5%',
+                                    padding: '2 .5%',
                                     borderRadius: '1rem',
                                 }}
                                 key={i}

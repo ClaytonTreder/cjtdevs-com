@@ -3,7 +3,6 @@ import { Fragment } from 'react'
 import { attributes } from '!!frontmatter-markdown-loader!../../content/pages/about.md'
 import Meta from '../meta'
 import Image from 'next/image'
-import BackgroundImage from '../../components/BackgroundImage'
 
 function About() {
     const text = attributes
@@ -11,11 +10,13 @@ function About() {
     return (
         <>
             <Meta />
-            <div className={styles.about}>
-                <BackgroundImage
-                    src={text.background}
-                    alt="background"
-                />
+            <div
+                className={styles.about}
+                style={{
+                    background: `url(/${text.background}) no-repeat center center fixed`,
+                    backgroundSize: 'cover',
+                }}
+            >
                 <div className="title">
                     <h2>{text.title}</h2>
                 </div>
