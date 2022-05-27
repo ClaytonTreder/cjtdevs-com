@@ -48,7 +48,7 @@ export default function Prices() {
                         className="bg-img"
                     ></div>
                     <div className="title">
-                        <h2>{text.title} - Hello Chris</h2>
+                        <h2>{text.title}</h2>
                     </div>
                     {text.subTitle ? <span>{text.subTitle}</span> : null}
                     {text.sections?.map((section, i) => {
