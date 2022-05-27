@@ -23,9 +23,16 @@ meetus:
         - link: https://github.com/ClaytonTreder
           text: Github
       titles:
-        - title: Founder
+        - title: Founder/Owner
         - title: Fullstack developer
-        - title: Tech enthusiast
+    - name: Jacob Treder
+      pic: images/jake.png
+      titles:
+        - title: Lead Sales
+      links:
+        - text: LinkedIn
+          link: https://www.linkedin.com/in/jake-treder-4879b0138/
+      quote: Finding you the best product is my goal.
 extra:
   title: More Info
   text: Looking to create a new website or mobile / desktop application? You have
