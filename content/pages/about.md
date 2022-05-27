@@ -33,6 +33,16 @@ meetus:
         - text: LinkedIn
           link: https://www.linkedin.com/in/jake-treder-4879b0138/
       quote: Finding you the best product is my goal.
+    - name: Chris Calleja
+      pic: images/img_4163.jpeg
+      titles:
+        - title: Frontend Intern
+      links:
+        - text: LinkedIn
+          link: https://www.linkedin.com/in/chriscalleja/
+        - text: GitHub
+          link: https://github.com/ChrisCalleja
+      quote: Super excited to be learning with the team!
 extra:
   title: More Info
   text: Looking to create a new website or mobile / desktop application? You have
