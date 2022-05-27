@@ -12,7 +12,7 @@ collections:
     files:
       - label: Home
         name: home
-        file: src/content/pages/home.md
+        file: content/pages/home.md
         preview_path: /
         fields:
           - { label: Background, name: home-bg, widget: image }
@@ -58,7 +58,7 @@ collections:
                   - { label: Image, name: hl_link_image, widget: image }
       - label: About
         name: about
-        file: src/content/pages/about.md
+        file: content/pages/about.md
         preview_path: /about
         fields:
           - { label: Background, name: background, widget: image }
@@ -88,10 +88,11 @@ collections:
                   - label: Links
                     name: links
                     widget: list
+                    required: false
                     fields:
                       - { label: Text, name: text, widget: string }
                       - { label: Link, name: link, widget: string }
-                  - { label: Quote, name: quote, widget: string }
+                  - { label: Quote, name: quote, widget: string, required: false }
           - label: Extra
             name: extra
             widget: object
@@ -100,7 +101,7 @@ collections:
               - { label: Text, name: text, widget: string }
       - label: Services
         name: services
-        file: src/content/pages/services.md
+        file: content/pages/services.md
         preview_path: /sevices
         fields:
           - { label: Background, name: background, widget: image }
@@ -117,7 +118,7 @@ collections:
           - { label: Contact Title, name: contactTitle, widget: string }
       - label: Contact
         name: contact
-        file: src/content/pages/contact.md
+        file: content/pages/contact.md
         preview_path: /contact
         fields:
           - { label: Background, name: background, widget: image }
@@ -126,7 +127,7 @@ collections:
           - { label: Content, name: content, widget: string }
       - label: Clients
         name: clients
-        file: src/content/pages/clients.md
+        file: content/pages/clients.md
         preview_path: /clients
         fields:
           - { label: Background, name: background, widget: image }
@@ -148,14 +149,14 @@ collections:
               - { label: Author, name: author, widget: string, required: false }
       - label: Blogs
         name: blog
-        file: src/content/pages/blog.md
+        file: content/pages/blog.md
         preview_path: /blog
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Sub Title, name: subTitle, widget: string }
       - label: Payments
         name: payments
-        file: src/content/pages/payments.md
+        file: content/pages/payments.md
         fields: 
           - { label: Title, name: title, widget: string }
           - { label: Sub Title, name: subTitle, widget: string }
@@ -178,13 +179,13 @@ collections:
     files:
       - label: Header
         name: header
-        file: src/content/components/header.md
+        file: content/components/header.md
         preview_path: /
         fields:
           - { label: Logo, name: logo, widget: image }
       - label: Footer
         name: footer
-        file: src/content/components/footer.md
+        file: content/components/footer.md
         preview_path: /
         fields:
           - label: Quick links
@@ -235,7 +236,7 @@ collections:
                   - { label: Text, name: text, widget: string }
       - label: Contact
         name: contact
-        file: src/content/components/contact.md
+        file: content/components/contact.md
         preview_path: /contact
         fields:
           - { label: Email, name: email, widget: string }
@@ -251,7 +252,7 @@ collections:
               - { label: Error, name: error, widget: string }
   - label: Blogs
     name: blogs
-    folder: src/content/blogs
+    folder: content/blogs
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }

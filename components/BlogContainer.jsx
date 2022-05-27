@@ -1,15 +1,10 @@
 import Picture from './Picture'
-import { Fragment, useEffect, useState } from 'react'
+import { Fragment } from 'react'
 import LinkShare from './LinkShare'
 
 export default function BlogContainer(props) {
     const blog = props.blog.frontmatter
     const trimedFileName = props.blog.slug
-    const [location, setLocation] = useState()
-
-    useEffect(() => {
-        setLocation(window.location)
-    }, [])
 
     return (
         <Fragment>
@@ -27,17 +22,19 @@ export default function BlogContainer(props) {
                     <p>
                         <small>Author: {blog.author}</small>
                     </p>
-                    <LinkShare
-                        link={`/blog/post/${trimedFileName}`}
-                    />
                     <button
                         onClick={() => {
                             window.location.href = `/blog/post/${trimedFileName}`
                         }}
-                        style={{ marginTop: '5%', width: '75%' }}
+                        style={{
+                            marginTop: '5%',
+                            width: '75%',
+                            color: 'black',
+                        }}
                     >
                         Read
                     </button>
+                    <LinkShare link={`/blog/post/${trimedFileName}`} />
                 </div>
                 <div className="column" style={{ width: '65%' }}>
                     <Picture

@@ -11,7 +11,7 @@ export default function NavBar(params) {
     return (
         <Fragment>
             <div className={styles['navbar']}>
-                <Navs />
+                <Navs closeNav={() => {}} />
             </div>
             {navOpen ? (
                 <div className={styles['mobilenavbar']}>
@@ -23,14 +23,18 @@ export default function NavBar(params) {
                     >
                         &#x2715;
                     </div>
-                    <Navs />
+                    <Navs
+                        closeNav={() => {
+                            setNavOpen(false)
+                        }}
+                    />
                 </div>
             ) : null}
         </Fragment>
     )
 }
 
-function Navs() {
+function Navs(props) {
     const loc = useRouter()
 
     const home = useRef(null)
@@ -40,8 +44,18 @@ function Navs() {
     const clients = useRef(null)
     const blog = useRef(null)
 
+    const removeAll = () => {
+        home.current.classList.remove(`${styles['nav-select']}`)
+        about.current.classList.remove(`${styles['nav-select']}`)
+        services.current.classList.remove(`${styles['nav-select']}`)
+        contact.current.classList.remove(`${styles['nav-select']}`)
+        clients.current.classList.remove(`${styles['nav-select']}`)
+        blog.current.classList.remove(`${styles['nav-select']}`)
+    }
+
     useEffect(() => {
-        switch (loc.asPath) {
+        removeAll()
+        switch (loc.pathname) {
             case '/':
                 home.current.classList.add(`${styles['nav-select']}`)
                 break
@@ -67,7 +81,13 @@ function Navs() {
     return (
         <Fragment>
             <Link href="/">
-                <a ref={home} className="flex-inline">
+                <a
+                    onClick={() => {
+                        props.closeNav()
+                    }}
+                    ref={home}
+                    className="flex-inline"
+                >
                     <div>
                         <div className={styles['arrow-left-top']}></div>
                         <div className={styles['arrow-left-bottom']}></div>
@@ -76,7 +96,13 @@ function Navs() {
                 </a>
             </Link>
             <Link href="/about">
-                <a ref={about} className="flex-inline">
+                <a
+                    onClick={() => {
+                        props.closeNav()
+                    }}
+                    ref={about}
+                    className="flex-inline"
+                >
                     <div>
                         <div className={styles['arrow-left-top']}></div>
                         <div className={styles['arrow-left-bottom']}></div>
@@ -85,7 +111,13 @@ function Navs() {
                 </a>
             </Link>
             <Link href="/services">
-                <a ref={services} className="flex-inline">
+                <a
+                    onClick={() => {
+                        props.closeNav()
+                    }}
+                    ref={services}
+                    className="flex-inline"
+                >
                     <div>
                         <div className={styles['arrow-left-top']}></div>
                         <div className={styles['arrow-left-bottom']}></div>
@@ -94,7 +126,13 @@ function Navs() {
                 </a>
             </Link>
             <Link href="/contact">
-                <a ref={contact} className="flex-inline">
+                <a
+                    onClick={() => {
+                        props.closeNav()
+                    }}
+                    ref={contact}
+                    className="flex-inline"
+                >
                     <div>
                         <div className={styles['arrow-left-top']}></div>
                         <div className={styles['arrow-left-bottom']}></div>
@@ -103,7 +141,13 @@ function Navs() {
                 </a>
             </Link>
             <Link href="/clients">
-                <a ref={clients} className="flex-inline">
+                <a
+                    onClick={() => {
+                        props.closeNav()
+                    }}
+                    ref={clients}
+                    className="flex-inline"
+                >
                     <div>
                         <div className={styles['arrow-left-top']}></div>
                         <div className={styles['arrow-left-bottom']}></div>
@@ -112,7 +156,13 @@ function Navs() {
                 </a>
             </Link>
             <Link href="/blog">
-                <a ref={blog} className="flex-inline">
+                <a
+                    onClick={() => {
+                        props.closeNav()
+                    }}
+                    ref={blog}
+                    className="flex-inline"
+                >
                     <div>
                         <div className={styles['arrow-left-top']}></div>
                         <div className={styles['arrow-left-bottom']}></div>

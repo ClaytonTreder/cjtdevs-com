@@ -1,95 +1,111 @@
-import { useRef, useEffect } from 'react';
-import { useRouter } from 'next/router';
-import styles from '../../styles/pages/Services.module.css';
-import { attributes } from '!!frontmatter-markdown-loader!../../content/pages/services.md';
-import Contact from '../../components/Contact';
-import Picture from '../../components/Picture';
-import scrollTo from '../../hooks/scrollTo.js';
-import { useMemo } from 'react';
+import { useRef, useEffect } from 'react'
+import { useRouter } from 'next/router'
+import styles from '../../styles/pages/Services.module.css'
+import { attributes } from '!!frontmatter-markdown-loader!../../content/pages/services.md'
+import Contact from '../../components/Contact'
+import Picture from '../../components/Picture'
+import scrollTo from '../../hooks/scrollTo.js'
+import { useMemo } from 'react'
+import Meta from '../meta'
 
 export default function Services() {
-  const text = attributes;
+    const text = attributes
 
-  const talk = useRef(null);
+    const talk = useRef(null)
 
-  const loc = useRouter();
+    const loc = useRouter()
 
-  const scrollOptions = useMemo(
-    () => ({
-      behavior: 'auto',
-      block: 'center',
-      inline: 'nearest',
-    }),
-    []
-  );
+    const scrollOptions = useMemo(
+        () => ({
+            behavior: 'auto',
+            block: 'center',
+            inline: 'nearest',
+        }),
+        []
+    )
 
-  useEffect(() => {
-    switch (loc.hash) {
-      case '#site':
-        scrollTo(text?.sections[0]?.tag, scrollOptions);
-        break;
-      case '#app':
-        scrollTo(text?.sections[1]?.tag, scrollOptions);
-        break;
-      case '#software':
-        scrollTo(text?.sections[2]?.tag, scrollOptions);
-        break;
-      default:
-        break;
-    }
-  }, [loc.hash, scrollOptions, text?.sections]);
+    useEffect(() => {
+        switch (loc.hash) {
+            case '#site':
+                scrollTo(text?.sections[0]?.tag, scrollOptions)
+                break
+            case '#app':
+                scrollTo(text?.sections[1]?.tag, scrollOptions)
+                break
+            case '#software':
+                scrollTo(text?.sections[2]?.tag, scrollOptions)
+                break
+            default:
+                break
+        }
+    }, [loc.hash, scrollOptions, text?.sections])
 
-  return text ? (
-    <div className={styles.services}>
-      <div className='title'>
-        <h2>{text.title}</h2>
-      </div>
-      <Picture src={text.background} alt='background pic' className='bg-img' />
-      {text.sections?.map((section, i) => {
-        return (
-          <div
-            id={section.tag}
-            style={{
-              backgroundColor: 'rgba(255, 255, 255, 0.932)',
-              margin: '10%',
-              padding: '2.5%',
-              borderRadius: '1rem',
-            }}
-            key={i}
-          >
-            <h4>{section.title}</h4>
-            <section>
-              <p>
-                <Picture
-                  src={section.pic}
-                  alt='service'
-                  style={{ float: section.float }}
-                />
-                {section.text}
-              </p>
-            </section>
-            <div className={styles.btnContainer}>
-              <button
-                onClick={() => {
-                  talk.current.scrollIntoView(scrollOptions);
-                }}
-              >
-                {section.button}
-              </button>
-            </div>
-            <div className={styles.btnContainer}>
-              <a style={{ marginTop: '1%' }} href={'/prices#' + section.tag}>
-                <u>Prices</u>
-              </a>
-            </div>
-            <hr />
-          </div>
-        );
-      })}
-      <div className={styles.contactContainer } ref={talk}>
-        <h4>{text.contactTitle}</h4>
-        <Contact />
-      </div>
-    </div>
-  ) : null;
+    return (
+        <>
+            <Meta />
+            {text ? (
+                <div className={styles.services}>
+                    <div className="title">
+                        <h2>{text.title}</h2>
+                    </div>
+                    <Picture
+                        src={text.background}
+                        alt="background pic"
+                        className="bg-img"
+                    />
+                    {text.sections?.map((section, i) => {
+                        return (
+                            <div
+                                id={section.tag}
+                                style={{
+                                    backgroundColor:
+                                        'rgba(255, 255, 255, 0.932)',
+                                    margin: '10%',
+                                    padding: '2.5%',
+                                    borderRadius: '1rem',
+                                }}
+                                key={i}
+                            >
+                                <h4>{section.title}</h4>
+                                <section>
+                                    <p>
+                                        <Picture
+                                            src={section.pic}
+                                            alt="service"
+                                            style={{ float: section.float }}
+                                        />
+                                        {section.text}
+                                    </p>
+                                </section>
+                                <div className={styles.btnContainer}>
+                                    <button
+                                        onClick={() => {
+                                            talk.current.scrollIntoView(
+                                                scrollOptions
+                                            )
+                                        }}
+                                    >
+                                        {section.button}
+                                    </button>
+                                </div>
+                                <div className={styles.btnContainer}>
+                                    <a
+                                        style={{ marginTop: '1%' }}
+                                        href={'/prices#' + section.tag}
+                                    >
+                                        <u>Prices</u>
+                                    </a>
+                                </div>
+                                <hr />
+                            </div>
+                        )
+                    })}
+                    <div className={styles.contactContainer} ref={talk}>
+                        <h4>{text.contactTitle}</h4>
+                        <Contact />
+                    </div>
+                </div>
+            ) : null}
+        </>
+    )
 }
