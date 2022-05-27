@@ -7,6 +7,7 @@ import Picture from '../../components/Picture'
 import scrollTo from '../../hooks/scrollTo.js'
 import { useMemo } from 'react'
 import Meta from '../meta'
+import Link from 'next/link'
 
 export default function Services() {
     const text = attributes
@@ -44,15 +45,16 @@ export default function Services() {
         <>
             <Meta />
             {text ? (
-                <div className={styles.services}>
+                <div
+                    className={styles.services}
+                    style={{
+                        background: `url(/${text.background}) no-repeat center center fixed`,
+                        backgroundSize: 'cover',
+                    }}
+                >
                     <div className="title">
                         <h2>{text.title}</h2>
                     </div>
-                    <Picture
-                        src={text.background}
-                        alt="background pic"
-                        className="bg-img"
-                    />
                     {text.sections?.map((section, i) => {
                         return (
                             <div
@@ -61,7 +63,7 @@ export default function Services() {
                                     backgroundColor:
                                         'rgba(255, 255, 255, 0.932)',
                                     margin: '10%',
-                                    padding: '2.5%',
+                                    padding: '2 .5%',
                                     borderRadius: '1rem',
                                 }}
                                 key={i}
@@ -89,12 +91,11 @@ export default function Services() {
                                     </button>
                                 </div>
                                 <div className={styles.btnContainer}>
-                                    <a
-                                        style={{ marginTop: '1%' }}
-                                        href={'/prices#' + section.tag}
-                                    >
-                                        <u>Prices</u>
-                                    </a>
+                                    <Link href={'/prices#' + section.tag}>
+                                        <a style={{ marginTop: '1%' }}>
+                                            <u>Prices</u>
+                                        </a>
+                                    </Link>
                                 </div>
                                 <hr />
                             </div>

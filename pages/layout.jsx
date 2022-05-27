@@ -8,21 +8,17 @@ export default function Layout({ children }) {
     const [mobileNavOpen, setMobileNavOpen] = useState()
 
     return (
-        <div>
-            <>
-                <div className="body-content">
-                    <NavBar
-                        setMobileNavOpen={setMobileNavOpen}
-                        mobileNavOpen={mobileNavOpen}
-                    />
-                    <Header
-                        setMobileNavOpen={setMobileNavOpen}
-                        mobileNavOpen={mobileNavOpen}
-                    />
-                    {children}
-                </div>
-                <Footer />
-            </>
-        </div>
+        <>
+            <NavBar
+                setMobileNavOpen={setMobileNavOpen}
+                mobileNavOpen={mobileNavOpen}
+            />
+            <Header
+                setMobileNavOpen={setMobileNavOpen}
+                mobileNavOpen={mobileNavOpen}
+            />
+            {children}
+            <Footer />
+        </>
     )
 }

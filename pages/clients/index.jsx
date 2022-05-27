@@ -1,7 +1,6 @@
 import Client from '../../components/Client'
 import * as styles from '../../styles/pages/Clients.module.css'
 import { attributes } from '!!frontmatter-markdown-loader!../../content/pages/clients.md'
-import Picture from '../../components/Picture'
 import Meta from '../meta'
 
 export default function Clients() {
@@ -9,12 +8,13 @@ export default function Clients() {
     return (
         <>
             <Meta />
-            <div className={styles.clients}>
-                <Picture
-                    src={text.background}
-                    alt="background"
-                    className="bg-img"
-                />
+            <div
+                className={styles.clients}
+                style={{
+                    background: `url(/${text.background}) no-repeat center center fixed`,
+                    backgroundSize: 'cover',
+                }}
+            >
                 <div className="title">
                     <h2>{text.title}</h2>
                 </div>

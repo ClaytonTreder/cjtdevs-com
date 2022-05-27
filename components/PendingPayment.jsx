@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import styles from '../styles/components/PendingPayment.module.css'
-import Picture from './Picture'
+import Image from 'next/image'
 
 export default function PendingPayment(params) {
     const [loading, setLoading] = useState(false)
@@ -119,11 +119,12 @@ export default function PendingPayment(params) {
                 </div>
                 <div className="flex-row text-center">
                     {loading ? (
-                        <Picture
-                            src={'images/loader.gif'}
+                        <Image
+                            width={75}
+                            height={75}
+                            src={'/images/loader.gif'}
                             alt="loading"
                             style={{
-                                width: '4rem',
                                 position: 'block',
                             }}
                         />

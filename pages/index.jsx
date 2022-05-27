@@ -1,8 +1,9 @@
 import styles from '../styles/pages/Home.module.css'
 import { attributes } from '!!frontmatter-markdown-loader!../content/pages/home.md'
 import NewsLetter from '../components/NewsLetter'
-import Picture from '../components/Picture'
 import Meta from './meta'
+import Image from 'next/image'
+import Link from 'next/link'
 
 function Home() {
     const text = attributes
@@ -10,12 +11,12 @@ function Home() {
     return (
         <>
             <Meta />
-            <div>
-                <Picture
-                    src={text.home_bg}
-                    alt="micro-chip"
-                    className="bg-img"
-                />
+            <div
+                style={{
+                    background: `url(/${text.home_bg}) no-repeat center center fixed`,
+                    backgroundSize: 'cover',
+                }}
+            >
                 <div className={`${styles.banner} fade-in`}>
                     <div className={`${styles.title}`}>
                         {text.home_call_to_action.hcta_lines.map((line, i) => {
@@ -49,10 +50,22 @@ function Home() {
                     {text.home_actions.map((action, i) => {
                         return (
                             <section key={i}>
-                                <img
-                                    alt="background"
-                                    src={`./${action.ha_action.ha_action_image}`}
-                                />
+                                <div
+                                    style={{
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        height: '5rem',
+                                    }}
+                                >
+                                    <Image
+                                        className={styles.img}
+                                        height={100}
+                                        width={100}
+                                        objectFit="contain"
+                                        alt="background"
+                                        src={`/${action.ha_action.ha_action_image}`}
+                                    />
+                                </div>
                                 <hr />
                                 <p>{action.ha_action.ha_action_text}</p>
                             </section>
@@ -60,16 +73,20 @@ function Home() {
                     })}
                 </div>
                 <div className={styles.baseLinks}>
-                    {text.home_links.map((link, i) => {
+                    {text.home_links.map((homeLink, i) => {
                         return (
                             <div key={i} className="flex-inline">
-                                <img
-                                    src={`./${link.hl_link.hl_link_image}`}
-                                    alt={`${link.hl_link.hl_link_image}`}
+                                <Image
+                                    height={80}
+                                    width={80}
+                                    src={`/${homeLink.hl_link.hl_link_image}`}
+                                    alt={`${homeLink.hl_link.hl_link_image}`}
                                 />
-                                <a href={link.hl_link.hl_link_nav}>
-                                    <button>{link.hl_link.hl_link_text}</button>
-                                </a>
+                                <Link href={homeLink.hl_link.hl_link_nav}>
+                                    <button>
+                                        {homeLink.hl_link.hl_link_text}
+                                    </button>
+                                </Link>
                             </div>
                         )
                     })}
