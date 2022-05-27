@@ -1,23 +1,20 @@
 import styles from '../../styles/pages/About.module.css'
-import Picture from '../../components/Picture'
 import { Fragment } from 'react'
 import { attributes } from '!!frontmatter-markdown-loader!../../content/pages/about.md'
 import Meta from '../meta'
+import Image from 'next/image'
+import BackgroundImage from '../../components/BackgroundImage'
 
 function About() {
     const text = attributes
 
     return (
         <>
-            <Meta
-                url="/about"
-                title="CJT Devs - Find your home page here"
-            />{' '}
+            <Meta />
             <div className={styles.about}>
-                <Picture
+                <BackgroundImage
                     src={text.background}
                     alt="background"
-                    className="bg-img"
                 />
                 <div className="title">
                     <h2>{text.title}</h2>
@@ -36,11 +33,19 @@ function About() {
                         return (
                             <Fragment key={i}>
                                 <div className={styles.meetUs}>
-                                    <Picture
-                                        src={dev.pic}
-                                        alt={dev.imgAlt}
-                                        style={dev.imgStyle}
-                                    />
+                                    <div
+                                        style={{
+                                            minWidth: '25%',
+                                        }}
+                                    >
+                                        <Image
+                                            src={`/${dev.pic}`}
+                                            alt={dev.imgAlt}
+                                            height={0}
+                                            width={0}
+                                            layout="responsive"
+                                        />
+                                    </div>
                                     <div className={styles.meetUsTitles}>
                                         <h6>{dev.name}</h6>
                                         {dev.titles.map((title, i) => {

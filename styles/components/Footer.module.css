@@ -1,17 +1,10 @@
 .footer a {
-    padding: 0%;
     color: var(--color-black) !important;
     border-radius: 0.25rem;
-    max-height: 50px;
     justify-content: flex-start;
     align-items: center;
     display: flex;
     flex-direction: row;
-}
-.footer img {
-    margin-right: 2px;
-    height: 1rem;
-    max-width: 1rem;
 }
 .footer hr {
     padding: 0%;

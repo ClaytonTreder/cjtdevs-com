@@ -143,7 +143,7 @@ textarea {
 @media (max-width: 767px) {
     .bg-img {
         z-index: -100;
-        width: auto;
+        width: 100vw;
         height: 100vh;
         position: fixed;
         top: 0;
@@ -183,7 +183,8 @@ textarea {
         justify-content: space-around;
         padding-left: var(--desktop-padding-x);
         padding-right: var(--desktop-padding-x);
-        margin-bottom: var(--mobile-margin-y);
+        padding-top: 0.25%;
+        margin-bottom: 1%;
         background-color: black;
         color: var(--color-white) !important;
         animation: var(--fade-in-time);
@@ -321,4 +322,4 @@ hr {
 
 .text-center {
     text-align: center !important;
-  }
+}

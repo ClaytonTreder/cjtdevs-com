@@ -13,7 +13,7 @@ export default function BlogPost({ postname, frontmatter, markdownBody }) {
     return (
         <>
             <Meta
-                url={`/blog/post/${postname}`}
+                route={`/blog/post/${postname}`}
                 title={`CJT Devs Blog - ${blog.title}`}
                 description={`${blog.subTitle} - ${blog.author}`}
                 image={blog.img}
