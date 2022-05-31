@@ -1,0 +1,16 @@
+/* mobile */
+@media (max-width: 767px) {
+    .BlogContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+
+    }
+}
+
+/* desktop */
+@media (min-width: 768px) {
+    .BlogContainer {
+        display: flex;
+    }
+}
