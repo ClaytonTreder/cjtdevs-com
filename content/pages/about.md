@@ -1,5 +1,5 @@
 ---
-background: images/geometric-1732847__340.webp
+background: images/photo-1518770660439-4636190af475.jpeg
 title: About Us
 info:
   - title: Who?
