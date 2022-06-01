@@ -1,5 +1,5 @@
 ---
-background: images/photo-1518770660439-4636190af475.jpeg
+background: images/fiber-optic-1055946.jpg
 title: About Us
 info:
   - title: Who?
