@@ -1,5 +1,5 @@
 ---
-background: images/technology-dekstop-wallpapers-768x480.jpeg
+background: images/abstract-technology-background-networks-connections.jpeg
 title: About Us
 info:
   - title: Who?
