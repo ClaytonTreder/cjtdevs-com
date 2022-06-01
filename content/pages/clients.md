@@ -1,5 +1,5 @@
 ---
-background: images/room-lights.jpg
+background: images/abstract-technology-background-networks-connections.jpeg
 title: Clients
 subtitle: ​​Join our growing list of clients!
 content: We value hard work and high preformance. Our clients agree. Check out
