@@ -1,5 +1,5 @@
 ---
-background: images/room-lights.jpg
+background: images/background-5035258_960_720.webp
 title: Clients
 subtitle: ​​Join our growing list of clients!
 content: We value hard work and high preformance. Our clients agree. Check out

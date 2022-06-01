@@ -21,7 +21,7 @@ export default function Blog({ posts }) {
                             return (
                                 <Fragment key={i}>
                                     <BlogContainer blog={blog} />
-                                    <br /> <br /> <br />
+                                    <br /> <hr /> <br />
                                 </Fragment>
                             )
                         })}
