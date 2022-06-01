@@ -1,5 +1,5 @@
 ---
-background: images/fiber-optic-1055946.jpg
+background: images/technology-dekstop-wallpapers-768x480.jpeg
 title: About Us
 info:
   - title: Who?
