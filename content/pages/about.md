@@ -1,5 +1,5 @@
 ---
-background: images/abstract-technology-background-networks-connections.jpeg
+background: images/photo-1510906594845-bc082582c8cc.jpeg
 title: About Us
 info:
   - title: Who?
