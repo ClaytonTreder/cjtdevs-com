@@ -3,7 +3,7 @@ title: We’re not a ____ Company, we’re a Tech Company
 subTitle: Is your tech acumen evolving in the same way your company is?
 author: Nick Thurber, CPA
 date: 2022-05-31T23:08:10.656Z
-img: images/41296772825_ea5474e63b_o.webp
+img: images/41296772825_ea5474e63b_o.jpg
 ---
 It’s no secret that tech has successfully permeated every aspect of human existence – it’s in our cars, our homes, hell, even our dog collars. It’s completely ubiquitous. Because of this, most non-tech companies, regardless of product or industry, have realized that advancing their tech is mission critical to long term relevance. They have also realized it’s important that people KNOW they are advancing… Hence that catchy PR buzz-phrase “We’re not a \_\_\_\_ company, we’re a tech company.”
 
