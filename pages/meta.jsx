@@ -31,6 +31,11 @@ export default function Meta(params) {
                 content={`${url}/${params.image ?? 'images/preview.png'}`}
             />
             <meta
+                key="image"
+                property="image"
+                content={`${url}/${params.image ?? 'images/preview.png'}`}
+            />
+            <meta
                 key="description"
                 name="description"
                 content={params.description ?? description}
