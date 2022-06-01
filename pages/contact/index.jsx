@@ -18,11 +18,17 @@ export default function Contact() {
                 <div className="title">
                     <h2>{text.title}</h2>
                 </div>
-                <div className={styles.subtitle}>
-                    <span style={{ fontSize: 'large' }}>{text.subTitle}</span>
-                </div>
-                <div className={styles.subtitle}>
-                    <span style={{ fontSize: 'medium' }}>{text.content}</span>
+                <div className={styles.subtitleSection}>
+                    <div className={styles.subtitle}>
+                        <span style={{ fontSize: 'large' }}>
+                            {text.subTitle}
+                        </span>
+                    </div>
+                    <div className={styles.subtitle}>
+                        <span style={{ fontSize: 'medium' }}>
+                            {text.content}
+                        </span>
+                    </div>
                 </div>
                 <hr />
                 <section>
