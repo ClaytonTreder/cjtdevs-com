@@ -34,19 +34,15 @@ function About() {
                         return (
                             <Fragment key={i}>
                                 <div className={styles.meetUs}>
-                                    <div
-                                        style={{
-                                            minWidth: '25%',
-                                        }}
-                                    >
                                         <Image
                                             src={`/${dev.pic}`}
                                             alt={dev.imgAlt}
-                                            height={0}
-                                            width={0}
-                                            layout="responsive"
+                                            height={200}
+                                            width={200}
+                                            objectFit="cover"
+                                            objectPosition="center"
+                                            quality={50}
                                         />
-                                    </div>
                                     <div className={styles.meetUsTitles}>
                                         <h6>{dev.name}</h6>
                                         {dev.titles.map((title, i) => {

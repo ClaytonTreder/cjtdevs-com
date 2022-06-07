@@ -10,6 +10,20 @@ class MyDocument extends Document {
                     />
                     <meta name="robots" content="index, follow" />
                     <link rel="shortcut icon" href="/favicon.ico" />
+                    <script
+                        async
+                        src="https://www.googletagmanager.com/gtag/js?id=UA-198230094-1"
+                    />
+
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+                          
+                            gtag('config', 'UA-198230094-1');`,
+                        }}
+                    />
                 </Head>
                 <body>
                     <Main />
