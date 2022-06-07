@@ -17,12 +17,11 @@ class MyDocument extends Document {
 
                     <script
                         dangerouslySetInnerHTML={{
-                            __html: `
-                                  window.dataLayer = window.dataLayer || [];
-                                  function gtag(){dataLayer.push(arguments);}
-                                  gtag('js', new Date());
-                                  gtag('config', 'UA-198230094-1', { page_path: window.location.pathname });
-                                `,
+                            __html: `window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+                          
+                            gtag('config', 'UA-198230094-1');`,
                         }}
                     />
                 </Head>
