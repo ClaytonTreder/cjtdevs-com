@@ -26,7 +26,7 @@ meetus:
         - title: Founder/Owner
         - title: Fullstack Developer
     - name: Jacob Treder
-      pic: images/jake-min-5-1-.png
+      pic: images/jake.jpg
       titles:
         - title: Lead Sales
       links:

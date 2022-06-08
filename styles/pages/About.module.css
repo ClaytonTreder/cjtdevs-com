@@ -65,9 +65,10 @@
         margin-bottom: 10%;
     }
     .about .meetUsTitles {
+        width: 70%;
         display: flex;
         flex-direction: column;
-        margin-left: 3%;
+        margin-left: 10%;
     }
     .about .moreInfo span {
         padding-left: 5%;
@@ -129,6 +130,10 @@
         display: flex;
         flex-direction: column;
         margin-left: 3%;
+    }
+    .about .meetUsTitles .wrap {
+        word-break: break-all;
+        flex-wrap: wrap;
     }
     .about .moreInfo span {
         padding-left: 25%;

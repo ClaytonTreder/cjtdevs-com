@@ -29,20 +29,27 @@ function About() {
                     )
                 })}
                 <div className={styles.meetUsContainer}>
-                    <h5>{text.meetus.title}</h5>
+                    <h5 style={{ marginBottom: '3.5%' }}>{text.meetus.title}</h5>
                     {text.meetus.devs.map((dev, i) => {
                         return (
                             <Fragment key={i}>
                                 <div className={styles.meetUs}>
+                                    <div
+                                        style={{
+                                            minWidth: '25%',
+                                        }}
+                                    >
                                         <Image
                                             src={`/${dev.pic}`}
                                             alt={dev.imgAlt}
-                                            height={200}
-                                            width={200}
+                                            height={150}
+                                            width={150}
+                                            layout="fixed"
                                             objectFit="cover"
                                             objectPosition="center"
                                             quality={50}
                                         />
+                                    </div>
                                     <div className={styles.meetUsTitles}>
                                         <h6>{dev.name}</h6>
                                         {dev.titles.map((title, i) => {
@@ -75,9 +82,11 @@ function About() {
                                                 )
                                             })}
                                         </div>
-                                        <em>
-                                            <small>{dev.quote}</small>
-                                        </em>
+                                        <span>
+                                            <em>
+                                                <small>{dev.quote}</small>
+                                            </em>
+                                        </span>
                                     </div>
                                 </div>
                             </Fragment>
