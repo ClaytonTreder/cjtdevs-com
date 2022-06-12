@@ -2,10 +2,6 @@
   background-color: var(--color-main-dark);
 }
 
-.Header img {
-  height: auto;
-  width: 100%;
-}
 /* mobile */
 @media (max-width: 767px) {
   .Header {
@@ -13,11 +9,20 @@
     top: 0;
     z-index: 90;
   }
+  .Header img {
+    height: auto;
+    width: 50%;
+    padding-left: 5%;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+  }
 
   .MobileNavIcon {
     position: absolute;
     right: 0;
     padding: 1%;
+    margin: 5%;
+    margin-top: 10%;
     z-index: 100;
   }
   .MobileNavIcon div {
