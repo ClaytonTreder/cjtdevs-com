@@ -15,7 +15,7 @@ sections:
         text: Similiar to a static website, but with the ability to add/edit content. Have some recipes to share or want to start a blog? This is the option for you!
       - title: E-Commerce Website
         price: $1500
-        text: Do you want to sell something online? Or provide a service through your website? Powered by Stripe, we can make you a beautiful place to sell online.
+        text: Do you want to sell something online? Or provide a service through your website? Powered by Stripe, we can make you a powerful point of sales system and beautiful place to sell online.
       - title: Business specific intergrations
         price: $2000
         text: Have a specific program you want intergrated into your site? Looking for something a bit more robust? This is what we are here for. Contact us today.
