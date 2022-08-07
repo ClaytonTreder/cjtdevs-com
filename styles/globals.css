@@ -64,13 +64,13 @@ a {
     --color-black-faded: rgba(0, 0, 0, 0.9);
 
     --color-theme-main: rgb(18, 45, 66);
-    --color-theme-main-faded: rgba(18, 45, 66, 0.9);
+    --color-theme-main-faded: rgba(18, 45, 66, 0.975);
 
     --color-theme-secondary: rgb(29, 73, 106);
     --color-theme-secondary-faded: rgba(29, 73, 106, 0.9);
 
     --color-theme-light: rgb(192, 195, 197);
-    --color-theme-light-faded: rgba(192, 195, 197, 0.9);
+    --color-theme-light-faded: rgba(192, 195, 197, 0.975);
 }
 
 .title {

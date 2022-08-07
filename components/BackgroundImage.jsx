@@ -1,14 +1,22 @@
-import Image from 'next/image'
+import { useEffect, useState} from 'react'
 
-export default function BackgroundImage(props) {
-    return props.src ? (
-        <div className="bg-img">
-            <Image
-                priority={true}
-                src={`/${props.src}`}
-                layout="fill"
-                alt={props.imgAlt}
-            />
-        </div>
+export default function BackgroundImage({ src, onload }) {
+    const [state, setState] = useState({ loaded: false })
+    useEffect(() => {
+        const img = new Image()
+        img.src = src
+        img.onload = () => {
+            setState((prevState) => ({
+                ...prevState,
+                loaded: true,
+            }))
+            onload()
+        }
+    }, [src])
+    return state.loaded ? (
+        <div
+            style={{ backgroundImage: `url(/${src})` }}
+            className="bg-img"
+        ></div>
     ) : null
 }
