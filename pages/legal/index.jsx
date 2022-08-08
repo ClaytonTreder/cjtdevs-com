@@ -20,7 +20,7 @@ export default function BlogPost({ pages }) {
                     >
                         <h4>Legal Info</h4>
                         {pages.map((page) => (
-                            <Link href={`/legal/${page.slug}`}>
+                            <Link key={page.slug} href={`/legal/${page.slug}`}>
                                 <u style={{ cursor: 'pointer' }}>
                                     {page.frontmatter.title}
                                 </u>
