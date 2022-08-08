@@ -13,8 +13,8 @@ middle:
   links:
     - text: Sign up for our News Letter
       link: /newsletter
-    - text: Blog
-      link: /blog
+    - text: Legal
+      link: /legal
     - text: Payments
       link: /payments
     - text: Admin
