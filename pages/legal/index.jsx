@@ -1,6 +1,8 @@
 import Link from 'next/link'
+import matter from 'gray-matter'
 
-export default function BlogPost() {
+export default function BlogPost({ pages }) {
+    pages = JSON.parse(pages) ?? []
     return (
         <>
             <div>
@@ -17,18 +19,44 @@ export default function BlogPost() {
                         }}
                     >
                         <h4>Legal Info</h4>
-                        <Link href="/legal/privacy-policy">
-                            <u>Privacy Policy</u>
-                        </Link>
-                        <Link href="/legal/terms-of-service">
-                            <u>Terms of Service</u>
-                        </Link>
-                        <Link href="/legal/user-info-deletion-instructions">
-                            <u>User info deltion instructions</u>
-                        </Link>
+                        {pages.map((page) => (
+                            <Link href={`/legal/${page.slug}`}>
+                                <u style={{ cursor: 'pointer' }}>
+                                    {page.frontmatter.title}
+                                </u>
+                            </Link>
+                        ))}
                     </div>
                 </div>
             </div>
         </>
     )
+}
+
+export async function getServerSideProps() {
+    try {
+        const pages = ((context) => {
+            const keys = context.keys()
+            const values = keys.map(context)
+
+            const data = keys.map((key, index) => {
+                const slug = key.replace(/^.*[\\\/]/, '').slice(0, -3)
+                const document = matter(values[index].default)
+                return {
+                    frontmatter: document.data,
+                    slug,
+                }
+            })
+            return data
+        })(require.context('!!raw-loader!../../content/legal', true, /\.md$/))
+
+        return {
+            props: { pages: JSON.stringify(pages) },
+        }
+    } catch (ex) {
+        console.log(ex)
+        return {
+            props: { pages: JSON.stringify([]) },
+        }
+    }
 }
