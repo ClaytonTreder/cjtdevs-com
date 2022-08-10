@@ -1,5 +1,5 @@
 ---
 title: Data Deletion Insctructions
-date: 2022-05-31T23:08:10.656Z
+date: 2022-08-10T09:35:43.222Z
 ---
-Data Deletion Insctructions
+Please contact your developer to have your information removed from our database.
