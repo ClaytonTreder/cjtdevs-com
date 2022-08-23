@@ -16,7 +16,9 @@ export default function Blog({ posts }) {
                 </div>
                 <section>
                     {blogs
-                        .sort((a, b) => (a.date > b.date ? 1 : -1))
+                        .sort((a, b) =>
+                            a.frontmatter.date < b.frontmatter.date ? 1 : -1
+                        )
                         .map((blog, i) => {
                             return (
                                 <Fragment key={i}>
@@ -31,7 +33,7 @@ export default function Blog({ posts }) {
     )
 }
 
-export async function getStaticProps({ ...ctx }) {
+export async function getServerSideProps({ ...ctx }) {
     try {
         const posts = ((context) => {
             const keys = context.keys()
