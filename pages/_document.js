@@ -24,6 +24,18 @@ class MyDocument extends Document {
                             gtag('config', 'UA-198230094-1');`,
                         }}
                     />
+                    <script
+                        async
+                        src="https://www.googletagmanager.com/gtag/js?id=G-41KMBS1TNV"
+                    ></script>
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `window.dataLayer = window.dataLayer || [];
+                                   function gtag(){dataLayer.push(arguments);}
+                                   gtag('js', new Date());
+                                   gtag('config', 'G-41KMBS1TNV');`,
+                        }}
+                    />
                 </Head>
                 <body>
                     <Main />
