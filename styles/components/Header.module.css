@@ -1,43 +1,53 @@
 .Header {
-  background-color: var(--color-main-dark);
+    background-color: var(--color-main-dark);
 }
 
 /* mobile */
 @media (max-width: 767px) {
-  .Header {
-    position: sticky;
-    top: 0;
-    z-index: 90;
-  }
-  .Header img {
-    height: auto;
-    width: 50%;
-    padding-left: 5%;
-    padding-top: 2.5%;
-    padding-bottom: 2.5%;
-  }
+    .Header {
+        position: sticky;
+        top: 0;
+        z-index: 90;
+    }
+    .Header img {
+        height: auto;
+        width: 50%;
+        padding-left: 5%;
+        padding-top: 2.5%;
+        padding-bottom: 2.5%;
+    }
 
-  .MobileNavIcon {
-    position: absolute;
-    right: 0;
-    padding: 1%;
-    margin: 5%;
-    margin-top: 10%;
-    z-index: 100;
-  }
-  .MobileNavIcon div {
-    width: 30px;
-    height: 3px;
-    background-color: var(--color-white);
-    margin-bottom: 6px;
-  }
+    .MobileNavIcon {
+        position: absolute;
+        right: 0;
+        padding: 1%;
+        margin: 5%;
+        margin-top: 10%;
+        z-index: 100;
+    }
+    .MobileNavIcon div {
+        height: 2px;
+        background-color: var(--color-white);
+        margin-bottom: 6px;
+    }
+    .MobileNavIcon .line1 {
+        width: 30px;
+    }
+    .MobileNavIcon .line2 {
+        width: 25px;
+        margin-left: 5px;
+    }
+    .MobileNavIcon .line3 {
+        width: 20px;
+        margin-left: 10px;
+    }
 }
 
 /* desktop */
 @media (min-width: 768px) {
-  .Header img {
-    height: auto;
-    width: 40%;
-    margin-left: 30%;
-  }
+    .Header img {
+        height: auto;
+        width: 40%;
+        margin-left: 30%;
+    }
 }
