@@ -12,7 +12,7 @@ export default function BackgroundImage({ src, onload }) {
             }))
             onload()
         }
-    }, [src])
+    }, [src, onload])
     return state.loaded ? (
         <div
             style={{ backgroundImage: `url(/${src})` }}

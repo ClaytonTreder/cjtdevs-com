@@ -1,23 +1,24 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Script from 'next/script'
 class MyDocument extends Document {
     render() {
         return (
             <Html>
                 <Head>
                     <link
-                        href="https://fonts.googleapis.com/css2?family=Cabin"
+                        href="https://fonts.googleapis.com/css2?family=Cabin&display=optional"
                         rel="stylesheet"
                     />
                     <meta name="robots" content="index, follow" />
                     <link rel="shortcut icon" href="/favicon.ico" />
-                    <script
+                    <Script
                         async
                         src="https://www.googletagmanager.com/gtag/js?id=UA-198230094-1"
                     />
-                    <script
+                    <Script
                         type="text/javascript"
                         src="https://assets.calendly.com/assets/external/widget.js"
-                    ></script>
+                    />
                     <script
                         dangerouslySetInnerHTML={{
                             __html: `window.dataLayer = window.dataLayer || [];
@@ -27,10 +28,10 @@ class MyDocument extends Document {
                             gtag('config', 'UA-198230094-1');`,
                         }}
                     />
-                    <script
+                    <Script
                         async
                         src="https://www.googletagmanager.com/gtag/js?id=G-41KMBS1TNV"
-                    ></script>
+                    />
                     <script
                         dangerouslySetInnerHTML={{
                             __html: `window.dataLayer = window.dataLayer || [];

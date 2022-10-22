@@ -8,6 +8,7 @@ export default function Loader() {
                 height={'1'}
                 width={'1'}
                 src="/images/loader.gif"
+                alt="loader"
             />
         </div>
     )
