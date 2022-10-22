@@ -36,7 +36,6 @@ function Contact() {
                 token: token,
             }),
         })
-        console.log(response)
 
         setState((prevState) => ({
             ...prevState,

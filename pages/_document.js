@@ -14,7 +14,10 @@ class MyDocument extends Document {
                         async
                         src="https://www.googletagmanager.com/gtag/js?id=UA-198230094-1"
                     />
-
+                    <script
+                        type="text/javascript"
+                        src="https://assets.calendly.com/assets/external/widget.js"
+                    ></script>
                     <script
                         dangerouslySetInnerHTML={{
                             __html: `window.dataLayer = window.dataLayer || [];
