@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import styles from 'styles/pages/Calendar.module.css'
 
 export default function Calendar() {
     useEffect(() => {
@@ -11,8 +12,11 @@ export default function Calendar() {
     }, [])
 
     return (
-        <div style={{ minHeight: '100vh' }}>
-            <div style={{ height: '100%' }} id="calendar" />
+        <div className={styles.calendar}>
+            <div
+                style={{ height: '100%', padding: '2%', }}
+                id="calendar"
+            />
         </div>
     )
 }
