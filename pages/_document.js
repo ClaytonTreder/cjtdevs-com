@@ -6,7 +6,7 @@ class MyDocument extends Document {
             <Html>
                 <Head>
                     <link
-                        href="https://fonts.googleapis.com/css2?family=Cabin&display=optional"
+                        href="https://fonts.googleapis.com/css2?family=Cabin&display=swap"
                         rel="stylesheet"
                     />
                     <meta name="robots" content="index, follow" />
@@ -15,7 +15,8 @@ class MyDocument extends Document {
                         async
                         src="https://www.googletagmanager.com/gtag/js?id=UA-198230094-1"
                     />
-                    <Script
+                    <script
+                        defer
                         type="text/javascript"
                         src="https://assets.calendly.com/assets/external/widget.js"
                     />
