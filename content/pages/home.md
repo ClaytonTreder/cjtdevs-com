@@ -34,7 +34,7 @@ home_actions:
 home_links:
   - hl_link:
       hl_link_text: Schedule a free consultation now
-      hl_link_nav: /calendar
+      hl_link_nav: /contact
       hl_link_image: images/coffee.png
   - hl_link:
       hl_link_nav: /clients

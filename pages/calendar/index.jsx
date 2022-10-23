@@ -12,11 +12,15 @@ export default function Calendar() {
     }, [])
 
     return (
-        <div className={styles.calendar}>
-            <div
-                style={{ height: '100%', padding: '5%', }}
-                id="calendar"
-            />
-        </div>
+        <>
+            {false && (
+                <div className={styles.calendar}>
+                    <div
+                        style={{ height: '100%', padding: '5%' }}
+                        id="calendar"
+                    />
+                </div>
+            )}
+        </>
     )
 }
