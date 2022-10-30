@@ -44,6 +44,7 @@ a:hover .nav :not(a:hover .arrow-left-top) {
 
     @keyframes slidein {
         0% {
+            margin-top: 100%;
             opacity: 0;
             transform: translate(-50%, 0);
             width: 260%;
@@ -52,6 +53,7 @@ a:hover .nav :not(a:hover .arrow-left-top) {
             opacity: 1;
         }
         100% {
+            margin-top: 0%;
             transform: translate(0, 0);
             width: 60%;
         }
