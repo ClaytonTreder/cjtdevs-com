@@ -9,21 +9,12 @@ import BackgroundImage from '../components/BackgroundImage'
 
 function Home() {
     const text = attributes
-    const [state, setState] = useState({ loaded: false })
 
     return (
         <>
             <Meta />
             <div>
-                <BackgroundImage
-                    src={text.home_bg}
-                    onload={() => {
-                        setState((prevState) => ({
-                            ...prevState,
-                            loaded: true,
-                        }))
-                    }}
-                />
+                <BackgroundImage src={text.home_bg} onload={() => {}} />
                 <>
                     <div className={`${styles.banner} fade-in`}>
                         <div className={`${styles.title}`}>
