@@ -6,7 +6,6 @@ import Meta from './meta'
 import Image from 'next/image'
 import Link from 'next/link'
 import BackgroundImage from '../components/BackgroundImage'
-import Loader from '../components/Loader'
 
 function Home() {
     const text = attributes
@@ -107,7 +106,7 @@ function Home() {
                             })}
                         </div>
                     </>
-                ): <Loader />}
+                ): null}
             </div>
         </>
     )
