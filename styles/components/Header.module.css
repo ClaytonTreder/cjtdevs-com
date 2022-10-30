@@ -32,15 +32,18 @@
     }
     .MobileNavIcon .line1 {
         width: 30px;
+        transition: width 1s, margin-left 1s;
     }
 
     .MobileNavIcon .line2 {
         width: 25px;
         margin-left: 5px;
+        transition: width 1s, margin-left 1s;
     }
     .MobileNavIcon .line3 {
         width: 20px;
         margin-left: 10px;
+        transition: width 1s, margin-left 1s;
     }
     .SlideOut .line1,
     .SlideOut .line2,

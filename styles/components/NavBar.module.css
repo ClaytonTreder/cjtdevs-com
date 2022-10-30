@@ -33,18 +33,68 @@ a:hover .nav :not(a:hover .arrow-left-top) {
         position: fixed;
         z-index: 100;
         right: 0;
-        width: 100%;
+        width: 60%;
         padding-right: 2%;
         height: 100%;
         padding-left: 20%;
+        opacity: 0;
+        transform: translate(-100%, 0);
         background-color: black;
-        animation: slidein 1s ease-in-out;
+        animation: slidein 0.5s ease-in-out forwards;
+        -webkit-animation: slidein 0.5s ease-in-out forwards;
+        -moz-animation: slidein 0.5s ease-in-out forwards;
+        -o-animation: slidein 0.5s ease-in-out forwards;
+        -ms-animation: slidein 0.5s ease-in-out forwards;
     }
 
     @keyframes slidein {
         0% {
             opacity: 0;
-            transform: translate(-50%, 0);
+            transform: translate(-100%, 0);
+        }
+        100% {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+    }
+
+    @-moz-keyframes slidein {
+        0% {
+            opacity: 0;
+            transform: translate(-100%, 0);
+        }
+        100% {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+    }
+
+    @-webkit-keyframes slidein {
+        0% {
+            opacity: 0;
+            transform: translate(-100%, 0);
+        }
+        100% {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+    }
+
+    @-o-keyframes slidein {
+        0% {
+            opacity: 0;
+            transform: translate(-100%, 0);
+        }
+        100% {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+    }
+
+    @-ms-keyframes slidein {
+        0% {
+            opacity: 0;
+            transform: translate(-100%, 0);
         }
         100% {
             opacity: 1;
