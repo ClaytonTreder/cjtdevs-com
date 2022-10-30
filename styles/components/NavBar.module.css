@@ -46,10 +46,8 @@ a:hover .nav :not(a:hover .arrow-left-top) {
             opacity: 0;
             transform: translate(-50%, 0);
         }
-        50% {
-            opacity: 1;
-        }
         100% {
+            opacity: 1;
             transform: translate(0, 0);
         }
     }
