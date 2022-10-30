@@ -2,10 +2,13 @@ import styles from '../styles/components/Header.module.css'
 
 export default function Header(params) {
     const setMobileNavOpen = params.setMobileNavOpen
+
     return (
         <div className={styles.Header}>
             <div
-                className={styles.MobileNavIcon}
+                className={`${styles.MobileNavIcon} ${
+                    params.mobileNavOpen ? styles.SlideOut : ''
+                }`}
                 onClick={(e) => {
                     setMobileNavOpen(true)
                 }}
