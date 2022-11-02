@@ -32,14 +32,34 @@
     }
     .MobileNavIcon .line1 {
         width: 30px;
+        transition: width 1s, margin-left 1s;
     }
+
     .MobileNavIcon .line2 {
         width: 25px;
         margin-left: 5px;
+        transition: width 1s, margin-left 1s;
     }
     .MobileNavIcon .line3 {
         width: 20px;
         margin-left: 10px;
+        transition: width 1s, margin-left 1s;
+    }
+    .SlideOut .line1,
+    .SlideOut .line2,
+    .SlideOut .line3 {
+        width: 0px;
+        margin-left: 30px;
+        transition: width 1s, margin-left 1s;
+    }
+
+    @keyframes slideout {
+        0% {
+            max-width: 100%;
+        }
+        100% {
+            max-width: 0%;
+        }
     }
 }
 
