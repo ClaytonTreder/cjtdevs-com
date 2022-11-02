@@ -6,7 +6,6 @@ import Meta from './meta'
 import Image from 'next/image'
 import Link from 'next/link'
 import BackgroundImage from '../components/BackgroundImage'
-import test from 'public/images/3kings.png'
 
 function Home() {
     const text = attributes
@@ -94,7 +93,6 @@ function Home() {
                             )
                         })}
                     </div>
-                    <Image className={styles.img} alt="background" src={test} />
                 </>
             </div>
         </>
