@@ -28,6 +28,6 @@ social:
     text: info@cjtdevs.com
     pic: images/mail.png
   phone:
-    text: (734) 787-8670
+    text: (734) 237-1268
     pic: images/phone.png
 ---
