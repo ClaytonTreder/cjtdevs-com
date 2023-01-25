@@ -1,6 +1,5 @@
 ---
-home_bg: images/chip.jpg
-home-bg: images/chip-1-.webp
+home_bg: images/chip-1-.webp
 home_call_to_action:
   hcta_lines:
     - hcta_line: Detroit-based software developers

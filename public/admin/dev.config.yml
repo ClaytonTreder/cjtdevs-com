@@ -15,7 +15,7 @@ collections:
         file: content/pages/home.md
         preview_path: /
         fields:
-          - { label: Background, name: home-bg, widget: image }
+          - { label: Background, name: home_bg, widget: image }
           - label: "Call To Action"
             name: home_call_to_action
             widget: object
