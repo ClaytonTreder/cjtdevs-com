@@ -1,6 +1,7 @@
 ---
-background: images/keyboard2.png
+background: images/keyboard2.webp
 title: Contact
 subTitle: Let's talk
-content: Thanks for your interest in our services. Please fill out the email form, submit and we will get back to you soon.
+content: Thanks for your interest in our services. Please fill out the email
+  form, submit and we will get back to you soon.
 ---
